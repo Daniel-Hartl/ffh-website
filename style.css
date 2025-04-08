@@ -69,9 +69,9 @@ header{
             header nav ul{
                 display: flex;
                 vertical-align: middle;
-                justify-content: center;
+                justify-content: right;
                 height: 100%;
-                width: 80%;
+                width: 100%;
                 flex-wrap: nowrap;
             }
             header nav li{
@@ -89,6 +89,36 @@ header{
                 display: table-cell;
                 vertical-align: top;
             }
-            header nav a{
-                color: white
+            header nav .menuitem {
+                color: white;
+                cursor: pointer;
+                -webkit-user-select: none; /* Safari */
+                -ms-user-select: none; /* IE 10 and IE 11 */
+                user-select: none; /* Standard syntax */
             }
+                .menuitem ul {
+                    height: 0px;
+                    overflow: hidden;
+                    -webkit-transition: all 0.5s ease-in-out;
+                    -moz-transition: all 0.5s ease-in-out;
+                    -o-transition: all 0.5s ease-in-out;
+                    transition: all 0.5s ease-in-out;
+                    width: 100%;
+                    vertical-align: middle;
+                    display: flex;
+                }
+                
+                .menuitem:hover ul {
+                    height: 100px;
+                }
+                .menuitem ul li {
+                    font-size: 20px;
+                    display: table;
+                    height: 100%;
+                    text-wrap: nowrap;
+                    padding-left:20px;
+                    padding-right:20px;
+                }
+                .menuitem ul li:hover {
+                    background-color: #1D1045;
+                }

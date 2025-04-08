@@ -7,16 +7,8 @@ window.addEventListener('scroll', () => {
     const bannerRect = banner.getBoundingClientRect();
     const navabarHeight = navabar.clientHeight;
 
-    // logo.style.minHeight = `calc(${navabarHeight}px - 10px)`;
 
-    // if (bannerRect.bottom <= navabarHeight) {
-    //     logo.style.height = `calc(${navabarHeight}px - 10px)`;
-    //     logo.style.margin = `5px`;
-    // }
-    // else {
-    //     logo.style.height = `${bannerRect.bottom}px`;
-    // }
-
+    // calculate height of logo according to banner height
     completeHeight = 0;
 
     if (bannerRect.bottom <= navabarHeight) {

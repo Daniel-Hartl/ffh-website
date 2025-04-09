@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: poppins;
+}
+main {
+        padding-left: 5%;
+        padding-right: 5%;
+        min-height: calc(85vh - 300px);
+        text-align: center;
+}
+main hr {
+    width: 40%;
+    margin: 2vh auto;
+    border-top: 4px solid #bbb;
+    border-radius: 2px;
+}
+.footnote{
+    font-size:11px;
+}
+main a{
+    color:#1D1045;
+}

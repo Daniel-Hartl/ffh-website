@@ -1,10 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: poppins;
-}
 header{
     width: 100%;
     height: 300px;
@@ -19,14 +12,13 @@ header{
         height: 100%;
         display: block;
         margin: 0 auto;
-        background-image: url(images/heitzenhofen.png);
+        background-image: url(../images/heitzenhofen.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
     }
         header .logo-div{
             display: table;
-            height: 100%;
             float: left;
             position: fixed;
             z-index: 100;
@@ -99,7 +91,7 @@ header{
                     padding-left:50px;
                     padding-right:50px;
                 }
-                .menuitem .submenu {
+                header .menuitem .submenu {
                     font-size: 20px;
                     height: 0px;
                     justify-content: center;
@@ -110,22 +102,25 @@ header{
                     transition: all 0.5s ease-in-out;
                     display: grid;
                     width: 100%;
+                    flex-wrap: nowrap;
                 }
-                .menuitem:hover .submenu {
-                    height: 250px;
+                header .menuitem:hover .submenu {
+                    height: auto;
                 }
-                .submenu li {
-                    display: table;
+                header .submenu li {
                     width: 100%;
+                    display: table;
                 }
-                .submenu span {
+                header .submenu span {
                     display: table-cell;
                     vertical-align: middle;
                 }
-                .submenu p{
+
+                header .submenu p{
                     padding-left:30px;
                     padding-right:30px;
+                    color: white;
                 }
-                .menuitem li:hover {
+                header .menuitem li:hover {
                     background-color: #1D1045;
                 }

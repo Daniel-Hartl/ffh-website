@@ -79,8 +79,6 @@ header{
                 height: 100%;
                 float: left;
                 text-wrap: nowrap;
-                padding-left:50px;
-                padding-right:50px;
             }
             header nav li:hover{
                 background-color: #361f7e;
@@ -96,29 +94,38 @@ header{
                 -ms-user-select: none; /* IE 10 and IE 11 */
                 user-select: none; /* Standard syntax */
             }
-                .menuitem ul {
+
+                header nav .menuitem p {
+                    padding-left:50px;
+                    padding-right:50px;
+                }
+                .menuitem .submenu {
+                    font-size: 20px;
                     height: 0px;
+                    justify-content: center;
                     overflow: hidden;
                     -webkit-transition: all 0.5s ease-in-out;
                     -moz-transition: all 0.5s ease-in-out;
                     -o-transition: all 0.5s ease-in-out;
                     transition: all 0.5s ease-in-out;
+                    display: grid;
                     width: 100%;
-                    vertical-align: middle;
-                    display: flex;
                 }
-                
-                .menuitem:hover ul {
-                    height: 100px;
+                .menuitem:hover .submenu {
+                    height: 250px;
                 }
-                .menuitem ul li {
-                    font-size: 20px;
+                .submenu li {
                     display: table;
-                    height: 100%;
-                    text-wrap: nowrap;
-                    padding-left:20px;
-                    padding-right:20px;
+                    width: 100%;
                 }
-                .menuitem ul li:hover {
+                .submenu span {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+                .submenu p{
+                    padding-left:30px;
+                    padding-right:30px;
+                }
+                .menuitem li:hover {
                     background-color: #1D1045;
                 }

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="styles/headerstyle.css"/>
         <link rel="stylesheet" href="styles/mainstyle.css"/>
         <link rel="stylesheet" href="styles/footerstyle.css"/>
+        <link rel="stylesheet" href="styles/liststyle.css"/>
         
         <link rel="icon" href="images/wappen.png"/>
 
@@ -16,6 +17,7 @@
         <link rel="stylesheet" href="fonts/poppins.css"/>
     </head>
     <script src="skripts/headerCalculations.js"></script>
+    <script src="skripts/loadData.js"></script>
     <body>
         <header>
             <div class="inner-div" id="banner">
@@ -50,7 +52,14 @@
             </div>
         </header>
         <main>
-            <h1>Verein </h1>
+            <h1>Vorstandschaft</h1>
+            <div id="board-container">
+                <div topic="vorsitz" class="group"></div>
+                <hr>
+                <div topic="amt" class="group"></div>
+                <hr>
+                <div topic="beisitz" class="group"></div>
+            </div>
         </main>
         <footer>
             <div class="footer-div">

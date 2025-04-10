@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="styles/headerstyle.css"/>
         <link rel="stylesheet" href="styles/mainstyle.css"/>
         <link rel="stylesheet" href="styles/footerstyle.css"/>
+        <link rel="stylesheet" href="styles/liststyle.css"/>
         
         <link rel="icon" href="images/wappen.png"/>
 
@@ -16,6 +17,7 @@
         <link rel="stylesheet" href="fonts/poppins.css"/>
     </head>
     <script src="skripts/headerCalculations.js"></script>
+    <script src="skripts/loadData.js"></script>
     <body>
         <header>
             <div class="inner-div" id="banner">
@@ -51,6 +53,16 @@
         </header>
         <main>
             <h1>Aktive Mannschaft </h1>
+            <div id="crew-container">
+                <h2>Kommandanten</h2>
+                <div topic="kommandant" class="group"></div>
+                <hr>
+                <h2>weitere Führungsposten</h2>
+                <div topic="amt" class="group"></div>
+                <hr>
+                <h2>Löschmeister</h2>
+                <div topic="löschmeister" class="group"></div>
+            </div>
         </main>
         <footer>
             <div class="footer-div">

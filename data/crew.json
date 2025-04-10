@@ -1,0 +1,74 @@
+[
+    {
+        "Id": "kommandant",
+        "Funktion": "1. Kommandantin",
+        "Name": "Stefanie Dechant",
+        "Bild": ""
+    },
+    {
+        "Id": "kommandant",
+        "Funktion": "Stellv. Kommandant",
+        "Name": "Lukas Schindler",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "kommandant",
+        "Funktion": "Stellv. Kommandant",
+        "Name": "Gabriel Böhm",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": "Hauptlöschmeister",
+        "Name": "Peter Pilz",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": "Oberlöschmeister",
+        "Name": "Dirk Tamme",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": "Löschmeister",
+        "Name": "Paul Ehrl",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": "Löschmeister",
+        "Name": "Josef Graf",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": "Löschmeister",
+        "Name": "Bernhard Hierl",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": "Löschmeister",
+        "Name": "Karl Kiener",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": "Löschmeister",
+        "Name": "Josef Rödl",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "amt",
+        "Funktion": "1. Gerätewart",
+        "Name": "Gabriel Böhm",
+        "Bild": "images/sid.png"
+    },
+    {
+        "Id": "amt",
+        "Funktion": "1. Jugendbeauftrager",
+        "Name": "Gabriel Böhm",
+        "Bild": "images/sid.png"
+    }
+]

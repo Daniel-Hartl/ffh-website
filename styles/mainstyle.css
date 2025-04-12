@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    list-style: none;
     text-decoration: none;
     font-family: poppins;
 }
@@ -25,4 +24,21 @@ main a{
 }
 h1 {
     font-size: 3em;
+}
+h2 {
+    margin-top: 2vh;
+}
+ol {
+    list-style: decimal;
+    margin-left: 2%;
+    margin-bottom: 1vh;
+}
+ol li {
+    margin-bottom: 0.3vh;
+}
+.left-aligned-block {
+    text-align: left;
+}
+.left-aligned-block p {
+    margin-left: 1%;
 }

@@ -1,23 +1,23 @@
-function generateNewMemberFrame(mitglied) {
+function generateNewMemberFrame(member) {
     // Container-DIV
     const container = document.createElement('div');
-    container.id = mitglied.Id;
+    container.id = member.Id;
     container.className = 'board-member';
 
     // Bild
     const img = document.createElement('img');
-    img.src = mitglied.Bild || 'images/noImage.png'; // Falls kein Bild vorhanden
-    img.alt = mitglied.Name;
+    img.src = member.Bild || 'images/noImage.png'; // Falls kein Bild vorhanden
+    img.alt = member.Name;
 
     // Name
     const name = document.createElement('div');
     name.className = 'name-tag';
-    name.textContent = mitglied.Name;
+    name.textContent = member.Name;
 
     // Funktion
     const position = document.createElement('div');
     position.className = 'function-description';
-    position.textContent = mitglied.Funktion;
+    position.textContent = member.Funktion;
 
     // Alles zusammensetzen
     container.appendChild(img);

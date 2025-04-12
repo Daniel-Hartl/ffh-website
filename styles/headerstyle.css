@@ -65,6 +65,7 @@ header{
                 height: 100%;
                 width: 100%;
                 flex-wrap: nowrap;
+                list-style: none;
             }
             header nav li{
                 display: table;

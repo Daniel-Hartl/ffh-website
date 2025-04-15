@@ -1,0 +1,120 @@
+.header {
+    height: 100%;
+    width: 100%;
+    font-size: 40px;
+}
+.menubar {
+    background-color: #1D1045;
+    position:fixed;
+    width: 100%;
+    display: block;
+}
+    .menubar nav {
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .menubar ul {
+        list-style: none;
+        flex-wrap: nowrap;
+    }
+
+    .menubar li {
+        display: table;
+        float: left;
+        height: 100%;
+    }
+
+    .menubar li:hover{
+        background-color: #361f7e;
+    }
+
+    .menubar span {
+        display: table-cell;
+    }
+
+        .menuitem {
+            color: white;
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+
+        .menuitem p {
+            padding-left:50px;
+            padding-right:50px;
+        }
+
+        .menuitem:hover .submenu {
+            height: 152px;
+        }
+
+        .submenu {
+            font-size: 25px;
+            height: 0;
+            overflow: hidden;
+            justify-content: center;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            display: grid;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+        .submenu li {
+            width: 100%;
+            display: table;
+        }
+
+        .submenu span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .submenu p{
+            padding-left:30px;
+            padding-right:30px;
+            color: white;
+        }
+        .submenu li:hover {
+            background-color: #1D1045;
+        }
+
+.banner {
+    background-image: url(heitzenhofen.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100% - 1.5rem);
+}
+
+.logo-container {
+    display: table;
+    position: fixed;
+    z-index: 100;
+    animation-timeline: scroll(root);
+}
+    .logo-container div{
+        width: 225px;
+        max-height: 300px;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    .logo-container img {
+        max-width: 90%;
+        max-height: 90%;
+        object-position: left;
+        object-fit: fill;
+        display: block;
+        margin: 5% auto;
+        margin-left: 5%;
+    }

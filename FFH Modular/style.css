@@ -6,4 +6,12 @@
 }
 header {
     height: 30vh;
+    margin-bottom: 3vh;
+}
+main {
+    min-height: 59vh;
+}
+footer {
+    height: 5vh;
+    margin-top: 3vh;
 }

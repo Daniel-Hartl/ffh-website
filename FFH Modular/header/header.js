@@ -1,4 +1,8 @@
 window.addEventListener('scroll', () => {
+    calculateLogo();
+});
+
+function calculateLogo() {
     const banner = document.getElementsByClassName('banner');
     const logo = document.getElementById('logo');
     const navbar = document.getElementsByClassName('menubar');
@@ -18,9 +22,7 @@ window.addEventListener('scroll', () => {
     logo.style.height = `${getHeight(completeHeight)}px`;
     logo.style.marginTop = `${getMargin(completeHeight)}px`;
     logo.style.marginBottom = `${getMargin(completeHeight)}px`;
-});
-
-window.addEventListener()
+}
 
 function getMargin(height) {
     return height * 0.05;

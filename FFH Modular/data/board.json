@@ -1,0 +1,68 @@
+[
+    {
+        "Id": "vorsitz",
+        "Funktion": "1. Vorsitzender",
+        "Name": "Josef Graf",
+        "Bild": ""
+    },
+    {
+        "Id": "vorsitz",
+        "Funktion": "2. Vorsitzende",
+        "Name": "Sophie Kliegl",
+        "Bild": ""
+    },
+    {
+        "Id": "vorsitz",
+        "Funktion": "Ehrenvorsitzender",
+        "Name": "Josef Rödl",
+        "Bild": ""
+    },
+    {
+        "Id": "amt",
+        "Funktion": "1. Schriftführerin",
+        "Name": "Martina Glockner",
+        "Bild": ""
+    },
+    {
+        "Id": "amt",
+        "Funktion": "2. Schriftführer",
+        "Name": "Stefan Remeli",
+        "Bild": ""
+    },
+    {
+        "Id": "amt",
+        "Funktion": "1. Kassier",
+        "Name": "Christian Dechant",
+        "Bild": ""
+    },
+    {
+        "Id": "amt",
+        "Funktion": "2. Kassier",
+        "Name": "Marion Winzinger",
+        "Bild": ""
+    },
+    {
+        "Id": "beisitz",
+        "Funktion": "Beisitzer",
+        "Name": "Dietmar Drexler",
+        "Bild": ""
+    },
+    {
+        "Id": "beisitz",
+        "Funktion": "Beisitzer",
+        "Name": "Andreas Kliegl",
+        "Bild": ""
+    },
+    {
+        "Id": "beisitz",
+        "Funktion": "Beisitzer",
+        "Name": "Michael Kretschmann",
+        "Bild": ""
+    },
+    {
+        "Id": "beisitz",
+        "Funktion": "Beisitzer",
+        "Name": "Julian Schindler",
+        "Bild": ""
+    }
+]

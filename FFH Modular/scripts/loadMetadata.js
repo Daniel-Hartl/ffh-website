@@ -65,6 +65,6 @@ function setMetadata() {
 function addStyle() {
     const style = document.createElement('link');
     style.rel = 'stylesheet';
-    style.href = 'style.css';
+    style.href = 'styles/style.css';
     document.head.appendChild(style);
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <script src="scripts/loadMetadata.js"></script>
+    <script src="scripts/loadComponent.js"></script>
+</head>
+
+<body>
+    <header class="dynamic-content" src="header/header.html"></header>
+    <main>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="e4b6314f-58eb-41d8-8806-3576e47333ca">
+            <table>
+                <tr>
+                    <td class="tc1">
+                        <p>Name:</p>
+                    </td>
+                    <td class="tc2">
+                        <input name="Name" required type="text" placeholder="Ihr Name"
+                            pattern="[A-Za-z]{2,}(\s[A-Za-z]{2,})+"
+                            oninvalid="this.setCustomValidity('Bitte geben Sie Vor- und Nachname ein!')"
+                            onchange="this.setCustomValidity('')" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>E-Mail:</p>
+                    </td>
+                    <td>
+                        <!-- <input name="E-Mail" placeholder="Ihre E-Mail-Adresse" type="email" required /> -->
+                        <input name="E-Mail" required type="text" placeholder="Ihre E-Mail-Adresse"
+                            pattern="[A-Za-z0-9\-._]+@[A-Za-z0-9\-._]+\.[a-zA-Z]{2,}"
+                            oninvalid="this.setCustomValidity('Bitte geben Sie Ihre E-Mail-Adresse ein!')"
+                            onchange="this.setCustomValidity('')" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Betreff:</p>
+                    </td>
+                    <td><input name="Betreff" type="text" minlength="5" placeholder="Ihr Anliegen" required /></td>
+                </tr>
+                <tr>
+                    <td class="textarea-caption">
+                        <p>Nachricht:</p>
+                    </td>
+                    <td>
+                        <textarea name="Nachricht" rows="10" placeholder="Ihre Nachricht">
+                    </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Absenden</button></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+    <footer class="dynamic-content" src="footer/footer.html"></footer>
+</body>
+
+</html>

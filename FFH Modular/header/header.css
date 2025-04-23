@@ -1,7 +1,7 @@
 .header {
     height: 100%;
     width: 100%;
-    font-size: 40px;
+    font-size: 30px;
 }
 .menubar {
     background-color: #1D1045;
@@ -55,7 +55,7 @@
         }
 
         .submenu {
-            font-size: 25px;
+            font-size: 20px;
             height: 0;
             overflow: hidden;
             justify-content: center;
@@ -93,6 +93,7 @@
     background-size: cover;
     background-position: center center;
     height: calc(100% - 1.5rem);
+    padding-top: 2rem;
 }
 
 .logo-container {
@@ -102,7 +103,7 @@
     animation-timeline: scroll(root);
 }
     .logo-container div{
-        width: 180px;
+        width: 170px;
         max-height: 250px;
         position: relative;
         display: inline-block;

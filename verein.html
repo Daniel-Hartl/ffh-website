@@ -1,57 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FF Heitzenhofen</title>
-        <link rel="stylesheet" href="styles/headerstyle.css"/>
-        <link rel="stylesheet" href="styles/mainstyle.css"/>
-        <link rel="stylesheet" href="styles/footerstyle.css"/>
-        <link rel="stylesheet" href="styles/liststyle.css"/>
-        
-        <link rel="icon" href="images/wappen.png"/>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="fonts/poppins.css"/>
+       <script src="scripts/loadMetadata.js"></script> 
+       <script src="scripts/loadComponent.js"></script>
+       <script src="scripts/loadMembers.js"></script>
+       <link href="styles/liststyle.css" rel="stylesheet"/>
     </head>
-    <script src="skripts/headerCalculations.js"></script>
-    <script src="skripts/loadData.js"></script>
-    <script src="skripts/loadHtml.js"></script>
     <body>
-        <header>
-            <div class="inner-div" id="banner">
-                <div class="logo-div">
-                    <div>
-                        <a href="home.html">
-                            <img src="images/wappen.png" id="logo" alt="Logo"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="navbar-div" id="navbar">
-                    <nav>
-                        <ul id="navbar-list">
-                            <li><span><a class="menuitem" href="home.html"><p>Home</p></a></span></li>
-                            <li>
-                                <span>
-                                    <div class="menuitem"><p>Über uns</p>
-                                        <ul class="submenu">
-                                            <li><span><a href="verein.html"><p>Verein</p></a></span></li>
-                                            <li><span><a href="aktiv.html"><p>Aktive Mannschaft</p></a></span></li>
-                                            <li><span><a href="fahrzeug.html"><p>Fahrzeug</p></a></span></li>
-                                            <li><span><a href="geraetehaus.html"><p>Gerätehaus</p></a></span></li>
-                                        </ul>
-                                    </div>
-                                </span>
-                            </li>
-                            <li><span><a class="menuitem" href="termine.html"><p>Termine</p></a></span></li>
-                            <li><span><a class="menuitem" href="chronik.html"><p>Chronik</p></a></span></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        <header class="dynamic-content" src="header/header.html"></header>
         <main>
             <h1>Vorstandschaft</h1>
             <div id="board-container">
@@ -62,13 +18,160 @@
                 <div topic="beisitz" class="group"></div>
             </div>
             <hr>
-            <div class="content-container" src="data/satzung.html"></div>
-        </main>
-        <footer>
-            <div class="footer-div">
-                <a href="impressum.html">Impressum</a>
-                <a href="impressum.html#datenschutz">Datenschutzerklärung</a>
+
+            <div class="left-aligned-block">
+                <h1>Satzung der freiwilligen Feuerwehr Heitzenhofen e.V.</h1>
+                <h2>§ 1</h2>
+                <ol>
+                    <li>Der Verein trägt den Namen Freiwillige Feuerwehr Heitzenhofen</li>
+                    <li>Der Verein hat seinen Sitz in Heitzenhofen</li>
+                    <li>Das Geschäftsjahr des Vereins ist das Kalenderjahr</li>
+                </ol>
+            
+                <h2>§ 2 Vereinszweck</h2>
+                <ol>
+                    <li>Der Zweck des Vereins ist die Unterstützung der Freiwilligen Feuerwehr Heitzenhofen, insbesondere durch
+                        Werbung und Stellen von Einsatzkräften dabei verfolgt er ausschliesslich und unmittelbar gemeinnützige
+                        Zwecke im Sinne der §§ 51 bis 68 der Abgabenordnung.</li>
+                    <li>Der Verein ist selbstlos tätig; er verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke. Mittel des
+                        Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet werden. Die Mitglieder erhalten keine
+                        Gewinnanteile und in ihrer Eigenschaft als Mitglied auch keine sonstigen Zuwendungen aus Vereinsmitteln. Es
+                        darf keine Person durch Verwaltungsausgaben, die den Zwecken des Vereins fremd sind, oder durch
+                        verhältnismäßig hohe Vergütungen begünstigt werden.</li>
+                    <li>Die Vereinsämter sind Ehrenämter.</li>
+                </ol>
+            
+                <h2>§ 3 Mitglieder</h2>
+                <ol>
+                    <li>Mitglieder des Vereins können seinen
+                        <ol>
+                            <li>Feuerwehrdienstleistende (aktive Mitglieder)</li>
+                            <li>ehemalige Feuerwehrdienstleistende (passive Mitglieder)</li>
+                            <li>fördernde Mitglieder</li>
+                            <li>Ehrenmitglieder</li>
+                            <li>Feuerwehranwärter</li>
+                        </ol>
+                    </li>
+                    <li>Zu den aktiven Mitgliedern zählen auch die Feuerwehranwärter, Personen die aus dem aktiven Feuerwehrdienst ausscheiden, werden passive Mitglieder, wenn sie nicht aus dem Verein austreten. Fördernde Mitglieder unterstützen den Verein insbesondere durch besondere finanzielle Beiträge oder Dienstleistungen. Zu Ehrenmitgliedern können Personen ernannt werden, die sich als Feuerwehrdienstleistende oder auf sonstige Weise um das Feuerwehrwesen besondere Verdienste erworben haben.</li>
+                </ol>
+            
+                <h2>§ 4 Erwerb der Mitgliedschaft</h2>
+                <ol>
+                    <li>Mitglied des Vereins kann jede natürliche Person im Sinne des BGB werden. Sie soll ihren Sitz im Gemeindebereich haben und für den Feuerwehrdienst geeignet sein.</li>
+                    <li>Der Antrag zur Aufnahme in den Verein ist schriftlich beim Vorstand einzureichen. Minderjährige müssen die Zustimmung ihrer gesetzlichen Vertreter nachweisen.</li>
+                    <li>Über die Aufnahme entscheidet der Vorstand. Er ist nicht verpflichtet, etwaige Ablehnungsgründe nachzuweisen.</li>
+                    <li>Die Ernennung zum Ehrenmitglied erfolgt auf Vorschlag des Vorstandes durch die Mitgliederversammlung mit einer Mehrheit von zwei Drittel der Erschienenen und abstimmenden Mitglieder.</li>
+                </ol>
+            
+                <h2>§ 5 Beendigung der Mitgliedschaft</h2>
+                <ol>
+                    <li>Die Mitgliedschaft endet durch:
+                        <ol>
+                            <li>Tod des Mitglieds</li>
+                            <li>Austritt</li>
+                            <li>Streichung von der Mitgliederliste</li>
+                            <li>Ausschluss</li>
+                        </ol>
+                    </li>
+                    <li>Der Austritt ist dann wirksam, wenn er dem Vorstand gegenüber schriftlich erklärt wird.</li>
+                    <li>Ein Mitglied kann durch Beschluss des Vorstandes von der Mitgliederliste gestrichen werden, wenn es trotz zweimahliger Mahnung mit der Erfüllung seiner Beitragspflicht im Rückstand ist. Die Streichung darf erst beschlossen werden, wenn seit Absendung des zweiten Mahnungsbescheides 3 Monate verstrichen sind. Dem Mitglied ist die Streichung schriftlich mitzuteilen.</li>
+                    <li>Ein Mitglied kann, wenn es gegen die Vereinsinteressen gröblich verstoßen hat, durch Beschluss des Vorstandes aus dem Verein ausgeschlossen werden. Vor der Entscheidung ist dem Betroffenen unter Setzung einer angemessenen Frist Gelegenheit zu geben, sich schriftlich oder persönlich gegenüber dem Vorstand zu rechtfertigen.</li>
+                    <li>Dem Betroffenen ist der Ausschluss schriftlich mitzuteilen. Gegen den Ausschluss steht ihm das Recht der Berufung an die Mitgliederversammlung zu. Die Berufung muss innerhalb einer Frist von einem Monat ab Zugang des Ausschlussbeschlusses bei Vorstand eingelegt sein. Ist die Berufung rechtzeitig eingelegt, hat der Vorstand sie der nächsten Mitgliederversammlung zur Entscheidung vorzulegen. Geschieht das nicht, gilt der Ausschlussbeschluss als nicht erlassen.</li>
+                </ol>
+            
+                <h2>§ 6 Mitgliedsbeiträge</h2>
+                <p>Von den Mitgliedern wird ein Jahresbeitrag erhoben, dessen Höhe die Mitgliederversammlung festsetzt. Ehrenmitglieder sind von der Beitragspflicht befreit.</p>
+                <p>Die Höhe der Beiträge ist im Finanzstatus geregelt.</p>
+            
+                <h2>§ 7 Organe des Vereins</h2>
+                <p>Organe des Vereins sind der Vorstand und die Mitgliederversammlung</p>
+            
+                <h2>§ 8 Vorstand</h2>
+                <ol>
+                    <li>Der Vorstand besteht aus:
+                        <ol>
+                            <li>dem Vorsitzenden,</li>
+                            <li>dem stellvertretendem Vorsitzenden,</li>
+                            <li>dem Schriftführer,</li>
+                            <li>dem Kassenwart,</li>
+                            <li>den gewählten Beisitzern,</li>
+                            <li>dem Kommandanten,</li>
+                            <li>dem stellvertretendem Kommandanten,</li>
+                            <li>Mitgliedern, die Führungsdienstgrade ab Löschmeister bekleiden,</li>
+                            <li>dem Jugendwart,</li>
+                            <li>dem Gerätewart.</li>
+                        </ol>
+                    </li>
+                    <li>Die unter Absatz 1 Nr. 1 bis 5 genannten Vorstandschaftmitglieder werden von der Mitgliederversammlung auf fünf Jahre gewählt. Der Vorsitzende ist in geheimer Abstimmung zu wählen. Die Vorstandschaftmitglieder bleiben auch nach dem Ablauf ihrer Amtszeit bis zur Neuwahl im Amt.</li>
+                    <li>Außer durch Tod erlischt das Amt eines Vorstandsmitglieds mit dem Ausschluss aus dem Verein, durch Amtesenthebung und Rücktritt. Die Mitgliederversammlung kann jederzeit den gesamten Vorstand oder einzelne seiner Mitglieder ihres Amtes entheben. Die Vorstandsmitglieder können jederzeit schriftlich ihren Rücktritt erklären.</li>
+                </ol>
+                
+                <h2>§ 9 Zuständigkeit des Vorstandes</h2>
+                <ol>
+                    <li>Der Vorstand ist für alle Angelegenheiten des Vereins zuständig, die nicht durch diese Satzung anderen Vereinsorganen vorbehalten sind. Er hat vor allem folgende Aufgaben:
+                        <ol>
+                            <li>Vorbereitung der Mitgliederversammlung und festlegen der Tagesordnung</li>
+                            <li>Einberufung der Mitgliederversammlung</li>
+                            <li>Vollzug der Beschlüsse der Mitgliederversammlung</li>
+                            <li>Verwaltung des Vereinsvermögens</li>
+                            <li>Erstellung des Jahres- und Kassenberichts</li>
+                            <li>Beschlussfassung über Aufnahme, Streichung und Ausschluss von Vereinsmitgliedern</li>
+                            <li>Beschlussfassung über Ehrungen und Vorschläge für Ehrenmitgliedschaften</li>
+                        </ol>
+                    </li>
+                    <li>Vorstand im Sinne des § 26 BGB ist der Vorsitzende, der stellvertretende Vorsitzende und der Kassenwart. Jeder ist einzelvertretungsberechtigt. Die Vertretungsmacht ist in der Weise beschränkt, dass zu Rechtsgeschäften mit einem Geschäftswert über 1000,- € die Zustimmung des Vorstandes im Sinne von § 8 Abs. 1 erforderlich ist.</li>
+                </ol>
+            
+                <h2>§ 10 Sitzung des Vorstands</h2>
+                <ol>
+                    <li>Für die Sitzung des Vorstands sind die Mitglieder vom Vorsitzenden, bei seiner Verhinderung vom stellvertretenden Vorsitzenden rechtzeitig, jedoch mindestens eine Woche vorher einzuladen. Der Vorstand ist beschlussfähig, wenn mindestens drei Mitglieder anwesend sind. Der Vorstand entscheidet mit einfacher Mehrheit der abgegebenen gültigen Stimmen. Bei Stimmengleichheit entscheidet die Stimme des ersten Vorsitzenden bzw. des die Sitzung leitenden Vorstandsmitgliedes.</li>
+                    <li>Über die Sitzung des Vorstands ist vom Schriftführer ein Protokoll aufzunehmen. Die Niederschrift soll Ort und Zeit der Vorstandssitzung, die Namen der Teilnehmer, die Beschlüsse und das Abstimmungsergebnis enthalten.</li>
+                </ol>
+            
+                <h2>§ 11 Kassenführung</h2>
+                <ol>
+                    <li>Die zur Erreichung des Vereinszwecks notwendigen Mittel werden insbesondere aus Beiträgen und Spenden aufgebracht. Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet werden.</li>
+                    <li>Der Kassenwart hat über die Kassengeschäfte Buch zu führen und eine Jahresrechnung zu erstellen. Zahlungen dürfen nur auf Grund von Auszahlungsanordnungen des Vorsitzenden oder bei dessen Verhinderung des stellvertretenden Vorsitzenden geleistet werden.</li>
+                    <li>Die Jahresabrechnung ist von zwei Kassenprüfern, die jeweils auf zwei Jahre gewählt werden, zu prüfen. Sie ist der Mitgliederversammlung zur Genehmigung vorzulegen.</li>
+                </ol>
+            
+                <h2>§ 12 Mitgliederversammlung</h2>
+                <ol>
+                    <li>Die Mitgliederversammlung ist für folgende Angelegenheiten zuständig:
+                        <ol>
+                            <li>Entgegennahme des Jahres- und Kassenberichts, Genehmigung der Jahresrechnung, Entlastung des Vorstands.</li>
+                            <li>Festsetzung der Höhe des Jahresbeitrags.</li>
+                            <li>Wahl und Abberufung der Mitglieder des Vorstandes und der Kassenprüfer.</li>
+                            <li>Beschlussfassung über Änderungen der Satzung oder Auflösung des Vereins.</li>
+                            <li>Beschlussfassung über die Berufung gegen einen Ausschlussbeschluss des Vorstands.</li>
+                            <li>Ernennung neuer Ehrenmitglieder.</li>
+                        </ol>
+                    </li>
+                    <li>Die ordentliche Mitgliederversammlung findet jährlich mindestens einmal statt. Außerdem muss die Mitgliederversammlung einberufen werden, wenn das Interesse des Vereins es erfordert oder wenn die Einberufung von einem Fünftel der Mitglieder unter Angabe des Zwecks und der Gründe vom Vorstand schriftlich verlangt wird.</li>
+                    <li>Jede Mitgliederversammlung wird vom Vorsitzenden, bei seiner Verhinderung vom stellvertretenden Vorsitzenden, unter Einhaltung einer Frist von zwei Wochen schriftlich, vereinsintern einberufen. Dies erfolgt durch Bekanntmachung in der Mittelbayerischen Zeitung und dem Mitteilungsblatt der VG Kallmünz. Dabei ist die Tagesordnung mitzuteilen.</li>
+                    <li>Jedes Mitglied kann bis spätestens eine Woche vor dem Tag der Mitgliederversammlung beim Vorsitzenden schriftlich beantragen, dass weitere Angelegenheiten nachträglich auf die Tagesordnung gesetzt werden. Über Anträge auf Ergänzung der Tagesordnung die erst in der Versammlung gestellt werden, beschließt die Mitgliederversammlung.</li>
+                </ol>
+            
+                <h2>§ 13 Beschlussfassung der Mitgliederversammlung</h2>
+                <ol>
+                    <li>Die Mitgliederversammlung wird vom Vorsitzenden, bei seiner Verhinderung vom stellvertretenden Vorsitzenden oder einem anderen Vorstandsmitglieds geleitet. Bei Wahlen kann die Versammlungsleitung für die Dauer des Wahlgangs und der vorhergehenden Aussprache einem Wahlausschuss übertragen werden.</li>
+                    <li>In der Mitgliederversammlung ist jedes Mitglied auch Ehrenmitglieder stimmberechtigt. Stimmberechtigt ist jede ordnungsgemäß einberufene Mitgliederversammlung, unabhängig von der Anzahl der anwesenden Vereinsmitglieder.</li>
+                    <li>Soweit die Satzung nichts anderes bestimmt, entscheidet bei der Beschlussfassung die einfache Mehrheit der abgegebenen Stimmen; Stimmenthaltungen bleiben außer Betracht. Zur Änderung der Satzung und zur Auflösung des Vereins ist eine Mehrheit von drei Viertel der abgegebenen Stimmen erforderlich.</li>
+                    <li>Die Art der Abstimmung wird grundsätzlich vom Vorsitzenden als Versammlungsleiter festgesetzt. Die Abstimmung muss jedoch geheim durchgeführt werden, wenn ein Fünftel der erschienenen Mitglieder dies beantragt.</li>
+                    <li>Über den Verlauf der Mitgliederversammlung ist ein Protokoll aufzunehmen, das vom Vorsitzenden unterzeichnet ist. Die Niederschrift soll Ort und Zeit der Versammlung, die Zahl der erschienenen Mitglieder, die Person des Versammlungsleiters, die Tagesordnung, die Beschlüsse, die Abstimmungsergebnisse und die Art der Abstimmung enthalten.</li>
+                </ol>
+            
+                <h2>§ 14 Ehrungen</h2>
+                <p>An Personen die sich im Feuerwehrdienst oder auf andere Weise besondere Verdienste um das Feuerwehrwesen erhoben haben, kann</p>
+                <ol>
+                    <li>Ehrendiplome - Ehrennadeln oder</li>
+                    <li>Die Ehrenmitgliedschaft des Vereins verliehen werden.</li>
+                </ol>
+            
+                <h2>§ 15 Auflösung</h2>
+                <p>Die Auflösung des Vereins kann nur in einer zu diesem Zweck einberufenen Mitgliederversammlung beschlossen werden. Bei Auflösung des Vereins, bei Entziehung oder Verlust seiner Rechtsfähigkeit oder bei Wegfall seines bisherigen Zwecks fällt das Wertvermögen des Vereins an die Gemeinde, die es unmittelbar und ausschließlich für das Feuerwehrwesen zu verwenden hat.</p>
             </div>
-        </footer>
+        </main>
+        <footer class="dynamic-content" src="footer/footer.html"></footer>
     </body>
 </html>

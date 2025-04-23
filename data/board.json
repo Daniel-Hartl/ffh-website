@@ -9,60 +9,60 @@
         "Id": "vorsitz",
         "Funktion": "2. Vorsitzende",
         "Name": "Sophie Kliegl",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "vorsitz",
         "Funktion": "Ehrenvorsitzender",
         "Name": "Josef Rödl",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "amt",
         "Funktion": "1. Schriftführerin",
         "Name": "Martina Glockner",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "amt",
         "Funktion": "2. Schriftführer",
         "Name": "Stefan Remeli",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "amt",
         "Funktion": "1. Kassier",
         "Name": "Christian Dechant",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "amt",
         "Funktion": "2. Kassier",
         "Name": "Marion Winzinger",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "beisitz",
         "Funktion": "Beisitzer",
         "Name": "Dietmar Drexler",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "beisitz",
         "Funktion": "Beisitzer",
         "Name": "Andreas Kliegl",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "beisitz",
         "Funktion": "Beisitzer",
         "Name": "Michael Kretschmann",
-        "Bild": "images/sid.png"
+        "Bild": ""
     },
     {
         "Id": "beisitz",
         "Funktion": "Beisitzer",
         "Name": "Julian Schindler",
-        "Bild": "images/sid.png"
+        "Bild": ""
     }
 ]

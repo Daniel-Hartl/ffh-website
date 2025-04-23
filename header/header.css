@@ -92,7 +92,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: calc(100% - 1.5rem);
+    height: calc(100% - 2rem);
     padding-top: 2rem;
 }
 
@@ -102,20 +102,10 @@
     z-index: 100;
     animation-timeline: scroll(root);
 }
-    .logo-container div{
-        width: 170px;
-        max-height: 250px;
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-    }
 
-    .logo-container img {
-        max-width: 90%;
-        max-height: 90%;
-        object-position: left;
-        object-fit: fill;
-        display: block;
-        margin: 5% auto;
-        margin-left: 5%;
-    }
+.logo-container img {
+    max-height: 90%;
+    margin: 5% auto;
+    width: auto;
+    height: auto;
+}

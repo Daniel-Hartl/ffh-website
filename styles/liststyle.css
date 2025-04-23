@@ -18,13 +18,17 @@
     margin-bottom: 13.5vh;
     display: inline-block;
 }
-.board-member:hover{
-    height: 75vh;
-    width: 33%;
-    font-size: 1.5em;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+
+@media (pointer:fine) {
+    .board-member:hover{
+        height: 75vh;
+        width: 33%;
+        font-size: 1.5em;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
 }
+
 .board-member img{
     max-height: 80%;
     object-fit: cover;
@@ -33,4 +37,28 @@
 .name-tag{
     font-weight: bold;
     font-size: 1.2em;
+}
+
+@media (max-width: 1600px) {
+    .board-member{  
+        width: 26%;
+        margin: 1.5% auto;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    .board-member{  
+        width: 45%;
+        margin: 1.5% auto;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 770px) {
+    .board-member{  
+        width: 80%;
+        margin: 1.5% auto;
+        height: 50vh;
+    }
 }

@@ -1,0 +1,18 @@
+table {
+    margin: 5% auto;
+    justify-content: center;
+}
+
+.tcR {
+    text-align: right;
+}
+
+.tcS {
+    max-width: 80vw;
+    width: 50rem;
+}
+
+
+.tcL {
+    text-align: left;
+}

@@ -1,0 +1,41 @@
+button {
+    width: 100%;
+    margin-top : 1vh;
+    margin-bottom : 1vh;
+    margin-left: 2vh;
+    padding: 0.2rem;
+    padding-left: 10px;
+    border-style: none;
+    border-radius: 0.4rem;
+    background-color: #1D1045;
+    color: white;
+}
+
+button:hover {
+    background-color: #361f7e;
+}
+
+textarea, input {
+    width: 100%;
+    margin-top : 1vh;
+    margin-bottom : 1vh;
+    margin-left: 2vh;
+    resize: none;
+    background-color: lightgray;
+    border-style: none;
+    border-radius: 0.4rem;
+    padding: 0.2rem;
+    padding-left: 10px;
+}
+
+input:invalid:required {
+    background-color: pink;
+}
+
+.textarea-caption {
+    vertical-align: top;
+}
+
+.textarea-caption p {
+    margin-top: 0.2rem;
+}

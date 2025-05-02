@@ -82,3 +82,20 @@ table {
 .right-aligned {
     text-align: right;
 }
+
+.base-button {
+    margin-top: 1vh;
+    font-size: 1.3rem;
+    border: 0;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    vertical-align:middle;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.base-button:hover {
+    background-color: #1D1045;
+    color: white;
+}

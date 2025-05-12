@@ -1,7 +1,7 @@
 .header {
     height: 100%;
     width: 100%;
-    font-size: 30px;
+    font-size: 2rem;
 }
 .menubar {
     background-color: #1D1045;
@@ -101,13 +101,14 @@
     position: fixed;
     z-index: 100;
     animation-timeline: scroll(root);
+    height: 30vh;
 }
 
 .logo-container img {
     max-height: 90%;
+    height: calc(30vh - 10%);
     margin: 5% auto;
     width: auto;
-    height: auto;
     margin-left: 5%;
 }
 

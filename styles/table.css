@@ -12,7 +12,16 @@ table {
     width: 50rem;
 }
 
-
 .tcL {
     text-align: left;
+}
+
+.caption-column {
+    width: auto;
+    max-width: 20vw;
+}
+
+.input-column {
+    max-width: 80vw;
+    width: 50rem;
 }

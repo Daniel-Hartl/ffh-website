@@ -1,0 +1,27 @@
+.center {
+    margin: auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.left-aligned-text {
+    text-align: left;
+}
+
+.left-aligned-text p {
+    margin-left: 1%;
+}
+
+.right-aligned-text {
+    text-align: right;
+}
+
+.right-aligned-text p {
+    margin-right: 1%;
+}

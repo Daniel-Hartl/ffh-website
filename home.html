@@ -2,11 +2,14 @@
 <html lang="de">
 
 <head>
+    <link type="image/png" rel="icon" href="images/favicon.png">
     <script src="scripts/loadMetadata.js"></script>
     <script src="scripts/loadComponent.js"></script>
     <script src="scripts/loadArticles.js"></script>
     <link href="styles/articles.css" rel="stylesheet" />
     <link href="styles/table.css" rel="stylesheet" />
+    <link href="styles/buttons.css" rel="stylesheet" />
+    <link href="styles/aligns.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -17,9 +20,17 @@
             <div id="article-list"></div>
         </div>
         <div id="article" hidden="true">
-            <input type="button" class="button" onclick="loadList()" value="⇦"/>
+            <!-- <input type="button" class="primary-button left return-button" onclick="loadList()" value="⇦"/>
             <div id="article-display"></div>
-            <input type="button" class="button" onclick="loadList()" value="⇦"/>
+            <input type="button" class="primary-button left return-button" onclick="loadList()" value="⇦"/> -->
+            <div type="button" class="primary-button left return-button">
+                <a href="home.html">⇦</a>
+            </div>
+            <div id="article-display"></div>
+            <div type="button" class="primary-button left return-button">
+                <a href="home.html">⇦</a>
+            </div>
+
         </div>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>

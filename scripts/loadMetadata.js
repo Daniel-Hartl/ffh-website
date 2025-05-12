@@ -46,8 +46,9 @@ function setTitle() {
 
 function setIcon() {
     const icon = document.createElement('link');
-    icon.href = 'images/wappen.png';
+    icon.href = 'images/favicon.png';
     icon.rel = 'icon';
+    icon.type = 'image/png';
     document.head.appendChild(icon);
 }
 

@@ -1,5 +1,6 @@
 main {
-    display: flex inline-block;
+    display: flex;
+
 }
 
 .article {
@@ -51,19 +52,6 @@ main {
     margin-top: 6vh;
 }
 
-.button {
-    font-size: 3rem;
-    border: 0;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 0.5rem;
-    display: flex;
-    vertical-align:middle;
-}
 
-.button:hover {
-    background-color: #1D1045;
-    color: white;
-}
 
 

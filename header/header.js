@@ -2,6 +2,11 @@ window.addEventListener('scroll', () => {
     calculateLogo();
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+    alert("Hallo")
+    calculateLogo();
+});
+
 calculateLogo();
 
 function calculateLogo() {

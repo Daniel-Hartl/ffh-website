@@ -132,9 +132,3 @@ function loadArticle(article) {
 
     articleDiv = document.getElementById('article').hidden = false;
 }
-
-function loadList() {
-    articleDiv = document.getElementById('article').hidden = true;
-    list = document.getElementById('list').hidden = false;
-
-}

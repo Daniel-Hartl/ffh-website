@@ -6,11 +6,12 @@
     <script src="scripts/loadMetadata.js"></script>
     <script src="scripts/loadComponent.js"></script>
     <script src="scripts/loadMembers.js"></script>
-    <link href="styles/liststyle.css" rel="stylesheet" />
-    <link href="styles/aligns.css" rel="stylesheet" />
-    <link href="styles/buttons.css" rel="stylesheet" />
-    <link href="styles/fontsize.css" rel="stylesheet" />
-    <link href="styles/aligns.css" rel="stylesheet" />
+    <link href="styles/defaults/liststyle.css" rel="stylesheet" />
+    <link href="styles/defaults/aligns.css" rel="stylesheet" />
+    <link href="styles/defaults/buttons.css" rel="stylesheet" />
+    <link href="styles/defaults/fontsize.css" rel="stylesheet" />
+    <link href="styles/defaults/aligns.css" rel="stylesheet" />
+    <link href="styles/defaults/margins.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -24,10 +25,10 @@
             <hr>
             <div topic="beisitz" class="group"></div>
         </div>
-        <hr>
+        <hr class="wide-margin-bottom">
 
-        <div class="left-aligned-text">
-            <h1>Satzung der freiwilligen Feuerwehr Heitzenhofen e.V.</h1>
+        <div class="left-aligned-text thin-margin-bottom">
+            <h1 class="center-aligned-text">Satzung der freiwilligen Feuerwehr Heitzenhofen e.V.</h1>
             <a download="Satzung FF Heitzenhofen.pdf" href="data/Satzung FF Heitzenhofen.pdf">
                 <input type="button" class="primary-button center large" value="Satzung als PDF herunterladen"></input>
             </a>
@@ -252,9 +253,10 @@
                 bei Wegfall seines bisherigen Zwecks fällt das Wertvermögen des Vereins an die Gemeinde, die es
                 unmittelbar und ausschließlich für das Feuerwehrwesen zu verwenden hat.</p>
         </div>
-        <a download="Satzung FF Heitzenhofen.pdf" href="data/Satzung FF Heitzenhofen.pdf">
-            <input type="button" class="primary-button center large" value="Satzung als PDF herunterladen"></input>
-        </a>
+
+        <div class="primary-button center large wide-margin-bottom">
+            <a download="Satzung FF Heitzenhofen.pdf" href="data/Satzung FF Heitzenhofen.pdf">Satzung als PDF herunterladen</a>
+        </div>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>
 </body>

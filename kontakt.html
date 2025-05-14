@@ -6,8 +6,10 @@
     <script src="scripts/loadMetadata.js"></script>
     <script src="scripts/loadComponent.js"></script>
     <script src="scripts/formSubmittedRedirect.js"></script>
-    <link rel="stylesheet" href="styles/table.css" />
-    <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/defaults/table.css" />
+    <link rel="stylesheet" href="styles/pages/form.css" />
+    <link rel="stylesheet" href="styles/defaults/buttons.css" />
+    <link rel="stylesheet" href="styles/defaults/aligns.css" />
 </head>
 
 <body>
@@ -17,10 +19,10 @@
             <input type="hidden" name="access_key" value="e4b6314f-58eb-41d8-8806-3576e47333ca">
             <table>
                 <tr>
-                    <td class="tcR">
+                    <td class="caption-column right-aligned-text">
                         <p>Name:</p>
                     </td>
-                    <td class="tcS">
+                    <td class="input-column">
                         <input name="Name" required type="text" placeholder="Ihr Name"
                             pattern="[A-Za-z]{2,}(\s[A-Za-z]{2,})+"
                             oninvalid="this.setCustomValidity('Bitte geben Sie Vor- und Nachname ein!')"
@@ -28,10 +30,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="tcR">
+                    <td class="caption-column right-aligned-text">
                         <p>E-Mail:</p>
                     </td>
-                    <td class="tcS">
+                    <td class="input-column">
                         <input name="E-Mail" type="text" required placeholder="Ihre E-Mail-Adresse"
                             pattern="[A-Za-z0-9\-._]+@[A-Za-z0-9\-._]+\.[a-zA-Z]{2,}"
                             oninvalid="this.setCustomValidity('Bitte geben Sie Ihre E-Mail-Adresse ein!')"
@@ -39,24 +41,26 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="tcR">
+                    <td class="caption-column right-aligned-text">
                         <p>Betreff:</p>
                     </td>
-                    <td class="tcS">
+                    <td class="input-column">
                         <input name="Betreff" type="text" minlength="5" placeholder="Ihr Anliegen" required />
                     </td>
                 </tr>
                 <tr>
-                    <td class="textarea-caption tcR">
+                    <td class="textarea-caption caption-column right-aligned-text">
                         <p>Nachricht:</p>
                     </td>
-                    <td class="tcS">
+                    <td class="input-column">
                         <textarea name="Nachricht" rows="10" placeholder="Ihre Nachricht"></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button type="submit">Absenden</button></td>
+                    <td class="input-column">
+                        <button class="primary-button submit-button" type="submit">Absenden</button>
+                    </td>
                 </tr>
             </table>
         </form>

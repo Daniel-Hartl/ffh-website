@@ -25,3 +25,7 @@
 .right-aligned-text p {
     margin-right: 1%;
 }
+
+.center-aligned-text {
+    text-align: center;
+}

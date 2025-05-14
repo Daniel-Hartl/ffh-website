@@ -2,11 +2,6 @@ window.addEventListener('scroll', () => {
     calculateLogo();
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    alert("Hallo")
-    calculateLogo();
-});
-
 calculateLogo();
 
 function calculateLogo() {
@@ -17,16 +12,16 @@ function calculateLogo() {
     const bannerRect = banner[0].getBoundingClientRect();
     const navbarHeight = navbar[0].clientHeight;
 
-    // calculate height of logo according to banner height
-
     completeHeight = 0;
     if (bannerRect.bottom <= navbarHeight) {
         completeHeight = navbarHeight;
     }
     else {
-        completeHeight = bannerRect.bottom;
-    }
+        const maxHeight = document.documentElement.clientHeight * 0.3;
+        const bannerBottom = bannerRect.bottom > maxHeight ? maxHeight : bannerRect.bottom;
 
+        completeHeight = bannerBottom;
+    }
     logo.style.height = `${getHeight(completeHeight)}px`;
     logo.style.width = `${getWidth(completeHeight)}px`;
     logo.style.marginTop = `${getMargin(completeHeight)}px`;

@@ -3,25 +3,17 @@ table {
     justify-content: center;
 }
 
-.tcR {
-    text-align: right;
-}
-
-.tcS {
-    max-width: 80vw;
-    width: 50rem;
-}
-
-.tcL {
-    text-align: left;
-}
-
 .caption-column {
     width: auto;
     max-width: 20vw;
+    padding-right: 1vw;
 }
 
 .input-column {
     max-width: 80vw;
     width: 50rem;
+}
+
+.column {
+    padding: 0 0.3rem;
 }

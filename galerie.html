@@ -2,16 +2,33 @@
 <html lang="de">
 
 <head>
+    <link type="image/png" rel="icon" href="images/favicon.png">
     <script src="scripts/loadMetadata.js"></script>
     <script src="scripts/loadComponent.js"></script>
+    <script src="scripts/tabviewlogic.js"></script>
+    <script src="scripts/loadGallery.js"></script>
     <link rel="stylesheet" href="styles/table.css" />
     <link rel="stylesheet" href="styles/form.css" />
+    <link rel="stylesheet" href="styles/margins.css" />
+    <link rel="stylesheet" href="styles/fontsize.css" />
+    <link rel="stylesheet" href="styles/tabview.css" />
 </head>
 
 <body>
     <header class="dynamic-content" src="header/header.html"></header>
     <main>
-        <h1>Galerie</h1>
+        <h1 class="wide-bottom">Galerie</h1>
+        <div class="tab">
+            <button class="tablinks large" onclick="openCity(event, 'verein')">Vereinsleben</button>
+            <button class="tablinks large" onclick="openCity(event, 'aktiv')">Aktive Mannschaft</button>
+        </div>
+        <div id="verein" class="tabcontent">
+            
+        </div>
+
+        <div id="aktiv" class="tabcontent">
+            
+        </div>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>
 </body>

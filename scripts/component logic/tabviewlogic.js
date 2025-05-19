@@ -10,5 +10,9 @@ function changeTab(evt, tabId) {
   }
   document.getElementById(tabId).style.display = "block";
   evt.currentTarget.className += " active";
+  try {
+    collapseAll()
+  }
+  catch{}
 }
 

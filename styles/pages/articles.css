@@ -44,7 +44,7 @@ main {
 .image-full {
     width: auto;
     max-width: 100%;
-    margin-top:4vh;
+    margin-top: 4vh;
     display: block;
 }
 
@@ -52,6 +52,16 @@ main {
     margin-top: 6vh;
 }
 
-
-
-
+@media (max-width: 1000px) {
+    .article {
+        background-color: lightgray;
+        margin-top: 5vh;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        height: 25vh;
+        display: inline-block;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+}

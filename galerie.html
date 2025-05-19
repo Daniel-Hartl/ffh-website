@@ -8,7 +8,8 @@
     <script src="scripts/generator scripts/loadGallery.js"></script>
     <script src="scripts/component logic/tabviewlogic.js"></script>
     <script src="scripts/component logic/collapsibleLogic.js"></script>
-    <link rel="stylesheet" href="styles/pages/galery.css" />
+    <script src="scripts/gallery.js"></script>
+    <link rel="stylesheet" href="styles/pages/gallery.css" />
     <link rel="stylesheet" href="styles/defaults/table.css" />
     <link rel="stylesheet" href="styles/defaults/margins.css" />
     <link rel="stylesheet" href="styles/defaults/fontsize.css" />
@@ -24,12 +25,11 @@
             <button class="tablinks large" onclick="changeTab(event, 'verein')">Vereinsleben</button>
             <button class="tablinks large" onclick="changeTab(event, 'aktiv')">Aktive Mannschaft</button>
         </div>
-        <div id="verein" class="tabcontent">
-            
-        </div>
+        <div id="verein" class="tabcontent"></div>
+        <div id="aktiv" class="tabcontent"></div>
 
-        <div id="aktiv" class="tabcontent">
-            
+        <div id="displayDiv" class="display">
+            <img class="display-content" id="displayContent"/>
         </div>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>

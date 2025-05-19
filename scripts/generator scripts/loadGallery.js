@@ -15,12 +15,15 @@ function generateEvent(event, tab) {
 
     Array.from(event.Content).forEach(picture => 
     {
+        const imagePath = `data/images/gallery/${tab.id}/${event.Folder}/${picture}`;
+
         const border =  document.createElement('div');
         border.className = 'picture-div';
 
         const content = document.createElement('img');
-        content.src = `data/images/gallery/${tab.id}/${event.Folder}/${picture}`;
+        content.src = imagePath;
         content.className = 'picture';
+        content.addEventListener('click', () => openDisplay(imagePath));
 
         border.appendChild(content);
         body.appendChild(border)

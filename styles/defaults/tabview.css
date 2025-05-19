@@ -1,5 +1,10 @@
 main {
     padding: 0 !important;
+    min-height: 62vh !important;
+}
+
+footer {
+  margin-top: 0 !important;
 }
 
 .tab {
@@ -43,4 +48,8 @@ main {
   padding: 6px 12px;
   background-color: #ddd;
   border: 0;
+}
+
+.default-tabcontent {
+  display: block;
 }

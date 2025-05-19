@@ -1,0 +1,47 @@
+.event-container {
+}
+
+.event-header {
+    padding:  0.5rem 0;
+    margin-top: 0.5rem;
+    border-radius: 0.7rem;
+}
+
+.expanded {
+    background-color: #1D1045;
+    color: white;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.expanded:hover {
+    background-color: #361f7e !important;
+}
+
+.event-body {
+    padding-top: 0.3rem;
+    margin-bottom: 5vh;
+    background-color: #1D1045;
+    color: white;
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+}
+
+.picture-div {
+    height: 20rem;
+    width: 20rem;
+    margin: 0.5rem;
+    overflow: hidden;
+    background-color: white;
+    display: inline-flex;
+    vertical-align: top;
+    border-radius: 0.7rem;
+    cursor:zoom-in;
+}
+
+.picture {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    margin: auto;
+}

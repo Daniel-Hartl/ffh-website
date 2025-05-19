@@ -21,6 +21,10 @@
     color: white;
 }
 
+.expanded {
+    background-color: gray;
+}
+
 .primary-button:hover a{
     color: white;
 }
@@ -34,4 +38,8 @@
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.white-button {
+    background-color: white;
 }

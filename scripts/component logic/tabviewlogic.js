@@ -1,4 +1,4 @@
-function openCity(evt, tabId) {
+function changeTab(evt, tabId) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -11,3 +11,4 @@ function openCity(evt, tabId) {
   document.getElementById(tabId).style.display = "block";
   evt.currentTarget.className += " active";
 }
+

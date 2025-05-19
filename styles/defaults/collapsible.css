@@ -1,0 +1,16 @@
+.collapsible {
+    cursor: pointer;
+    width: 100%;
+    border: 0;
+}
+
+.collapsible:hover {
+    background-color: #1D1045;
+    color: white;
+}
+
+.collapsible-content {
+    display: none;
+    overflow: hidden;
+    transition: 0.3s;
+}

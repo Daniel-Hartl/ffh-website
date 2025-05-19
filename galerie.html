@@ -3,14 +3,17 @@
 
 <head>
     <link type="image/png" rel="icon" href="images/favicon.png">
-    <script src="scripts/loadMetadata.js"></script>
-    <script src="scripts/loadComponent.js"></script>
-    <script src="scripts/tabviewlogic.js"></script>
-    <script src="scripts/loadGallery.js"></script>
+    <script src="scripts/generator scripts/loadMetadata.js"></script>
+    <script src="scripts/generator scripts/loadComponent.js"></script>
+    <script src="scripts/generator scripts/loadGallery.js"></script>
+    <script src="scripts/component logic/tabviewlogic.js"></script>
+    <script src="scripts/component logic/collapsibleLogic.js"></script>
+    <link rel="stylesheet" href="styles/pages/galery.css" />
     <link rel="stylesheet" href="styles/defaults/table.css" />
     <link rel="stylesheet" href="styles/defaults/margins.css" />
     <link rel="stylesheet" href="styles/defaults/fontsize.css" />
     <link rel="stylesheet" href="styles/defaults/tabview.css" />
+    <link rel="stylesheet" href="styles/defaults/collapsible.css" />
 </head>
 
 <body>
@@ -18,8 +21,8 @@
     <main>
         <h1 class="wide-margin-bottom">Galerie</h1>
         <div class="tab">
-            <button class="tablinks large" onclick="openCity(event, 'verein')">Vereinsleben</button>
-            <button class="tablinks large" onclick="openCity(event, 'aktiv')">Aktive Mannschaft</button>
+            <button class="tablinks large" onclick="changeTab(event, 'verein')">Vereinsleben</button>
+            <button class="tablinks large" onclick="changeTab(event, 'aktiv')">Aktive Mannschaft</button>
         </div>
         <div id="verein" class="tabcontent">
             

@@ -1,9 +1,13 @@
+table {
+    margin: 1rem auto;
+}
+
 .maps-div {
     width: 80%;
 }
 
 .maps-content-div {
-    height: 50vh;
+    height: 30rem;
     width: 100%;
 }
 
@@ -71,6 +75,43 @@
     color: white;
     padding: 1rem;
 }
+
 .banner-text a{
     color: lightgray;
+}
+
+.timeline {
+    width: 70%;
+    border-collapse: collapse;
+}
+
+.tr-odd {
+    background-color: lightgray;
+    color: #fff;
+}
+
+.tr-even{
+    background-color: #fff;
+    color: lightgray;
+}
+
+.timeline-year {
+    writing-mode: sideways-lr;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.timeline-image {
+    height: 30vh;
+    overflow: hidden;
+}
+
+.timeline-image img {
+    max-height: 100%;
+    max-width: 40vw;
+}
+
+.timeline-text {
+    color: black;
+    padding: 0.3rem;
 }

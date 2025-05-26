@@ -3,89 +3,95 @@
     width: 100%;
     font-size: 2rem;
 }
+
 .menubar {
     background-color: #1D1045;
-    position:fixed;
+    position: fixed;
     width: 100%;
     display: block;
 }
-    .menubar nav {
-        margin: 0 auto;
-        text-align: center;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-    }
 
-    .menubar ul {
-        list-style: none;
-        flex-wrap: nowrap;
-    }
+.menubar nav {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
 
-    .menubar li {
-        display: table;
-        float: left;
-        height: 100%;
-    }
+.menubar ul {
+    list-style: none;
+    flex-wrap: nowrap;
+}
 
-    .menubar li:hover{
-        background-color: #361f7e;
-    }
+.menubar li {
+    display: table;
+    float: left;
+    height: 100%;
+}
 
-    .menubar span {
-        display: table-cell;
-    }
+.menubar li:hover {
+    background-color: #361f7e;
+}
 
-        .menuitem {
-            color: white;
-            cursor: pointer;
-            -webkit-user-select: none; /* Safari */
-            -ms-user-select: none; /* IE 10 and IE 11 */
-            user-select: none; /* Standard syntax */
-        }
+.menubar span {
+    display: table-cell;
+}
 
-        .menuitem p {
-            padding-left:50px;
-            padding-right:50px;
-        }
+.menuitem {
+    color: white;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
 
-        .menuitem:hover .submenu {
-            height: 190px;
-        }
+.menuitem p {
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
-        .submenu {
-            font-size: 20px;
-            height: 0;
-            overflow: hidden;
-            justify-content: center;
-            -webkit-transition: all 0.5s ease-in-out;
-            -moz-transition: all 0.5s ease-in-out;
-            -o-transition: all 0.5s ease-in-out;
-            transition: all 0.5s ease-in-out;
-            display: grid;
-            flex-wrap: nowrap;
-            width: 100%;
-        }
+.menuitem:hover .submenu {
+    height: 190px;
+}
 
-        .submenu li {
-            width: 100%;
-            display: table;
-        }
+.submenu {
+    font-size: 20px;
+    height: 0;
+    overflow: hidden;
+    justify-content: center;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    display: grid;
+    flex-wrap: nowrap;
+    width: 100%;
+}
 
-        .submenu span {
-            display: table-cell;
-            vertical-align: middle;
-        }
+.submenu li {
+    width: 100%;
+    display: table;
+}
 
-        .submenu p{
-            padding-left:30px;
-            padding-right:30px;
-            color: white;
-        }
-        .submenu li:hover {
-            background-color: #1D1045;
-        }
+.submenu span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.submenu p {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+}
+
+.submenu li:hover {
+    background-color: #1D1045;
+}
 
 .banner {
     background-image: url(heitzenhofen.png);
@@ -113,13 +119,33 @@
 }
 
 @media (max-width: 1000px) {
+
+    .menubar {
+        position:absolute;
+    }
+
+    .header {
+        font-size: 1.2rem;
+    }
+
     .logo-container {
         visibility: hidden;
     }
-    
-    
+
+    .expandable {
+        color: gray;
+    }
+
+    .submenu {
+        height: 190px;
+    }
+
     .menuitem p {
         padding: 0%;
         width: 33.3vw;
+    }
+
+    .menubar ul {
+        width: 100%;
     }
 }

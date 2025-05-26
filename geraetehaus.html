@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-       <link type="image/png" rel="icon" href="images/favicon.png">
-       <script src="scripts/generator scripts/loadMetadata.js"></script> 
-       <script src="scripts/generator scripts/loadComponent.js"></script>
-    </head>
-    <body>
-        <header class="dynamic-content" src="header/header.html"></header>
-        <main>
-            
-        </main>
-        <footer class="dynamic-content" src="footer/footer.html"></footer>
-    </body>
+
+<head>
+    <link type="image/png" rel="icon" href="images/favicon.png">
+    <script src="scripts/generator scripts/loadMetadata.js"></script>
+    <script src="scripts/generator scripts/loadComponent.js"></script>
+    <script src="scripts/component logic/streetviewEmbed.js"></script>
+    <script src="scripts/googleConsent.js"></script>
+    <link rel="stylesheet" href="styles/defaults/table.css" />
+    <link rel="stylesheet" href="styles/defaults/aligns.css" />
+    <link rel="stylesheet" href="styles/defaults/margins.css" />
+    <link rel="stylesheet" href="styles/defaults/buttons.css" />
+    <link rel="stylesheet" href="styles/defaults/fontsize.css" />
+    <link rel="stylesheet" href="styles/pages/geraetehaus.css" />
+</head>
+
+<body>
+    <header class="dynamic-content" src="header/header.html"></header>
+    <main>
+        <h1>Gerätehaus</h1>
+        <div class="maps-div center">
+            <div class="maps-content-div">
+                <div id="placeholder" class="streetView">
+                    <div>
+                        <p>Zum Anzeigen der Google StreetView müssen zuerst die <a href="https://policies.google.com/technologies/cookies?hl=en&utm_source=ucb">Google-Cookies</a> akzeptiert werden.</p>
+                        <button onclick="acceptCookies('streetView')" class="primary-button center thin-margin-top">Google-Cookies akzeptieren</button>
+                    </div>
+                </div>
+                <span class="tooltip">Zum Aktivieren der StreetView klicken</span>
+            </div>
+            <table id="streetViewFooter" class="hidden">
+                <tr>
+                    <td class="left-aligned-text">
+                        <p class="small left-aligned-text">Streetview ist <a id="activity" class="inactive"
+                                onclick="toggleProtection()">inaktiv</a></p>
+                    </td>
+                    <td class="right-aligned-text">
+                        <p class="small right-aligned-text">
+                            Quelle:
+                            <a
+                                href="https://www.google.com/maps/@49.1199533,11.9643833,3a,75y,45.58h,92.8t/data=!3m7!1e1!3m5!1smLBiQCBd65Nlt3lBuh6L-Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-2.7963928879350277%26panoid%3DmLBiQCBd65Nlt3lBuh6L-Q%26yaw%3D45.57523423695113!7i16384!8i8192?authuser=0&entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D">
+                                <b>Google StreetView</b>
+                            </a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <table>
+            <tr>
+                <td class="column right-aligned-text"><b>Adresse:</b></td>
+                <td class="column left-aligned-text">Auf der Höhe 11</td>
+            </tr>
+            <tr>
+                <td class="column right-aligned-text"><b>&nbsp;</b></td>
+                <td class="column left-aligned-text">93182 Judenberg (Duggendorf)</td>
+            </tr>
+        </table>
+    </main>
+    <footer class="dynamic-content" src="footer/footer.html"></footer>
+</body>
+
 </html>

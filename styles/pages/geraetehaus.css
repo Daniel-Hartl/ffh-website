@@ -1,0 +1,60 @@
+.maps-div {
+    width: 80%;
+}
+
+.maps-content-div {
+    height: 50vh;
+    width: 100%;
+}
+
+.maps-div table {
+    width: 100%;
+    vertical-align: top;
+    padding: 0.5vh 0;
+    margin: 0;
+    background-color: lightgray;
+}
+
+.maps-content-div iframe {
+    border:0;
+}
+
+.protected {
+    pointer-events: none;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #1D1045;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+
+  /* Position the tooltip */
+  position: fixed;
+  z-index: 1;
+}
+
+.tooltipable:hover .tooltip {
+  visibility: visible;
+}
+
+.tooltipable {
+    cursor: pointer;
+}
+
+.inactive {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+.active {
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}

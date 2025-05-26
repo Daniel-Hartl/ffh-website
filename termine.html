@@ -5,6 +5,11 @@
     <link type="image/png" rel="icon" href="images/favicon.png">
     <script src="scripts/generator scripts/loadMetadata.js"></script>
     <script src="scripts/generator scripts/loadComponent.js"></script>
+    <script src="scripts/component logic/calendarEmbed.js"></script>
+    <script src="scripts/googleConsent.js"></script>
+    <link href="styles/defaults/buttons.css" rel="stylesheet">
+    <link href="styles/defaults/aligns.css" rel="stylesheet">
+    <link href="styles/defaults/margins.css" rel="stylesheet">
 </head>
 <style>
     .calender {
@@ -20,9 +25,12 @@
     <header class="dynamic-content" src="header/header.html"></header>
     <main>
         <div class="calender">
-            <iframe width="100%" height="100%"
-                src="https://calendar.google.com/calendar/embed?src=ebe12d2c011447883173f987a7608c5ec24f4511ad317b3bd27a857e57acb8d4%40group.calendar.google.com&ctz=Europe%2FBerlin">
-            </iframe>
+            <div id="placeholder" class="calendar">
+                    <div>
+                        <p>Zum Anzeigen des Google Kalenders müssen zuerst die <a href="https://policies.google.com/technologies/cookies?hl=en&utm_source=ucb">Google-Cookies</a> akzeptiert werden.</p>
+                        <button onclick="acceptCookies('streetView')" class="primary-button center thin-margin-top">Google-Cookies akzeptieren</button>
+                    </div>
+                </div>
         </div>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>

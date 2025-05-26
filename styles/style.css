@@ -53,3 +53,13 @@ ol {
 ol li {
     margin-bottom: 0.3vh;
 }
+#placeholder {
+    margin: auto;
+    padding: auto;
+    height: 100%;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #bbb;
+}

@@ -62,4 +62,5 @@ ol li {
     justify-content: center;
     display: flex;
     background-color: #bbb;
+    border-radius: 1rem;
 }

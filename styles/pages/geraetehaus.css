@@ -58,3 +58,19 @@
 .hidden {
     visibility: hidden;
 }
+
+.streetView {
+    background-image: url(../../images/building/now.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner-text {
+    background-color:  rgba(0,0,0,0.5);
+    color: white;
+    padding: 1rem;
+}
+.banner-text a{
+    color: lightgray;
+}

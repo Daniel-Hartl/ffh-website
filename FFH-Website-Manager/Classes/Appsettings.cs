@@ -2,16 +2,25 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
-internal static class Appsettings
+internal class Appsettings
 {
-    private static readonly IConfigurationRoot config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-    internal static string Host => config.GetSection("Credentials")["Host"];
-    internal static string User => config.GetSection("Credentials")["User"];
-    internal static string Password => config.GetSection("Credentials")["Password"];
-    internal static string RootDirectory => config.GetSection("Credentials")["RootDirectory"];
+    internal static Appsettings Instance;
+    static Appsettings()
+    {
+        string str = File.ReadAllText("appsettings.json");
+        Instance = JsonSerializer.Deserialize<Appsettings>(str)!;
+
+    }
+
+    public string Host { get; set; }
+    public string User { get; set; }
+    public string Password { get; set; }
+    public string RootDirectory { get; set; }
 }

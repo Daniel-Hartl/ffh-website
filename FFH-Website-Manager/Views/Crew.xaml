@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:FFH_Website_Manager.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <local:CrewViewModel x:Name="vm"/>
+    </UserControl.DataContext>
     <Grid>
             
     </Grid>

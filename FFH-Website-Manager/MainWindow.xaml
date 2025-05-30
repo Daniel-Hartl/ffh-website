@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FFH_Website_Manager"
         mc:Ignorable="d"
         xmlns:views="clr-namespace:FFH_Website_Manager.Views"
-        Title="FFH-Website Inhalt-Manager" Height="450" Width="800">
+        Title="FFH-Website Manager" Height="450" Width="800">
     <TabControl>
         <TabItem Header="Artikel">
             <views:Articles/>

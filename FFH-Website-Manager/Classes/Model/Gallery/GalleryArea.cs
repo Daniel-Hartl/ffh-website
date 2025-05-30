@@ -1,27 +1,14 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace FFH_Website_Manager.Classes.Model.Gallery;
 
-namespace FFH_Website_Manager.Classes.Model.Gallery;
+using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 
-
-internal class GalleryArea : ObservableObject
+internal class GalleryArea : GalleryBase
 {
     [JsonIgnore]
-    private string ordner;
+    private ObservableCollection<GalleryTopic> inhalt;
 
-    [JsonIgnore]
-    private List<string> inhalt;
-
-    public string Ordner
-    {
-        get => ordner;
-        set
-        {
-            ordner = value;
-            this.OnPropChanged();
-        }
-    }
-
-    public List<string> Inhalt
+    public ObservableCollection<GalleryTopic> Inhalt
     {
         get => inhalt;
         set

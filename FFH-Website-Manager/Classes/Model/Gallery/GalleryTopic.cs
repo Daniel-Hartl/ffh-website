@@ -1,11 +1,14 @@
 ﻿namespace FFH_Website_Manager.Classes.Model.Gallery;
 
+using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 
-internal class GalleryTopic : GalleryArea
+internal class GalleryTopic : GalleryBase
 {
     [JsonIgnore]
     private DateTime dateInternal;
+    [JsonIgnore]
+    private ObservableCollection<string> inhalt;
 
     [JsonIgnore]
     public DateTime DateInternal
@@ -22,5 +25,15 @@ internal class GalleryTopic : GalleryArea
     {
         get => DateInternal.ToString("dd.MM.yyyy");
         set => DateInternal = DateTime.Parse(value);
+    }
+
+    public ObservableCollection<string> Inhalt
+    {
+        get => inhalt;
+        set
+        {
+            inhalt = value;
+            this.OnPropChanged();
+        }
     }
 }

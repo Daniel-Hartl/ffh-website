@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FFH-Website-Manager", "FFH-Website-Manager.csproj", "{83CD6344-2863-4C86-8A6C-48175965A5FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83CD6344-2863-4C86-8A6C-48175965A5FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83CD6344-2863-4C86-8A6C-48175965A5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83CD6344-2863-4C86-8A6C-48175965A5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83CD6344-2863-4C86-8A6C-48175965A5FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F861211B-8B65-49F1-AB8A-94A528E34736}
+	EndGlobalSection
+EndGlobal

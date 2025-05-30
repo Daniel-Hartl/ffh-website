@@ -1,11 +1,11 @@
 [
     {
-        "Folder": "verein",
-        "Content": [
+        "Ordner": "verein",
+        "Inhalt": [
             {
-                "Folder": "Fahrzeugweihe Wischenhofen",
-                "Date": "17.05.2025",
-                "Content": [
+                "Ordner": "Fahrzeugweihe Wischenhofen",
+                "Datum": "17.05.2025",
+                "Inhalt": [
                     "Foto1.png",
                     "Foto2.png",
                     "Foto3.png",
@@ -13,9 +13,9 @@
                 ]
             },
             {
-                "Folder": "Fahrzeugweihe Kallmünz",
-                "Date": "10.05.2025",
-                "Content": [
+                "Ordner": "Fahrzeugweihe Kallmünz",
+                "Datum": "10.05.2025",
+                "Inhalt": [
                     "Foto1.png",
                     "Foto2.png",
                     "Foto3.png",
@@ -27,12 +27,12 @@
         ]
     },
     {
-        "Folder": "aktiv",
-        "Content": [
+        "Ordner": "aktiv",
+        "Inhalt": [
             {
-                "Folder": "Monatsübung Mai",
-                "Date": "08.05.2025",
-                "Content": [
+                "Ordner": "Monatsübung Mai",
+                "Datum": "08.05.2025",
+                "Inhalt": [
                     "Foto1.png",
                     "Foto2.png",
                     "Foto3.png",

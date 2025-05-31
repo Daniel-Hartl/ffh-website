@@ -5,11 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FFH_Website_Manager.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Blue">
+             d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <local:ArticlesViewModel x:Name="vm"/>
     </UserControl.DataContext>
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid ItemsSource="{Binding Articles}" AutoGenerateColumns="False"
+              CanUserReorderColumns="False" IsReadOnly="True" Margin="10" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Titel" Binding="{Binding Titel}"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
+                <DataGridCheckBoxColumn Header="Bild" Binding="{Binding HasImange, Mode=OneWay}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Bearbeiten" CommandParameter="{Binding}" Margin="10 1"
+                                Command="{Binding ElementName=vm, Path=EditArticleCommand}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

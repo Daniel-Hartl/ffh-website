@@ -14,8 +14,11 @@ internal class CrewViewModel : ViewModelBase
     {
         try
         {
-            string crewStr = sftp.DownloadStringContent("test/crew.json");
-            CrewMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(crewStr);
+            if (this.sftp is not null)
+            {
+                string crewStr = sftp.DownloadStringContent("test/crew.json");
+                CrewMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(crewStr);
+            }
         }
         catch (Exception ex)
         {

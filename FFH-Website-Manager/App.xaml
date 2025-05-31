@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:FFH_Website_Manager"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Label.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

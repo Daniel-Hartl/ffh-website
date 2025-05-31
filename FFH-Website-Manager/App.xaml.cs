@@ -1,8 +1,4 @@
 ﻿using FFH_Website_Manager.Classes;
-using FFH_Website_Manager.Classes.Model.Gallery;
-using System.Configuration;
-using System.Data;
-using System.Text.Json;
 using System.Windows;
 
 namespace FFH_Website_Manager
@@ -13,11 +9,20 @@ namespace FFH_Website_Manager
     public partial class App : Application
     {
         public App()
-        { 
-            SFTPProvider = new ();
+        {
+            SFTPProvider = new();
             SFTPProvider.Connect();
+            this.Exit += this.OnExit;
         }
+
         internal static SFTPProvider SFTPProvider { get; set; }
+
+        private void OnExit(object sender, ExitEventArgs e)
+        {
+            this.Exit -= this.OnExit;
+            if (SFTPProvider.IsConnected)
+                SFTPProvider?.Disconnect();
+        }
     }
 
 }

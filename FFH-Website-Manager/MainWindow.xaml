@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:views="clr-namespace:FFH_Website_Manager.Views"
         Title="FFH-Website Manager" Height="450" Width="800">
-    <TabControl>
+    <TabControl Margin="10">
         <TabItem Header="Artikel">
             <views:Articles/>
         </TabItem>

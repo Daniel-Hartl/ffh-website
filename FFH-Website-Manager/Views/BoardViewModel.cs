@@ -14,8 +14,11 @@ internal class BoardViewModel : ViewModelBase
     {
         try
         {
-            string boardStr = sftp.DownloadStringContent("test/board.json");
-            BoardMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(boardStr);
+            if (this.sftp is not null)
+            {
+                string boardStr = sftp.DownloadStringContent("test/board.json");
+                BoardMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(boardStr);
+            }
         }
         catch (Exception ex)
         {

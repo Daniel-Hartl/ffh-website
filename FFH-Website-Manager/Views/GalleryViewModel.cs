@@ -14,8 +14,11 @@ internal class GalleryViewModel : ViewModelBase
     {
         try
         {
-            string galleryStr = sftp.DownloadStringContent("test/gallery.json");
-            GalleryAreas = JsonSerializer.Deserialize<ObservableCollection<GalleryArea>>(galleryStr);
+            if (this.sftp is not null)
+            {
+                string galleryStr = sftp.DownloadStringContent("test/gallery.json");
+                GalleryAreas = JsonSerializer.Deserialize<ObservableCollection<GalleryArea>>(galleryStr);
+            }
         }
         catch (Exception ex)
         {

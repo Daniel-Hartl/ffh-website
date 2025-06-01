@@ -15,6 +15,10 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Articles}" AutoGenerateColumns="False"
               CanUserReorderColumns="False" IsReadOnly="True" Margin="10" Grid.Column="1">
             <DataGrid.Columns>
@@ -29,7 +33,19 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Löschen" CommandParameter="{Binding}" Margin="10 1"
+                                 Command="{Binding ElementName=vm, Path=DeleteArticleCommand}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+
+        <Button Content="Neuen Artikel hinzufügen" Margin="10 1" Grid.Column="1"
+                Command="{Binding ElementName=vm, Path=AddArticleCommand}"
+                Grid.Row="1"/>
     </Grid>
 </UserControl>

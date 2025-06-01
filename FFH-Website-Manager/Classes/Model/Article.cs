@@ -1,8 +1,6 @@
-﻿using System.Text.Json.Serialization;
-using System.Xml.Linq;
+﻿namespace FFH_Website_Manager.Classes.Model;
 
-namespace FFH_Website_Manager.Classes.Model;
-
+using System.Text.Json.Serialization;
 internal class Article : ObservableObject
 {
     [JsonIgnore]

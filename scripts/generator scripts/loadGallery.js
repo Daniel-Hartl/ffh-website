@@ -10,13 +10,13 @@ function generateEvent(event, tab) {
     // header button
     const header = document.createElement('button');
     header.className = 'collapsible event-header large';
-    header.innerText = event.Folder;
+    header.innerText = event.Ordner;
     header.addEventListener('click', () => toggleCollapsed(header, body));
 
     // load all images
-    Array.from(event.Content).forEach(picture => 
+    Array.from(event.Inhalt).forEach(picture => 
     {
-        const imagePath = `data/images/gallery/${tab.id}/${event.Folder}/${picture}`;
+        const imagePath = `data/images/gallery/${tab.id}/${event.Ordner}/${picture}`;
 
         const border =  document.createElement('div');
         border.className = 'picture-div';
@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const structure = await fetch('data/gallery.json').then(response => response.json());
 
     Array.from(tabs).forEach(tab => {
-        folder = Array.from(structure).find(element => element.Folder === tab.id)
+        folder = Array.from(structure).find(element => element.Ordner === tab.id)
         if (folder){
-            folder.Content.sort(compareDate).forEach(
+            folder.Inhalt.sort(compareDate).forEach(
                 event => tab.appendChild(generateEvent(event, tab)))
         }
     });

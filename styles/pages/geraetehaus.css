@@ -99,16 +99,17 @@ table {
     writing-mode: sideways-lr;
     font-size: 3rem;
     font-weight: 700;
+    width: 3.5rem;
 }
 
 .timeline-image {
     height: 30vh;
+    width: 20vw;
     overflow: hidden;
 }
 
 .timeline-image img {
     max-height: 100%;
-    max-width: 40vw;
 }
 
 .timeline-text {

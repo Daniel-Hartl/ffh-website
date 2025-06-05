@@ -32,6 +32,7 @@
 .board-member img{
     max-height: 80%;
     object-fit: cover;
+    max-width: 100%;
 }
 
 .name-tag{

@@ -49,6 +49,7 @@ internal class ArticlesViewModel : ViewModelBase
         Article art = new ();
         art.DateInternal = DateTime.Today;
         using EditArticle ea = new (art);
+        ea.Title = "Artikel anlegen";
         ea.ShowDialog();
 
         if (ea.SaveData)
@@ -63,6 +64,7 @@ internal class ArticlesViewModel : ViewModelBase
         if (article is Article art)
         {
             using EditArticle ea = new (art.Copy());
+            ea.Title = "Artikel bearbeiten";
             ea.ShowDialog();
 
             if (ea.SaveData)

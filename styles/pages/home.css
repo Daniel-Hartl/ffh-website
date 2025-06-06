@@ -1,0 +1,28 @@
+#welcome {
+    display: inline-flex;
+    background-color: #ddd;
+    height: 20rem;
+    width: 84%;
+    align-content: center;
+    border-radius: 2rem;
+}
+
+.person-div{
+    height: 18rem;
+    margin: 1rem 0.5rem;
+}
+
+.person-div img{
+    height: 80%;
+}
+
+.person-div div{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.text-div {
+    max-width: 60vw;
+    vertical-align: middle;
+    margin: auto;
+}

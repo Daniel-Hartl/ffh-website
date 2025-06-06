@@ -1,7 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace FFH_Website_Manager.Classes.Model;
 
-namespace FFH_Website_Manager.Classes.Model;
-
+using System.Text.Json.Serialization;
 
 internal class Person : ObservableObject
 {
@@ -46,15 +45,18 @@ internal class Person : ObservableObject
                 "Löschmeister" => "löschmeister",
                 "Löschmeisterin" => "löschmeister",
                 "1. Gerätewart" => "amt",
+                "2. Gerätewart" => "amt",
                 "1. Jugendbeauftragter" => "amt",
                 "1. Jugendbeauftragte" => "amt",
+                "2. Jugendbeauftragter" => "amt",
+                "2. Jugendbeauftragte" => "amt",
                 // Verein
                 "1. Vorsitzender" => "vorsitz",
                 "1. Vorsitzende" => "vorsitz",
                 "2. Vorsitzender" => "vorsitz",
                 "2. Vorsitzende" => "vorsitz",
-                "Ehrenorsitzender" => "vorsitz",
-                "Ehrenorsitzende" => "vorsitz",
+                "Ehrenvorsitzender" => "vorsitz",
+                "Ehrenvorsitzende" => "vorsitz",
                 "1. Schriftführer" => "amt",
                 "1. Schriftführerin" => "amt",
                 "2. Schriftführer" => "amt",
@@ -85,4 +87,16 @@ internal class Person : ObservableObject
             this.OnPropChanged();
         }
     }
+
+    [JsonIgnore]
+    public string DisplayId
+        => this.Id switch
+        {
+            "vorsitz" => "Vorsitzende",
+            "kommandant" => "Kommandanten",
+            "amt" => "Funktionäre",
+            "beisitz" => "Beisitzer",
+            "löschmeister" => "Führungsränge",
+            _ => "Sonstige"
+        };
 }

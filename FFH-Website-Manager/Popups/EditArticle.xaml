@@ -20,6 +20,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Label Content="_Überschrift:" Grid.Row="0" Grid.Column="0"/>
@@ -43,13 +44,14 @@
                 Margin="5"/>
         <Button Content="Löschen" Click="RemovePicture" Grid.Row="3"
                 IsEnabled="{Binding HasImange}" Margin="5"/>
-        <Image Grid.Column="1" Grid.RowSpan="3" Grid.Row="1"
+        <Image Grid.Column="1" Grid.RowSpan="4" Grid.Row="1"
                Source="{Binding RelativeSource={RelativeSource FindAncestor,
                 AncestorType={x:Type local:EditArticle}}, Path=Bmp}"/>
 
-        <Label Content="_Text:" Grid.Row="4" Grid.Column="0"/>
-        <TextBox Text="{Binding Inhalt, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4"
-                 Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap"/>
+        <Label Content="_Text:" Grid.Row="5" Grid.Column="0"/>
+        <TextBox Text="{Binding Inhalt, UpdateSourceTrigger=PropertyChanged}"
+                 Grid.Row="5" Grid.Column="1"
+                 Grid.ColumnSpan="3" TextWrapping="Wrap"/>
 
         <DockPanel HorizontalAlignment="Right"
                    Grid.Row="10" Grid.ColumnSpan="10">

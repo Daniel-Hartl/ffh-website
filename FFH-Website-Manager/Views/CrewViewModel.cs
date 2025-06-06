@@ -38,4 +38,17 @@ internal class CrewViewModel : ViewModelBase
             }
         }
     }
+
+
+
+    public ObservableCollection<string> Positions { get; set; } =
+        ["1. Kommandant", "1. Kommandantin", 
+        "stellv. Kommandant", "stellv. Kommandantin",
+        "Ehrenkommandant", "Ehrenkommandantin",
+        "Hauptlöschmeister", "Hauptlöschmeisterin",
+        "Oberlöschmeister", "Oberlöschmeisterin",
+        "Löschmeister", "Löschmeisterin",
+        "1. Gerätewart", "2. Gerätewart",
+        "1. Jugendbeauftragter", "1. Jugendbeauftragte",
+        "2. Jugendbeauftragter", "2. Jugendbeauftragte"];
 }

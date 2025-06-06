@@ -1,6 +1,5 @@
-main {
-    display: flex;
-
+#list {
+    display: contents;
 }
 
 .article {

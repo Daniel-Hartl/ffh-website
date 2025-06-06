@@ -9,7 +9,45 @@
     <UserControl.DataContext>
         <local:BoardViewModel x:Name="vm"/>
     </UserControl.DataContext>
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="Group" Source="{Binding BoardMembers}">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="DisplayId"/>
+            </CollectionViewSource.GroupDescriptions>
+        </CollectionViewSource>
+        <CollectionViewSource x:Key="Roles" Source="{Binding Positions}"/>
+    </UserControl.Resources>
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Column="1" ItemsSource="{Binding Source={StaticResource Group}}"
+                  AutoGenerateColumns="False">
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <Label FontWeight="Bold" FontSize="14" Content="{Binding Name}" HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridComboBoxColumn Header="Funktion"
+                                        SelectedValueBinding="{Binding Funktion}"
+                                        ItemsSource="{Binding Source={StaticResource Roles}}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Entfernen" CommandParameter="{Binding}" Margin="10 1"
+                Command="{Binding ElementName=vm, Path=DeleteMemberCommand}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

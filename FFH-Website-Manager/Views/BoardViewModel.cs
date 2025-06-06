@@ -16,7 +16,7 @@ internal class BoardViewModel : ViewModelBase
         {
             if (this.sftp is not null)
             {
-                string boardStr = sftp.DownloadStringContent("test/board.json");
+                string boardStr = sftp.DownloadStringContent(PathFragmentCollection.Board);
                 BoardMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(boardStr);
             }
         }
@@ -38,4 +38,26 @@ internal class BoardViewModel : ViewModelBase
             }
         }
     }
-}
+    public RelayCommand DeleteMemberCommand => new(this.DeleteMember);
+
+    public ObservableCollection<string> Positions { get; set; } =
+        ["1. Vorsitzender", "1. Vorsitzende",
+        "2. Vorsitzender", "2. Vorsitzende",
+        "Ehrenvorsitzender", "Ehrenvorsitzende",
+        "1. Schriftführer", "1. Schriftführerin",
+        "2. Schriftführer", "2. Schriftführerin",
+        "1. Kassier", "2. Kassier",
+        "Beisitzer", "Beisitzerin"];
+
+    private void DeleteMember(object obj)
+    {
+        if (obj is Person person
+            && MessageBox.Show($"Wollen Sie wirklich {person.Name} aus der Vorstandschaft entfernen?", string.Empty, MessageBoxButton.YesNo, MessageBoxImage.Question)
+                == MessageBoxResult.Yes)
+            this.BoardMembers.Remove(person);
+    }
+
+    private void Save()
+    {
+        this.sftp.UploadStringContent(PathFragmentCollection.Board, JsonSerializer.Serialize(this.BoardMembers.ToArray()));
+    }

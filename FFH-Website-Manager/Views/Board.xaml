@@ -23,6 +23,10 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
         <DataGrid Grid.Column="1" ItemsSource="{Binding Source={StaticResource Group}}"
                   AutoGenerateColumns="False">
             <DataGrid.GroupStyle>
@@ -35,6 +39,30 @@
                 </GroupStyle>
             </DataGrid.GroupStyle>
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Bild">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="{Binding WpfImage}"
+                                       Grid.RowSpan="2" MaxHeight="40"
+                                       MinWidth="40"/>
+                                <Button Content="Ändern" CommandParameter="{Binding}" Grid.Column="1"
+                                        Command="{Binding ElementName=vm, Path=ChangeImageCommand}"/>
+                                <Button Content="Löschen" CommandParameter="{Binding}"
+                                        Grid.Row="1" Grid.Column="1"
+                                        Command="{Binding ElementName=vm, Path=DeleteImageCommand}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                 <DataGridComboBoxColumn Header="Funktion"
                                         SelectedValueBinding="{Binding Funktion}"
@@ -43,11 +71,16 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Entfernen" CommandParameter="{Binding}" Margin="10 1"
-                Command="{Binding ElementName=vm, Path=DeleteMemberCommand}"/>
+                                    Command="{Binding ElementName=vm, Path=DeleteMemberCommand}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+
+        <DockPanel HorizontalAlignment="Right" Grid.Row="1" Grid.ColumnSpan="3">
+            <Button Content="_Speichern" Margin="5,0" Command="{Binding SaveCommand}"/>
+            <Button Content="_Zurücksetzen" Margin="5,0" Command="{Binding CancelCommand}"/>
+        </DockPanel>
     </Grid>
 </UserControl>

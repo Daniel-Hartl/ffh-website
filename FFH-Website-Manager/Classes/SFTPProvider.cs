@@ -14,19 +14,19 @@ internal class SFTPProvider : SftpClient
 
     public string DownloadStringContent(string remotePath)
     {
-        remotePath = Appsettings.Instance.RootDirectory + "/" + remotePath;
+        remotePath = BuildPath(Appsettings.Instance.RootDirectory, remotePath);
 
-        using MemoryStream ms = new ();
+        using MemoryStream ms = new();
         this.DownloadFile(remotePath, ms);
         ms.Position = 0;
-        using StreamReader sr = new (ms);
+        using StreamReader sr = new(ms);
         string str = sr.ReadToEnd();
         return str;
     }
 
     public void UploadFileFromPath(string path, string remotePath)
     {
-        using FileStream fs = new (path, FileMode.Open, FileAccess.Read);
+        using FileStream fs = new(path, FileMode.Open, FileAccess.Read);
         this.UploadFile(fs, remotePath);
     }
 
@@ -34,9 +34,11 @@ internal class SFTPProvider : SftpClient
     {
         remotePath = Appsettings.Instance.RootDirectory + "/" + remotePath;
 
-        using MemoryStream ms = new (Encoding.UTF8.GetBytes(content));
+        using MemoryStream ms = new(Encoding.UTF8.GetBytes(content));
         ms.Position = 0;
 
         this.UploadFile(ms, remotePath);
     }
+
+    public static string BuildPath(params string[] paths) => string.Join("/", paths);
 }

@@ -3,7 +3,6 @@
 using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.Model;
 using Microsoft.Win32;
-using Org.BouncyCastle.Tls.Crypto;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -54,7 +53,8 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
 
     public bool SaveData { get; set; }
 
-    private static string GetSftpUrl(string fileName) => Appsettings.Instance.RootDirectory + "/test/" + fileName;
+    private static string GetSftpUrl(string fileName)
+        => SFTPProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.ArticlesImageDirectory, fileName);
 
     private void AddPicture(object sender, RoutedEventArgs e)
     {

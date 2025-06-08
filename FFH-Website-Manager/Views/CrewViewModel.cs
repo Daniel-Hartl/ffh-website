@@ -1,49 +1,15 @@
 ﻿namespace FFH_Website_Manager.Views;
 
 using FFH_Website_Manager.Classes;
-using FFH_Website_Manager.Classes.Model;
 using System.Collections.ObjectModel;
-using System.Text.Json;
-using System.Windows;
 
-internal class CrewViewModel : ViewModelBase
-{
-    private ObservableCollection<Person> crewMembers;
+internal class CrewViewModel : PersonsViewModelBase
+{    
+    protected override string JsonPath { get; } = PathFragmentCollection.Crew;
 
-    public CrewViewModel() : base()
-    {
-        try
-        {
-            if (this.sftp is not null)
-            {
-                string crewStr = sftp.DownloadStringContent("test/crew.json");
-                CrewMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(crewStr);
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.ToString(), "Fehler beim Laden der Daten vom Server", MessageBoxButton.OK, MessageBoxImage.Error);
-        }
-    }
-
-    public ObservableCollection<Person> CrewMembers
-    {
-        get => crewMembers;
-        set
-        {
-            if (value != crewMembers)
-            {
-                crewMembers = value;
-                this.OnPropChanged();
-            }
-        }
-    }
-
-
-
-    public ObservableCollection<string> Positions { get; set; } =
+    public override ObservableCollection<string> Positions { get; set; } =
         ["1. Kommandant", "1. Kommandantin", 
-        "stellv. Kommandant", "stellv. Kommandantin",
+        "Stellv. Kommandant", "Stellv. Kommandantin",
         "Ehrenkommandant", "Ehrenkommandantin",
         "Hauptlöschmeister", "Hauptlöschmeisterin",
         "Oberlöschmeister", "Oberlöschmeisterin",

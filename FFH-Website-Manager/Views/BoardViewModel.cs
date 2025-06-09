@@ -8,11 +8,13 @@ internal class BoardViewModel : PersonsViewModelBase
     protected override string JsonPath { get; } = PathFragmentCollection.Board;
 
     public override ObservableCollection<string> Positions { get; set; } =
-        ["1. Vorsitzender", "1. Vorsitzende",
+        [string.Empty,
+        "1. Vorsitzender", "1. Vorsitzende",
         "2. Vorsitzender", "2. Vorsitzende",
         "Ehrenvorsitzender", "Ehrenvorsitzende",
         "1. Schriftführer", "1. Schriftführerin",
         "2. Schriftführer", "2. Schriftführerin",
         "1. Kassier", "2. Kassier",
-        "Beisitzer", "Beisitzerin"];
+        "Beisitzer", "Beisitzerin",
+        "Datenschutzbeauftragter", "Datenschutzbeauftragte"];
 }

@@ -8,7 +8,8 @@ internal class CrewViewModel : PersonsViewModelBase
     protected override string JsonPath { get; } = PathFragmentCollection.Crew;
 
     public override ObservableCollection<string> Positions { get; set; } =
-        ["1. Kommandant", "1. Kommandantin", 
+        [string.Empty,
+        "1. Kommandant", "1. Kommandantin", 
         "Stellv. Kommandant", "Stellv. Kommandantin",
         "Ehrenkommandant", "Ehrenkommandantin",
         "Hauptlöschmeister", "Hauptlöschmeisterin",

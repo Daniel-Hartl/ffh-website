@@ -8,13 +8,15 @@ using System.Text.Json;
 using System.Windows.Media.Imaging;
 using System.Windows;
 using System.IO;
+using System.ComponentModel;
 
 internal abstract class PersonsViewModelBase : ViewModelBase
 {
     private ObservableCollection<Person> boardMembers;
+    private bool stateHasChanged;
     protected virtual string JsonPath { get; }
 
-    public PersonsViewModelBase() : base()
+    protected PersonsViewModelBase() : base()
     {
         this.LoadData(null);
     }
@@ -26,11 +28,27 @@ internal abstract class PersonsViewModelBase : ViewModelBase
         {
             if (value != boardMembers)
             {
+                boardMembers.ToList().ForEach(x => x.PropertyChanged -= this.OnValueChanged);
                 boardMembers = value;
+                boardMembers.ToList().ForEach(x => x.PropertyChanged += this.OnValueChanged);
                 this.OnPropChanged();
             }
         }
     }
+
+    public bool StateHasChanged
+    {
+        get => stateHasChanged;
+        set
+        {
+            if (value != stateHasChanged)
+            {
+                stateHasChanged = value;
+                this.OnPropChanged();
+            }
+        }
+    }
+
     public RelayCommand DeleteMemberCommand => new(this.DeleteMember);
     public RelayCommand ChangeImageCommand => new(this.ChangeImage);
     public RelayCommand DeleteImageCommand => new(this.DeleteImage);
@@ -55,7 +73,14 @@ internal abstract class PersonsViewModelBase : ViewModelBase
             {
                 if (!string.IsNullOrEmpty(x.Bild))
                 {
-                    this.sftp.DeleteFile(SFTPProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.PersonImageDirectory, x.Bild));
+                    try
+                    {
+                        this.sftp.DeleteFile(SFTPProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.PersonImageDirectory, x.Bild));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Das Bild {x.Bild} konnte nicht gelöscht werden. Grund: {ex.Message}", "Fehler", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
                     x.Bild = string.Empty;
                 }
 
@@ -70,6 +95,7 @@ internal abstract class PersonsViewModelBase : ViewModelBase
         });
 
         this.sftp.UploadStringContent(this.JsonPath, JsonSerializer.Serialize(this.BoardMembers.ToArray()));
+        this.StateHasChanged = false;
     }
 
     private void LoadData(object obj)
@@ -79,7 +105,9 @@ internal abstract class PersonsViewModelBase : ViewModelBase
             if (this.sftp is not null)
             {
                 string boardStr = sftp.DownloadStringContent(this.JsonPath);
-                BoardMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(boardStr);
+                boardMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(boardStr);
+                boardMembers.ToList().ForEach(x => x.PropertyChanged += this.OnValueChanged);
+                this.OnPropChanged(nameof(BoardMembers));
             }
         }
         catch (Exception ex)
@@ -110,9 +138,11 @@ internal abstract class PersonsViewModelBase : ViewModelBase
     {
         if (obj is Person pers)
         {
-            pers.WpfImage = null;
             pers.UploadImagePath = string.Empty;
             pers.DeleteImage = true;
+            pers.WpfImage = null;
         }
     }
+
+    private void OnValueChanged(object sender, PropertyChangedEventArgs args) => this.StateHasChanged = true;
 }

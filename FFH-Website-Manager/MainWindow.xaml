@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:FFH_Website_Manager"
         mc:Ignorable="d"
         xmlns:views="clr-namespace:FFH_Website_Manager.Views"
-        Title="FFH-Website Manager" Height="450" Width="800">
+        Title="FFH-Website Manager" Height="600" Width="1200"
+        FontSize="14">
     <TabControl Margin="10">
         <TabItem Header="Artikel">
             <views:Articles/>
@@ -17,7 +18,7 @@
         <TabItem Header="Vorstandschaft">
             <views:Board/>
         </TabItem>
-        <TabItem Header="Aktive Mannschaft">
+        <TabItem Header="Führungsdienstgrade">
             <views:Crew/>
         </TabItem>
     </TabControl>

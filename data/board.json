@@ -1,67 +1,67 @@
 [
     {
         "Id": "vorsitz",
-        "Funktion": "1. Vorsitzender",
+        "Funktion": ["1. Vorsitzender"],
         "Name": "Josef Graf",
-        "Bild": "noImage.png"
+        "Bild": ""
     },
     {
         "Id": "vorsitz",
-        "Funktion": "2. Vorsitzende",
+        "Funktion": ["2. Vorsitzende"],
         "Name": "Sophie Kliegl",
         "Bild": ""
     },
     {
         "Id": "vorsitz",
-        "Funktion": "Ehrenvorsitzender",
+        "Funktion": ["Ehrenvorsitzender"],
         "Name": "Josef Rödl",
         "Bild": ""
     },
     {
         "Id": "amt",
-        "Funktion": "1. Schriftführerin",
+        "Funktion": ["1. Schriftführerin", "Datenschutzbeauftragte"],
         "Name": "Martina Glockner",
         "Bild": ""
     },
     {
         "Id": "amt",
-        "Funktion": "2. Schriftführer",
+        "Funktion": ["2. Schriftführer"],
         "Name": "Stefan Remeli",
         "Bild": ""
     },
     {
         "Id": "amt",
-        "Funktion": "1. Kassier",
+        "Funktion": ["1. Kassier"],
         "Name": "Christian Dechant",
         "Bild": ""
     },
     {
         "Id": "amt",
-        "Funktion": "2. Kassier",
+        "Funktion": ["2. Kassier"],
         "Name": "Marion Winzinger",
         "Bild": ""
     },
     {
         "Id": "beisitz",
-        "Funktion": "Beisitzer",
+        "Funktion": ["Beisitzer"],
         "Name": "Dietmar Drexler",
         "Bild": ""
     },
     {
         "Id": "beisitz",
-        "Funktion": "Beisitzer",
+        "Funktion": ["Beisitzer"],
         "Name": "Andreas Kliegl",
         "Bild": ""
     },
     {
         "Id": "beisitz",
-        "Funktion": "Beisitzer",
+        "Funktion": ["Beisitzer"],
         "Name": "Michael Kretschmann",
         "Bild": ""
     },
     {
         "Id": "beisitz",
-        "Funktion": "Beisitzer",
+        "Funktion": ["Beisitzer"],
         "Name": "Julian Schindler",
         "Bild": ""
     }

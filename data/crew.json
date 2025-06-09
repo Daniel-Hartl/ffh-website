@@ -1,74 +1,74 @@
 [
     {
         "Id": "kommandant",
-        "Funktion": "1. Kommandantin",
+        "Funktion": ["1. Kommandantin"],
         "Name": "Stefanie Dechant",
-        "Bild": "noImage.png"
+        "Bild": ""
     },
     {
         "Id": "kommandant",
-        "Funktion": "Stellv. Kommandant",
+        "Funktion": ["Stellv. Kommandant"],
         "Name": "Lukas Schindler",
         "Bild": ""
     },
     {
         "Id": "kommandant",
-        "Funktion": "Stellv. Kommandant",
+        "Funktion": ["Stellv. Kommandant", "1. Gerätewart", "1. Jugendbeauftragter"],
         "Name": "Gabriel Böhm",
         "Bild": ""
     },
     {
         "Id": "löschmeister",
-        "Funktion": "Hauptlöschmeister",
+        "Funktion": ["Hauptlöschmeister"],
         "Name": "Peter Pilz",
-        "Bild": ""
+        "Bild": "",
+        "Kommentar": "nicht mehr im aktiven Dienst"
     },
     {
         "Id": "löschmeister",
-        "Funktion": "Oberlöschmeister",
+        "Funktion": ["Oberlöschmeister"],
         "Name": "Dirk Tamme",
+        "Bild": "",
+        "Kommentar": "nicht mehr im aktiven Dienst"
+    },
+    {
+        "Id": "löschmeister",
+        "Funktion": ["Löschmeister"],
+        "Name": "Christian Dechant",
         "Bild": ""
     },
     {
         "Id": "löschmeister",
-        "Funktion": "Löschmeister",
+        "Funktion": ["Löschmeister"],
         "Name": "Paul Ehrl",
-        "Bild": ""
+        "Bild": "",
+        "Kommentar": "nicht mehr im aktiven Dienst"
     },
     {
         "Id": "löschmeister",
-        "Funktion": "Löschmeister",
+        "Funktion": ["Löschmeister"],
         "Name": "Josef Graf",
         "Bild": ""
     },
     {
         "Id": "löschmeister",
-        "Funktion": "Löschmeister",
+        "Funktion": ["Löschmeister"],
         "Name": "Bernhard Hierl",
-        "Bild": ""
+        "Bild": "",
+        "Kommentar": "nicht mehr im aktiven Dienst"
     },
     {
         "Id": "löschmeister",
-        "Funktion": "Löschmeister",
+        "Funktion": ["Löschmeister"],
         "Name": "Karl Kiener",
-        "Bild": ""
+        "Bild": "",
+        "Kommentar": "nicht mehr im aktiven Dienst"
     },
     {
         "Id": "löschmeister",
-        "Funktion": "Löschmeister",
+        "Funktion": ["Löschmeister"],
         "Name": "Josef Rödl",
-        "Bild": ""
-    },
-    {
-        "Id": "amt",
-        "Funktion": "1. Gerätewart",
-        "Name": "Gabriel Böhm",
-        "Bild": ""
-    },
-    {
-        "Id": "amt",
-        "Funktion": "1. Jugendbeauftragter",
-        "Name": "Gabriel Böhm",
-        "Bild": ""
+        "Bild": "",
+        "Kommentar": "nicht mehr im aktiven Dienst"
     }
 ]

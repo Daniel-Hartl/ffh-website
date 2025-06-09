@@ -57,16 +57,28 @@
                                 <Button Content="Ändern" CommandParameter="{Binding}" Grid.Column="1"
                                         Command="{Binding ElementName=vm, Path=ChangeImageCommand}"/>
                                 <Button Content="Löschen" CommandParameter="{Binding}"
-                                        Grid.Row="1" Grid.Column="1"
+                                        Grid.Row="1" Grid.Column="1" IsEnabled="{Binding HasImage}"
                                         Command="{Binding ElementName=vm, Path=DeleteImageCommand}"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridComboBoxColumn Header="Funktion"
-                                        SelectedValueBinding="{Binding Funktion}"
-                                        ItemsSource="{Binding Source={StaticResource Roles}}"/>
+                <DataGridTextColumn Header="Name"
+                                    Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridComboBoxColumn Header="Funktion1"
+                        SelectedValueBinding="{Binding Func1}"
+                        ItemsSource="{Binding Source={StaticResource Roles}}"/>
+                <DataGridComboBoxColumn Header="Funktion2"
+                        SelectedValueBinding="{Binding Func2}"
+                        ItemsSource="{Binding Source={StaticResource Roles}}"/>
+                <DataGridComboBoxColumn Header="Funktion3"
+                        SelectedValueBinding="{Binding Func3}"
+                        ItemsSource="{Binding Source={StaticResource Roles}}"/>
+                <DataGridComboBoxColumn Header="Funktion4"
+                        SelectedValueBinding="{Binding Func4}"
+                        ItemsSource="{Binding Source={StaticResource Roles}}"/>
+                <DataGridTextColumn Header="Kommentar"
+                                    Binding="{Binding Kommentar, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -78,8 +90,9 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <DockPanel HorizontalAlignment="Right" Grid.Row="1" Grid.ColumnSpan="3">
-            <Button Content="_Speichern" Margin="5,0" Command="{Binding SaveCommand}"/>
+        <DockPanel HorizontalAlignment="Right" Grid.Row="1" Grid.ColumnSpan="3" Margin="0 10">
+            <Button Content="_Speichern" Margin="5,0" Command="{Binding SaveCommand}"
+                    IsEnabled="{Binding StateHasChanged}"/>
             <Button Content="_Zurücksetzen" Margin="5,0" Command="{Binding CancelCommand}"/>
         </DockPanel>
     </Grid>

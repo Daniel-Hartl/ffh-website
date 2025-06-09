@@ -1,4 +1,4 @@
-.group{
+.group {
     display: flex inline-block;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     margin: 0 auto;
     flex: 0 0 20vh
 }
-.board-member{  
+.board-member {  
     width: 22%;
     margin: 1.5% auto;
     height: 50vh;
@@ -17,10 +17,26 @@
     margin-top: 13.5vh;
     margin-bottom: 13.5vh;
     display: inline-block;
+    vertical-align: top;
+}
+
+.board-member img {
+    max-height: 80%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.board-member-comment {
+    color: darkgray;
+}
+
+.name-tag {
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 @media (pointer:fine) {
-    .board-member:hover{
+    .board-member:hover {
         height: 75vh;
         width: 33%;
         font-size: 1.5em;
@@ -29,19 +45,8 @@
     }
 }
 
-.board-member img{
-    max-height: 80%;
-    object-fit: cover;
-    max-width: 100%;
-}
-
-.name-tag{
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
 @media (max-width: 1600px) {
-    .board-member{  
+    .board-member {  
         width: 26%;
         margin: 1.5% auto;
         height: 50vh;
@@ -49,7 +54,7 @@
 }
 
 @media (max-width: 1200px) {
-    .board-member{  
+    .board-member {  
         width: 45%;
         margin: 1.5% auto;
         height: 50vh;
@@ -57,7 +62,7 @@
 }
 
 @media (max-width: 770px) {
-    .board-member{  
+    .board-member {  
         width: 80%;
         margin: 1.5% auto;
         height: 50vh;

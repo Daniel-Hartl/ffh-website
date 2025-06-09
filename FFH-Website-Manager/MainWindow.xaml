@@ -9,6 +9,9 @@
         Title="FFH-Website Manager" Height="600" Width="1200"
         FontSize="14">
     <TabControl Margin="10">
+        <TabItem Header="Statistiken">
+            <views:Statistics/>
+        </TabItem>
         <TabItem Header="Artikel">
             <views:Articles/>
         </TabItem>

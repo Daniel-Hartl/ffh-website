@@ -2,13 +2,11 @@
 
 using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.Model;
-using Microsoft.Win32;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Windows.Media.Imaging;
 using System.Windows;
 using System.IO;
-using System.ComponentModel;
 
 internal abstract class PersonsViewModelBase : ViewModelBase
 {
@@ -28,22 +26,9 @@ internal abstract class PersonsViewModelBase : ViewModelBase
         {
             if (value != boardMembers)
             {
-                boardMembers.ToList().ForEach(x => x.PropertyChanged -= this.OnValueChanged);
+                boardMembers.ToList().ForEach(x => x.PropertyChanged -= this.StateChanging);
                 boardMembers = value;
-                boardMembers.ToList().ForEach(x => x.PropertyChanged += this.OnValueChanged);
-                this.OnPropChanged();
-            }
-        }
-    }
-
-    public bool StateHasChanged
-    {
-        get => stateHasChanged;
-        set
-        {
-            if (value != stateHasChanged)
-            {
-                stateHasChanged = value;
+                boardMembers.ToList().ForEach(x => x.PropertyChanged += this.StateChanging);
                 this.OnPropChanged();
             }
         }
@@ -52,8 +37,6 @@ internal abstract class PersonsViewModelBase : ViewModelBase
     public RelayCommand DeleteMemberCommand => new(this.DeleteMember);
     public RelayCommand ChangeImageCommand => new(this.ChangeImage);
     public RelayCommand DeleteImageCommand => new(this.DeleteImage);
-    public RelayCommand SaveCommand => new(this.Save);
-    public RelayCommand CancelCommand => new(this.LoadData);
 
     public virtual ObservableCollection<string> Positions { get; set; }
 
@@ -65,7 +48,7 @@ internal abstract class PersonsViewModelBase : ViewModelBase
             this.BoardMembers.Remove(person);
     }
 
-    private void Save(object obj)
+    protected override void Save(object obj)
     {
         this.BoardMembers.ToList().ForEach(x =>
         {
@@ -98,15 +81,16 @@ internal abstract class PersonsViewModelBase : ViewModelBase
         this.StateHasChanged = false;
     }
 
-    private void LoadData(object obj)
+    protected override void LoadData(object obj)
     {
+        this.StateHasChanged = false;
         try
         {
             if (this.sftp is not null)
             {
                 string boardStr = sftp.DownloadStringContent(this.JsonPath);
                 boardMembers = JsonSerializer.Deserialize<ObservableCollection<Person>>(boardStr);
-                boardMembers.ToList().ForEach(x => x.PropertyChanged += this.OnValueChanged);
+                boardMembers.ToList().ForEach(x => x.PropertyChanged += this.StateChanging);
                 this.OnPropChanged(nameof(BoardMembers));
             }
         }
@@ -118,19 +102,11 @@ internal abstract class PersonsViewModelBase : ViewModelBase
 
     private void ChangeImage(object obj)
     {
-        if (obj is Person pers)
+        if (obj is Person pers && FileDialogTemplates.SelectSingleImage(out string path))
         {
-            OpenFileDialog ofd = new();
-            ofd.Multiselect = false;
-            ofd.Title = "Bild auswählen...";
-            ofd.Filter = "Bilder (*.jpg, *.png, *.jpeg)|*.jpg; *.png; *.jpeg";
-            if (ofd.ShowDialog() ?? false)
-            {
-                pers.UploadImagePath = ofd.FileName;
-                pers.WpfImage = BitmapFrame.Create(new Uri(pers.UploadImagePath));
-                pers.DeleteImage = false;
-            }
-
+            pers.UploadImagePath = path;
+            pers.WpfImage = BitmapFrame.Create(new Uri(pers.UploadImagePath));
+            pers.DeleteImage = false;
         }
     }
 
@@ -143,6 +119,4 @@ internal abstract class PersonsViewModelBase : ViewModelBase
             pers.WpfImage = null;
         }
     }
-
-    private void OnValueChanged(object sender, PropertyChangedEventArgs args) => this.StateHasChanged = true;
 }

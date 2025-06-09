@@ -58,13 +58,9 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
 
     private void AddPicture(object sender, RoutedEventArgs e)
     {
-        OpenFileDialog ofd = new();
-        ofd.Multiselect = false;
-        ofd.Title = "Bild auswählen...";
-        ofd.Filter = "Bilder (*.jpg, *.png, *.jpeg)|*.jpg; *.png; *.jpeg";
-        if (ofd.ShowDialog() ?? false)
+        if (FileDialogTemplates.SelectSingleImage(out string path))
         {
-            uploadImagePath = ofd.FileName;
+            uploadImagePath = path;
             Bmp = BitmapFrame.Create(new Uri(uploadImagePath));
             this.imageHasChanged = true;
             this.OnPropChanged(nameof(Bmp));

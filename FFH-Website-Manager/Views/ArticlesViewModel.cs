@@ -11,25 +11,11 @@ internal class ArticlesViewModel : ViewModelBase
 {
     private ObservableCollection<Article> articles;
 
-    public ArticlesViewModel() : base()
-    {
-        try
-        {
-            if (this.sftp is not null)
-            {
-                string articlesStr = sftp.DownloadStringContent(PathFragmentCollection.Articles);
-                Articles = [.. JsonSerializer.Deserialize<ObservableCollection<Article>>(articlesStr).OrderByDescending(x => x.DateInternal)];
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.ToString(), "Fehler beim Laden der Daten vom Server", MessageBoxButton.OK, MessageBoxImage.Error);
-        }
-    }
+    public ArticlesViewModel() : base() => this.LoadData(null);
 
-    public RelayCommand AddArticleCommand => new (this.AddArticle);
-    public RelayCommand EditArticleCommand => new (this.EditArticle);
-    public RelayCommand DeleteArticleCommand => new (this.DeleteArticle);
+    public RelayCommand AddArticleCommand => new(this.AddArticle);
+    public RelayCommand EditArticleCommand => new(this.EditArticle);
+    public RelayCommand DeleteArticleCommand => new(this.DeleteArticle);
 
     public ObservableCollection<Article> Articles
     {
@@ -46,9 +32,11 @@ internal class ArticlesViewModel : ViewModelBase
 
     private void AddArticle(object article)
     {
-        Article art = new ();
-        art.DateInternal = DateTime.Today;
-        using EditArticle ea = new (art);
+        Article art = new ()
+        {
+            DateInternal = DateTime.Today
+        };
+        using EditArticle ea = new(art);
         ea.Title = "Artikel anlegen";
         ea.ShowDialog();
 
@@ -63,7 +51,7 @@ internal class ArticlesViewModel : ViewModelBase
     {
         if (article is Article art)
         {
-            using EditArticle ea = new (art.Copy());
+            using EditArticle ea = new(art.Copy());
             ea.Title = "Artikel bearbeiten";
             ea.ShowDialog();
 
@@ -82,6 +70,23 @@ internal class ArticlesViewModel : ViewModelBase
         {
             this.Articles.Remove(art);
             this.sftp.UploadStringContent(PathFragmentCollection.Articles, JsonSerializer.Serialize(Articles.ToArray()));
+        }
+    }
+
+    protected override void LoadData(object obj)
+    {
+        this.StateHasChanged = false;
+        try
+        {
+            if (this.sftp is not null)
+            {
+                string articlesStr = sftp.DownloadStringContent(PathFragmentCollection.Articles);
+                Articles = [.. JsonSerializer.Deserialize<ObservableCollection<Article>>(articlesStr).OrderByDescending(x => x.DateInternal)];
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.ToString(), "Fehler beim Laden der Daten vom Server", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

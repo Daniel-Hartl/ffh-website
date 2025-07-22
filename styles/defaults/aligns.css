@@ -29,3 +29,11 @@
 .center-aligned-text {
     text-align: center;
 }
+
+.bottom {
+    vertical-align: bottom;
+}
+
+.top {
+    vertical-align: top;
+}

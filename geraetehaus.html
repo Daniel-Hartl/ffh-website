@@ -6,7 +6,7 @@
     <script src="scripts/generator scripts/loadMetadata.js"></script>
     <script src="scripts/generator scripts/loadComponent.js"></script>
     <script src="scripts/component logic/streetviewEmbed.js"></script>
-    <!-- <script src="scripts/googleConsent.js"></script> -->
+    <script src="scripts/googleConsent.js"></script>
     <link rel="stylesheet" href="styles/defaults/table.css" />
     <link rel="stylesheet" href="styles/defaults/aligns.css" />
     <link rel="stylesheet" href="styles/defaults/margins.css" />
@@ -21,12 +21,13 @@
         <h1>Gerätehaus</h1>
         <div class="maps-div center">
             <div class="maps-content-div">
-                <div id="placeholder" class="streetView">
-                    <!-- <div>
+                    <img src="images/building/now.png"/>
+                <!-- <div id="placeholder" class="streetView">
+                    <div>
                         <p class="banner-text">Zum Anzeigen der Google StreetView müssen zuerst die <a href="https://policies.google.com/technologies/cookies?hl=en&utm_source=ucb">Google-Cookies</a> akzeptiert werden.</p>
                         <button onclick="acceptCookies('streetView')" class="primary-button center thin-margin-top">Google-Cookies akzeptieren</button>
-                    </div> -->
-                </div>
+                    </div>
+                </div> -->
                 <!-- <span class="tooltip">Zum Aktivieren der StreetView klicken</span>-->
             </div>
             <!--<table id="streetViewFooter" class="hidden">
@@ -48,14 +49,22 @@
             </table> -->
 
         </div>
-        <table>
+        <table class="address-table">
             <tr>
-                <td class="column right-aligned-text"><b>Adresse:</b></td>
-                <td class="column left-aligned-text">Auf der Höhe 11</td>
+                <td class="column right-aligned-text bottom"><b>Adresse:</b></td>
+                <td class="column left-aligned-text bottom">Auf der Höhe 11</td>
+                <td rowspan="2">
+                    <div class="maps-embed right">
+                        <div id="map-placeholder">
+                            <p>Zum Anzeigen von Google Maps müssen zuerst die <a href="https://policies.google.com/technologies/cookies?hl=en&utm_source=ucb">Google-Cookies</a> akzeptiert werden.</p>
+                            <button onclick="acceptCookies('maps')" class="primary-button center thin-margin-top">Google-Cookies akzeptieren</button>
+                        </div>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td class="column right-aligned-text"><b>&nbsp;</b></td>
-                <td class="column left-aligned-text">93182 Judenberg (Duggendorf)</td>
+                <td class="column right-aligned-text top"><b>&nbsp;</b></td>
+                <td class="column left-aligned-text top">93182 Judenberg (Duggendorf)</td>
             </tr>
         </table>
         <div class="timeline-container">

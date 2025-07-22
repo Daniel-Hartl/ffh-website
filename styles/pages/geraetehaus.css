@@ -9,6 +9,12 @@ table {
 .maps-content-div {
     height: 30rem;
     width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.maps-content-div img {
+    width: 100%;
 }
 
 .maps-div table {
@@ -117,6 +123,30 @@ table {
 .timeline-text {
     color: black;
     padding: 0.3rem;
+}
+
+.address-table{
+    width: 80%;
+}
+
+.maps-embed {
+    height: 30vh;
+    width: 40vw;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: gray;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #bbb;
+
+}
+
+.maps-embed iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
 }
 
 @media(max-width: 1000px) {

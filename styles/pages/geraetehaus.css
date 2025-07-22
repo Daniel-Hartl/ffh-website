@@ -104,8 +104,10 @@ table {
 
 .timeline-image {
     height: 30vh;
+    max-height: 30vh;
     width: 20vw;
     overflow: hidden;
+    text-align: center;
 }
 
 .timeline-image img {
@@ -115,4 +117,12 @@ table {
 .timeline-text {
     color: black;
     padding: 0.3rem;
+}
+
+@media(max-width: 1000px) {
+    .timeline-container {
+        visibility: collapse;
+        overflow: hidden;
+        height: 0;
+    }
 }

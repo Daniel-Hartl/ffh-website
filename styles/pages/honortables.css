@@ -1,0 +1,16 @@
+td {
+    padding: 0.5rem;
+}
+
+.comment {
+    color: gray;
+    font-size: 0.8rem;
+}
+
+      
+@media (max-width: 1000px) {
+    .location {
+        visibility: collapse;
+        max-width: 0px;
+    }
+}

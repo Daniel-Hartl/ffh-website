@@ -43,6 +43,7 @@ h1 {
 
 h2 {
     margin-top: 2vh;
+    font-size: 1rem;
 }
 
 ol {
@@ -63,4 +64,12 @@ ol li {
     display: flex;
     background-color: #bbb;
     border-radius: 1rem;
+}
+
+
+@media (max-width: 1000px) {
+    header {
+        height: 14rem;
+        margin-bottom: 2rem;
+    }
 }

@@ -7,39 +7,103 @@
     <script src="scripts/generator scripts/loadComponent.js"></script>
     <link rel="stylesheet" href="styles/defaults/table.css" />
     <link rel="stylesheet" href="styles/defaults/aligns.css" />
+    <link rel="stylesheet" href="styles/defaults/margins.css" />
+    <link rel="stylesheet" href="styles/pages/fahrzeug.css" />
+    <link href="styles/defaults/slideshow.css" rel="stylesheet" />
+    <script src="scripts/component logic/slideshow.js"></script>
 </head>
 
 <body>
     <header class="dynamic-content" src="header/header.html"></header>
     <main>
         <h1>TSF (Tragkraftspritzenfahrzeug)</h1>
-        <div>
+        <div class="header-image">
             <div>
-                <img src="images/tsf.jpg" />
             </div>
+        </div>
+        <table>
+            <tr>
+                <td class="column right-aligned-text"><b>Basis:</b></td>
+                <td class="column left-aligned-text">Renault Master 2 mit Pritsche</td>
+            </tr>
+            <tr>
+                <td class="column right-aligned-text"><b>Aufbau:</b></td>
+                <td class="column left-aligned-text"><a href="https://www.furtner-ammer.de/">Furtner & Ammer</a></td>
+            </tr>
+            <tr>
+                <td class="column right-aligned-text"><b>Baujahr:</b><br>&nbsp;</td>
+                <td class="column left-aligned-text">2009 (Im Dienst seit 2010)<br>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="column right-aligned-text"><b>Rufname:</b></td>
+                <td class="column left-aligned-text">Heitzenhofen 44/1</td>
+            </tr>
+            <tr>
+                <td class="column right-aligned-text"><b>Besatzung:</b></td>
+                <td class="column left-aligned-text">6 Mann (Staffel 5:1)</td>
+            </tr>
+        </table>
+
+        <div class="slideshow-container wide-margin-bottom" id="slideshow">
+            <h3 class="description fade">Geräteraum Links</h3>
+            <h3 class="description fade">Geräteraum Heck</h3>
+            <h3 class="description fade">Geräteraum Rechts</h3>
+            <h3 class="description fade">Fahrerkabine</h3>
+            <h3 class="description fade">Mannschaftsraum</h3>
+            <div class=" mySlides fade">
+                <img src="images/car/links.jpg" />
+            </div>
+            <div class="mySlides fade">
+                <img src="images/car/hinten.jpg" />
+            </div>
+
+
+            <div class="mySlides fade">
+                <img src="images/car/rechts.jpg" />
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/car/fahrer.jpg" />
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/car/mannschaftsraum.jpg" />
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <span class="pause-button top running" onclick="togglePause()">
+                <svg width="1.2rem" height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z"
+                        fill="#FFFFFF" />
+                </svg>
+            </span>
+            <div class="dot-div">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+        <div class="wide-margin-bottom">
+            <h2>Beladung</h2>
             <table>
                 <tr>
-                    <td class="column right-aligned-text"><b>Basis:</b></td>
-                    <td class="column left-aligned-text">Renault Master 2 mit Pritsche</td>
+                    <td class="gridcell"><p>Waldbrandsatz</p></td>
+                    <td class="gridcell"><p>Stromerzeuger</p></td>
+                    <td class="gridcell"><p>Tragkraftspritze</p></td>
                 </tr>
                 <tr>
-                    <td class="column right-aligned-text"><b>Aufbau:</b></td>
-                    <td class="column left-aligned-text"><a href="https://www.furtner-ammer.de/">Furtner & Ammer</a></td>
-                </tr>
-                <tr>
-                    <td class="column right-aligned-text"><b>Baujahr:</b><br>&nbsp;</td>
-                    <td class="column left-aligned-text">2009 (Im Dienst seit 2010)<br>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="column right-aligned-text"><b>Rufname:</b></td>
-                    <td class="column left-aligned-text">Heitzenhofen 44/1</td>
-                </tr>
-                <tr>
-                    <td class="column right-aligned-text"><b>Besatzung:</b></td>
-                    <td class="column left-aligned-text">6 Mann (Staffel 5:1)</td>
+                    <td class="gridcell"><p>Löschrucksack</p></td>
+                    <td class="gridcell"><p>Kettensäge</p></td>
+                    <td class="gridcell"><p>Teleskopstativ zur Ausleuchtung</p></td>
                 </tr>
             </table>
         </div>
+
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>
 </body>

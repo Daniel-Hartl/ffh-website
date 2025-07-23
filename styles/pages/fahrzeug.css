@@ -1,0 +1,38 @@
+.header-image {
+    margin: 0 auto;
+    border-radius: 2rem;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+}
+
+.header-image div {
+    border-radius: 2rem;
+    overflow: hidden;
+    max-height: 45vh;
+    height: 30rem;
+    width: 45rem;
+    max-width: 90vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../../images/car/heading.jpg);
+}
+
+.description {
+    margin: 0.5rem;
+}
+
+.gridcell{
+    width: 15rem;
+    max-width: 30vw;
+}
+
+.gridcell p{
+    margin: 1rem;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}

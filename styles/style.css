@@ -28,6 +28,11 @@ main hr {
     border-top: 4px solid #bbb;
     border-radius: 2px;
 }
+
+.hidden {
+    display: none !important;
+}
+
 main a{
     color:#1D1045;
 }

@@ -54,13 +54,14 @@
 
 .return-button {
     font-size: 3rem;
-    height: 100%;
-    width: 5rem;
+    height: inherit;
+    margin-right: 2rem;
     padding: 0 auto;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-top: 0;
     padding-bottom: 0;
+    z-index: 1;
 }
 
 .white-button {

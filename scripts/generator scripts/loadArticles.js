@@ -11,7 +11,7 @@ function generateNewArticleFrame(article) {
         img.src = 'data/images/articles/' + article.Bild
     }
     else {
-        img.src = 'header/heitzenhofen.png'; // Falls kein Bild vorhanden
+        img.src = 'images/noArticleImage.png'; // Falls kein Bild vorhanden
     }
     img.alt = article.Title;
     img.className = 'article-img'
@@ -85,50 +85,26 @@ function compareDate(a, b) {
 }
 
 function loadArticle(article) {
-    list = document.getElementById('list').hidden = true;
 
-    articleDiv = document.getElementById('article-display');
-    articleDiv.innerHTML = '';
+    document.getElementById('articleDate').innerText = article.Datum;
+    document.getElementById('articleHeader').innerText = article.Titel;
 
-    const date = document.createElement('p');
-    date.className = 'right-aligned';
-    date.innerText = article.Datum;
-    articleDiv.appendChild(date);
+    document.getElementById('articleAuthor').innerText = article.Autor;
+    document.getElementById('articleAuthor').hidden = !article.Autor;
 
-    const header = document.createElement('h1');
-    header.innerText = article.Titel;
-    articleDiv.appendChild(header);
+    document.getElementById('articleImg').src = "data/images/articles/" + article.Bild;
+    document.getElementById('articleImg').hidden = !article.Bild;
 
-    if (article.Autor) {
-        const author = document.createElement('p');
-        author.innerText = 'Autor: ' + article.Autor;
-        author.className = 'footnote';
-        articleDiv.appendChild(author);
-    }
+    document.getElementById('articleImgSource').innerText = "Quelle: " + article.Bildquelle;
+    document.getElementById('articleImgSource').hidden = !article.Bildquelle;
 
-    if (article.Bild) {
-        const imgDiv = document.createElement('div');
-        imgDiv.className = 'image-full'
+    document.getElementById('articleContent').innerHTML = article.Inhalt;
 
-        const image = document.createElement('img');
-        image.src = 'data/images/articles/' + article.Bild
-        image.alt = article.Title;
-        imgDiv.appendChild(image);
+    document.getElementById('list').classList.toggle("hidden");
+    document.getElementById('article').classList.toggle("hidden");
+}
 
-        if (article.Bildquelle) {
-            const imgSrc = document.createElement('p');
-            imgSrc.innerText = 'Quelle: ' + article.Bildquelle;
-            imgSrc.className = 'footnote';
-            imgDiv.appendChild(imgSrc);
-        }
-
-        articleDiv.appendChild(imgDiv);
-    }
-
-    const content = document.createElement('div');
-    content.innerHTML = article.Inhalt;
-    content.className = 'content';
-    articleDiv.appendChild(content);
-
-    articleDiv = document.getElementById('article').hidden = false;
+function closeArticle() {
+    document.getElementById('list').classList.toggle("hidden");
+    document.getElementById('article').classList.toggle("hidden");
 }

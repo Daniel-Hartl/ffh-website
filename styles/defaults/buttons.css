@@ -3,17 +3,40 @@
     border-radius: 0.5rem;
     text-align: center;
     vertical-align: middle;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     line-height: 100%;
     display: flex;
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 5rem;
+    padding-right: 5rem;
     width: fit-content;
     background-color: lightgray;
     cursor: pointer;
     justify-content: center;
     align-items: center;
+}
+
+.slim-button {
+    border: 0;
+    border-radius: 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 100%;
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: fit-content;
+    background-color: lightgray;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.slim-button:hover {
+    background-color: #1D1045;
+    color: white;
 }
 
 .primary-button:hover {

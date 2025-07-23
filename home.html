@@ -7,24 +7,82 @@
     <script src="scripts/generator scripts/loadComponent.js"></script>
     <script src="scripts/generator scripts/loadArticles.js"></script>
     <script src="scripts/generator scripts/loadWelcome.js"></script>
+    <script src="scripts/component logic/slideshow.js"></script>
     <link href="styles/pages/articles.css" rel="stylesheet" />
     <link href="styles/pages/home.css" rel="stylesheet" />
     <link href="styles/defaults/buttons.css" rel="stylesheet" />
     <link href="styles/defaults/aligns.css" rel="stylesheet" />
     <link href="styles/defaults/margins.css" rel="stylesheet" />
+    <link href="styles/defaults/slideshow.css" rel="stylesheet" />
 </head>
 
 <body>
     <header class="dynamic-content" src="header/header.html"></header>
     <main>
-        <div class="welcome-box wide-margin-bottom">
-            <div class="img-div">
-                <img class="img" src="images/verein.png"/>
+
+        <div class="slideshow-container wide-margin-bottom" id="slideshow">
+
+            <div class=" mySlides fade">
+                <div class="welcome-box">
+                    <div class="img-div"></div>
+                    <div id="welcome" class="text-div">
+                        <h1>Wilkommen bei der FF Heitzenhofen</h1>
+                    </div>
+                    <div class="center button-div">
+                        <a href="termine.html">
+                            <button class="welcome-button slim-button white-button">
+                                Termine
+                            </button>
+                        </a>
+                        <a href="kontakt.html">
+                            <button class="welcome-button slim-button white-button">
+                                Nachricht schreiben
+                            </button>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div id="welcome" class="text-div">
-                <h1>Herzlich Wilkommen bei der FF Heitzenhofen</h1>
+            <div class="mySlides fade">
+                <img src="images/campaign/campaign1.webp">
+            </div>
+
+
+            <div class="mySlides fade">
+                <img src="images/campaign/campaign2.webp">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/campaign/campaign3.webp">
+            </div>
+
+            <div class="mySlides fade">
+                <video controls onplaying="pauseTimer()">
+                    <source src="https://team112.bayern/wp-content/uploads/2024/09/240903_LFVB_Main_compressed.mp4"
+                        type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <span class="pause-button top running" onclick="togglePause()">
+                <svg width="1.2rem" height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z"
+                        fill="#FFFFFF" />
+                </svg>
+            </span>
+            <div class="dot-div">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
             </div>
         </div>
+
+
+
         <div id="list">
             <h1>Aktuelles</h1>
             <div id="article-list"></div>

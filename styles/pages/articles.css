@@ -53,11 +53,12 @@
 
 .image-full img {
     height: 40vh;
-    aspect-ratio:initial;
+    aspect-ratio: initial;
 }
 
 .content {
     margin-top: 6vh;
+    text-align: left;
 }
 
 @media (max-width: 1000px) {
@@ -73,8 +74,14 @@
         overflow: hidden;
     }
 
-    .image-full img{
-        width: 90vw;
+    .content {
+        margin-top: 3vh;
+    }
+
+    .image-full img {
+        width: calc(90vw - 4rem);
+        height: fit-content;
+        max-height: 35vh;
     }
 
     h1 {

@@ -56,14 +56,17 @@
     font-size: 3rem;
     height: inherit;
     margin-right: 2rem;
-    padding: 0 auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 1rem;
     z-index: 1;
 }
 
 .white-button {
     background-color: white;
+}
+
+@media (max-width: 1000px) {
+    .return-button {
+        margin-right: 1rem;
+        padding: 0.5rem;
+    }
 }

@@ -5,6 +5,12 @@
     font-family: poppins;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
 header {
     height: 30vh;
     margin-bottom: 3vh;

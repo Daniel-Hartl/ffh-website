@@ -34,9 +34,15 @@
 .button-div {
     display: flex;
     flex-direction: row;
-justify-content: center;}
+    justify-content: center;
+}
+
 
 @media (max-width: 1000px) {
+
+    .pc {
+        display: none !important;
+    }
 
     .img-div {
         visibility: collapse;
@@ -48,9 +54,9 @@ justify-content: center;}
         height: 100%;
     }
 
-.text-div h1 {
-    margin-top: 0.5rem;
-}
+    .text-div h1 {
+        margin-top: 0.5rem;
+    }
 
     .button-div {
         flex-direction: column;
@@ -60,5 +66,9 @@ justify-content: center;}
         margin-top: 0.5rem;
         width: 60vw !important;
         padding: 1rem !important;
+    }
+
+    .welcome-box {
+        font-size: 0.5rem;
     }
 }

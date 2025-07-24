@@ -76,4 +76,8 @@ td {
         margin: 1.5% auto;
         height: 50vh;
     }
+
+    .group {
+        margin-bottom: 10vh;
+    }
 }

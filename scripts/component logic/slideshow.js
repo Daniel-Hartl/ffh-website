@@ -18,7 +18,7 @@ function plusSlides(n) {
 }
 
 function currentSlide(n) {
-    console.log("currentSlide called "+n)
+    console.log("currentSlide called " + n)
     pauseTimer();
     showSlides(n);
 }
@@ -27,7 +27,11 @@ function showSlides(n) {
     //   console.log("showSlides called")
     let i;
     let slides = document.getElementsByClassName("mySlides");
+    slides = Array.from(slides).filter((item) => { return !item.className.includes("pc") || window.matchMedia("(width > 1000px)").matches  });
+    
     let dots = document.getElementsByClassName("dot");
+    dots = Array.from(dots).filter((item) => { return !item.className.includes("pc") || window.matchMedia("(width > 1000px)").matches  });
+
     let descriptions = document.getElementsByClassName("description");
     slideIndex = n % slides.length;
     if (slideIndex < 0)
@@ -42,7 +46,7 @@ function showSlides(n) {
     slides[slideIndex].style.display = "block";
     dots[slideIndex].className += " active";
     if (descriptions.length > slideIndex)
-    descriptions[slideIndex].style.display = " block";
+        descriptions[slideIndex].style.display = " block";
     setTimer();
 }
 

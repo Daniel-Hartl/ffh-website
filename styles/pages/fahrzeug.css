@@ -23,16 +23,35 @@
     margin: 0.5rem;
 }
 
-.gridcell{
+.gridcell {
     width: 15rem;
     max-width: 30vw;
 }
 
-.gridcell p{
+.gridcell p {
     margin: 1rem;
     text-align: center;
 }
 
 table {
     margin: 0 auto;
+}
+
+.mobile {
+    display: none;
+}
+
+.pc {
+    display: initial;
+}
+
+@media (max-width: 800px) {
+
+    .mobile {
+        display: initial;
+    }
+
+    .pc {
+        display: none;
+    }
 }

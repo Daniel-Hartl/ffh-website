@@ -36,22 +36,3 @@
 table {
     margin: 0 auto;
 }
-
-.mobile {
-    display: none;
-}
-
-.pc {
-    display: initial;
-}
-
-@media (max-width: 800px) {
-
-    .mobile {
-        display: initial;
-    }
-
-    .pc {
-        display: none;
-    }
-}

@@ -39,11 +39,6 @@
 
 
 @media (max-width: 1000px) {
-
-    .pc {
-        display: none !important;
-    }
-
     .img-div {
         visibility: collapse;
         height: 0;

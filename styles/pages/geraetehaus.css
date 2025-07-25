@@ -153,15 +153,6 @@ table {
     width: 100%;
 }
 
-.mobile {
-    visibility: collapse;
-    height: 0px;
-}
-
-.pc {
-    visibility: visible;
-}
-
 @media(max-width: 1000px) {
     .timeline-container {
         visibility: collapse;
@@ -175,15 +166,6 @@ table {
 
     .maps-content-div {
         height: 20rem;
-    }
-
-    .mobile {
-        visibility: visible;
-    }
-
-    .pc {
-        visibility: collapse ;
-        max-height: 0px;
     }
 
     .maps-embed {

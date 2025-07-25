@@ -17,6 +17,7 @@
     background-size: cover;
     background-position: center center;
     background-image: url(../../images/car/heading.jpg);
+    z-index: 1;
 }
 
 .description {
@@ -35,4 +36,14 @@
 
 table {
     margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+
+    .slideshow-container {
+        width: 95vw !important;
+        height: 65vw !important;
+        max-width: none !important;
+        max-height: none !important;
+    }
 }

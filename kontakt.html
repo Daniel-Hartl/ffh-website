@@ -3,7 +3,7 @@
 
 <head>
     <link type="image/png" rel="icon" href="images/favicon.png">
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <script src="scripts/generator scripts/loadMetadata.js"></script>
     <script src="scripts/generator scripts/loadComponent.js"></script>
     <script src="scripts/formSubmittedRedirect.js"></script>
@@ -18,52 +18,22 @@
     <main>
         <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
             <input type="hidden" name="access_key" value="e4b6314f-58eb-41d8-8806-3576e47333ca">
-            <table>
-                <tr>
-                    <td class="caption-column right-aligned-text">
-                        <p>Name:</p>
-                    </td>
-                    <td class="input-column">
-                        <input name="Name" required type="text" placeholder="Ihr Name"
-                            pattern="[A-Za-z]{2,}(\s[A-Za-z]{2,})+"
-                            oninvalid="this.setCustomValidity('Bitte geben Sie Vor- und Nachname ein!')"
-                            onchange="this.setCustomValidity('')" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="caption-column right-aligned-text">
-                        <p>E-Mail:</p>
-                    </td>
-                    <td class="input-column">
-                        <input name="E-Mail" type="text" required placeholder="Ihre E-Mail-Adresse"
-                            pattern="[A-Za-z0-9\-._]+@[A-Za-z0-9\-._]+\.[a-zA-Z]{2,}"
-                            oninvalid="this.setCustomValidity('Bitte geben Sie Ihre E-Mail-Adresse ein!')"
-                            onchange="this.setCustomValidity('')" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="caption-column right-aligned-text">
-                        <p>Betreff:</p>
-                    </td>
-                    <td class="input-column">
-                        <input name="Betreff" type="text" minlength="5" placeholder="Ihr Anliegen" required />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="textarea-caption caption-column right-aligned-text">
-                        <p>Nachricht:</p>
-                    </td>
-                    <td class="input-column">
-                        <textarea name="Nachricht" rows="10" placeholder="Ihre Nachricht"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="input-column">
-                        <button class="primary-button submit-button" type="submit">Absenden</button>
-                    </td>
-                </tr>
-            </table>
+            <div>
+                <p class="caption">Name:</p>
+                <input name="Name" required type="text" placeholder="Ihr Name" pattern="[A-Za-z]{2,}(\s[A-Za-z]{2,})+"
+                    oninvalid="this.setCustomValidity('Bitte geben Sie Vor- und Nachname ein!')"
+                    onchange="this.setCustomValidity('')" />
+                <p class="caption">E-Mail:</p>
+                <input name="E-Mail" type="text" required placeholder="Ihre E-Mail-Adresse"
+                    pattern="[A-Za-z0-9\-._]+@[A-Za-z0-9\-._]+\.[a-zA-Z]{2,}"
+                    oninvalid="this.setCustomValidity('Bitte geben Sie Ihre E-Mail-Adresse ein!')"
+                    onchange="this.setCustomValidity('')" />
+                <p class="caption">Betreff:</p>
+                <input name="Betreff" type="text" minlength="5" placeholder="Ihr Anliegen" required />
+                <p class="caption">Nachricht:</p>
+                <textarea name="Nachricht" rows="10" placeholder="Ihre Nachricht"></textarea>
+                <button class="submit-button primary-button" type="submit">Absenden</button>
+            </div>
         </form>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>

@@ -1,0 +1,14 @@
+.calender {
+    height: 59vh;
+    width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+@media (max-width: 1000px) {
+    .calender {
+        height: 55vh;
+    }
+}

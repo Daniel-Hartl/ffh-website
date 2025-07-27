@@ -61,6 +61,10 @@
     text-align: left;
 }
 
+#articleHeader, #articleDate{
+    z-index: 1;
+}
+
 @media (max-width: 1000px) {
     .article {
         background-color: lightgray;

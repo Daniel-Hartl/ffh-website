@@ -27,12 +27,13 @@ function readJson(group, topic, members) {
         counter = 0;
         members.forEach(member => {
             if (topic == member.Id) {
+                console.log(member)
                 group.children[1].appendChild(generateNewMemberFrame(member));
                 counter++;
             }
         });
         if (counter === 0) {
-            group.remove()
+            group.className += "hidden";
         }
     }
     catch (err) {

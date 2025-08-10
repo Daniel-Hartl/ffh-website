@@ -53,10 +53,6 @@ function setIcon() {
 }
 
 function setMetadata() {
-    const charset = document.createElement('meta');
-    charset.charset = 'UTF-8';
-    document.head.appendChild(charset);
-
     const viewport = document.createElement('meta');
     viewport.name = 'viewport';
     viewport.content = 'width=device-width, initial-scale=1.0';

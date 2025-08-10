@@ -1,11 +1,12 @@
 * {
-    z-index: 100;
+    z-index: inherit;
 }
 
 .header {
     height: 100%;
     width: 100%;
     font-size: 2rem;
+    z-index: 100 !important;
 }
 
 .menubar {

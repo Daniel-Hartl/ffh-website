@@ -85,6 +85,7 @@ function compareDate(a, b) {
 }
 
 function loadArticle(article) {
+    window.scrollTo(0, 0);
 
     document.getElementById('articleDate').innerText = article.Datum;
     document.getElementById('articleHeader').innerText = article.Titel;

@@ -37,6 +37,32 @@
     justify-content: center;
 }
 
+.advertisement-container{
+    display: flex;
+}
+
+.advertisement {
+    width: 30vw;
+    margin: 1vw;
+    overflow: hidden;
+    border-radius: 1rem;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advertisement :hover{
+    background-color: lightgray;
+}
+
+
+.advertisement img {
+    width: 80%;
+    height: 80%;
+    margin: 10% auto;
+    object-fit: cover;
+}
 
 @media (max-width: 1000px) {
     .img-div {

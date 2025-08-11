@@ -68,6 +68,19 @@ ol li {
     margin-bottom: 0.3vh;
 }
 
+.warning {
+    color: red;
+}
+
+.warning u {
+    text-decoration: underline;
+}
+
+.warning a{
+    color: red;
+    font-weight: bold;
+}
+
 #placeholder {
     margin: auto;
     padding: auto;

@@ -57,6 +57,12 @@ function setMetadata() {
     viewport.name = 'viewport';
     viewport.content = 'width=device-width, initial-scale=1.0';
     document.head.appendChild(viewport);
+
+    const description = document.createElement('meta');
+    description.name = 'description';
+    description.content = 'Die Freiwillige Feuerwehr Heitzenhofen ist eine Feuerwehr der Gemeinde Duggendorf,' +
+            ' mit Einsatzgebiet im östlichen Gemeindegebiet. Ihr Gerätehaus befindet sich im Gemeindeteil Judenberg.';
+    document.head.appendChild(description);
 }
 
 function addStyle() {

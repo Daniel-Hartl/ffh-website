@@ -92,4 +92,12 @@
     .welcome-box {
         font-size: 0.5rem;
     }
+
+    .advertisement {
+    width: 80vw;
+}
+
+.advertisement-container{
+    display: inline-block;
+}
 }

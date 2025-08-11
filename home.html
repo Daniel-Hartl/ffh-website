@@ -86,7 +86,7 @@
 
 
 
-            <section>
+            <section id="articles">
                 <h1>Aktuelles</h1>
                 <div id="article-list"></div>
             </section>
@@ -122,7 +122,7 @@
             </section>
         </div>
         <div id="article" class="hidden wide-margin-bottom">
-            <a href="home.html" class="primary-button left return-button">
+            <button class="primary-button left return-button" onclick="closeArticle()">
                 <svg width="2rem" height="2rem" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g id="icomoon-ignore"></g>
@@ -131,7 +131,7 @@
                         fill="#FFFFFF">
                     </path>
                 </svg>
-            </a>
+            </button>
             <div>
                 <p class="right-aligned" id="articleDate"></p>
                 <h1 id="articleHeader"></h1>

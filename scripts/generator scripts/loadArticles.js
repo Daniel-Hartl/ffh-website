@@ -108,4 +108,5 @@ function loadArticle(article) {
 function closeArticle() {
     document.getElementById('list').classList.toggle("hidden");
     document.getElementById('article').classList.toggle("hidden");
+    document.location.href = "#articles";
 }

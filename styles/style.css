@@ -93,7 +93,10 @@ ol li {
     border-radius: 1rem;
 }
 
-
+section {
+    padding-top: 5rem;
+    margin-top: -5rem;
+}
 
 @media (max-width: 1000px) {
     header {

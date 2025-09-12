@@ -1,6 +1,7 @@
 ﻿namespace FFH_Website_Manager.Views;
 
 using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.Model;
 using FFH_Website_Manager.Classes.Model.Gallery;
 using System.Collections.ObjectModel;
 using System.Text.Json;
@@ -10,7 +11,25 @@ internal class GalleryViewModel : ViewModelBase
 {
     private ObservableCollection<GalleryArea> galleryAreas;
 
-    public GalleryViewModel() : base()
+    public GalleryViewModel() : base() => this.LoadData(null);
+
+    public ObservableCollection<GalleryArea> GalleryAreas
+    {
+        get => galleryAreas;
+        set
+        {
+            if (value != galleryAreas)
+            {
+                galleryAreas = value;
+                this.OnPropChanged();
+            }
+        }
+    }
+
+    public RelayCommand EditEventCommand => new(EditEvent);
+    public RelayCommand AddEventCommand => new(AddEvent);
+
+    protected override void LoadData(object obj)
     {
         try
         {
@@ -26,16 +45,11 @@ internal class GalleryViewModel : ViewModelBase
         }
     }
 
-    public ObservableCollection<GalleryArea> GalleryAreas
+    private void EditEvent(object obj)
     {
-        get => galleryAreas;
-        set
-        {
-            if (value != galleryAreas)
-            {
-                galleryAreas = value;
-                this.OnPropChanged();
-            }
-        }
+    }
+
+    private void AddEvent(object obj)
+    {
     }
 }

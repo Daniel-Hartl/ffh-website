@@ -3,12 +3,18 @@
 using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 
-internal class GalleryTopic : GalleryBase
+public class GalleryTopic : GalleryBase
 {
     [JsonIgnore]
     private DateTime dateInternal;
     [JsonIgnore]
     private ObservableCollection<string> inhalt;
+
+    [JsonIgnore]
+    private ObservableCollection<string> localCache;
+
+    [JsonIgnore]
+    private ObservableCollection<string> deletedRemote;
 
     [JsonIgnore]
     public DateTime DateInternal
@@ -33,6 +39,28 @@ internal class GalleryTopic : GalleryBase
         set
         {
             inhalt = value;
+            this.OnPropChanged();
+        }
+    }
+
+    [JsonIgnore]
+    public ObservableCollection<string> LocalCache
+    {
+        get => localCache;
+        set
+        {
+            localCache = value;
+            this.OnPropChanged();
+        }
+    }
+
+    [JsonIgnore]
+    public ObservableCollection<string> DeletedRemote
+    {
+        get => deletedRemote;
+        set
+        {
+            deletedRemote = value;
             this.OnPropChanged();
         }
     }

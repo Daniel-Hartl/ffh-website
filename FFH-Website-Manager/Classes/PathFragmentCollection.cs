@@ -7,5 +7,6 @@ internal static class PathFragmentCollection
     internal const string PersonImageDirectory = "test";
     internal const string Board = "test/board.json";
     internal const string Gallery = "test/gallery.json";
+    internal const string GalleryImageBaseDirectory = "test";
     internal const string Statistics = "test/statistics.json";
 }

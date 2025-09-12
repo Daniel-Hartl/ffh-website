@@ -2,7 +2,7 @@
 
 using System.Text.Json.Serialization;
 
-internal abstract class GalleryBase : ObservableObject
+public abstract class GalleryBase : ObservableObject
 {
     [JsonIgnore]
     private string ordner;

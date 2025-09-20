@@ -6,6 +6,7 @@
     <meta charset="UTF-8"/>
     <script src="scripts/generator scripts/loadMetadata.js"></script>
     <script src="scripts/generator scripts/loadComponent.js"></script>
+    <script src="scripts/generator scripts/loadAppointments.js"></script>
     <script src="scripts/component logic/calendarEmbed.js"></script>
     <script src="scripts/googleConsent.js"></script>
     <link href="styles/defaults/buttons.css" rel="stylesheet">
@@ -16,7 +17,7 @@
 <body>
     <header class="dynamic-content" src="header/header.html"></header>
     <main>
-        <h1>Terminkalender</h1>
+        <h1>Kalender</h1>
         <div class="calender">
             <div id="placeholder" class="calendar">
                     <div>
@@ -25,6 +26,10 @@
                     </div>
                 </div>
         </div>
+        <h1>Termine</h1>
+        <table id="appointments">
+
+        </table>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>
 </body>

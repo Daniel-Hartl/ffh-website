@@ -5,3 +5,14 @@ function loadStreetView() {
     maps.width = "100%";
     document.getElementById("placeholder").replaceWith(maps);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    root = document.getElementById('appointments');
+    if (root) {
+        getAppointments().foreach(app => root.appendChild(generateAppointment(app)));
+    }
+});
+
+function generateAppointment(app) {
+    
+}

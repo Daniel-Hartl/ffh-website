@@ -16,59 +16,5 @@
         "Funktion": ["Stellv. Kommandant", "1. Gerätewart", "1. Jugendbeauftragter"],
         "Name": "Gabriel Böhm",
         "Bild": ""
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Hauptlöschmeister"],
-        "Name": "Peter Pilz",
-        "Bild": "",
-        "Kommentar": "nicht mehr im aktiven Dienst"
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Oberlöschmeister"],
-        "Name": "Dirk Tamme",
-        "Bild": "",
-        "Kommentar": "nicht mehr im aktiven Dienst"
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Löschmeister"],
-        "Name": "Christian Dechant",
-        "Bild": ""
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Löschmeister"],
-        "Name": "Paul Ehrl",
-        "Bild": "",
-        "Kommentar": "nicht mehr im aktiven Dienst"
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Löschmeister"],
-        "Name": "Josef Graf",
-        "Bild": ""
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Löschmeister"],
-        "Name": "Bernhard Hierl",
-        "Bild": "",
-        "Kommentar": "nicht mehr im aktiven Dienst"
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Löschmeister"],
-        "Name": "Karl Kiener",
-        "Bild": "",
-        "Kommentar": "nicht mehr im aktiven Dienst"
-    },
-    {
-        "Id": "löschmeister",
-        "Funktion": ["Löschmeister"],
-        "Name": "Josef Rödl",
-        "Bild": "",
-        "Kommentar": "nicht mehr im aktiven Dienst"
     }
 ]

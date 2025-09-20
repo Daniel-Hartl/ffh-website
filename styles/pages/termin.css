@@ -12,11 +12,11 @@ iframe {
 }
 
 .header td{
-    background-color: #1D1045;
-    font-weight: bold;
-    color: white;
-    padding: 0 1rem;
-    font-size: 1.5rem;
+    background-color: #1D1045 !important;
+    font-weight: bold !important;
+    color: white !important;
+    padding: 0 1rem !important;
+    font-size: 1.5rem !important;
 }
 
 .date {
@@ -42,5 +42,23 @@ iframe {
 @media (max-width: 1000px) {
     .calender {
         height: 55vh;
+    }
+
+    #appointments {
+        font-size: 1rem;
+    }
+
+    .header td{
+        font-size: 1rem;
+    }
+
+    .location {
+        visibility: collapse;
+        display: none;
+    }
+
+    .target {
+        visibility: collapse;
+        display: none;
     }
 }

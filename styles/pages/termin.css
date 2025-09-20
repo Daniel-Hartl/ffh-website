@@ -7,6 +7,38 @@ iframe {
     border: 0;
 }
 
+#appointments {
+    font-size: 1.5rem;
+}
+
+.header td{
+    background-color: #1D1045;
+    font-weight: bold;
+    color: white;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+}
+
+.date {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.description {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+.location {
+    padding: 0.5rem 1rem;
+    color: gray;
+}
+
+.target {
+    padding: 0.5rem 1rem;
+    color: gray;
+}
+
 @media (max-width: 1000px) {
     .calender {
         height: 55vh;

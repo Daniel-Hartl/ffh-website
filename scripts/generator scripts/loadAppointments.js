@@ -1,6 +1,6 @@
 function getAppointments() {
     try {
-        fetch('data/appointments.json')
+        return fetch('data/appointments.json')
             .then(response => response.json())
             .then(articles => articles.sort(compareDate))
     }
@@ -10,20 +10,27 @@ function getAppointments() {
 }
 
 function compareDate(a, b) {
-    aArr = String(a.Zeit).split("-")[0].split(",");
-    bArr = String(b.Zeit).split("-")[0].split(",");
-    if (Number(a[2]) < Number(b[2]))
-        return 1;
-    else if (Number(a[2]) > Number(b[2]))
+    aArr = String(a.Zeit).split("-")[0].split(".");
+    bArr = String(b.Zeit).split("-")[0].split(".");
+    if (Number(aArr[2]) < Number(bArr[2])) {
         return -1;
-    else if (Number(a[1]) < Number(b[1]))
+    }
+    else if (Number(aArr[2]) > Number(bArr[2])) {
         return 1;
-    else if (Number(a[1]) > Number(b[1]))
+    }
+    else if (Number(aArr[1]) < Number(bArr[1])) {
         return -1;
-    else if (Number(a[0]) < Number(b[0]))
+    }
+    else if (Number(aArr[1]) > Number(bArr[1])) {
         return 1;
-    else if (Number(a[0]) > Number(b[0]))
+    }
+    else if (Number(aArr[0]) < Number(bArr[0])) {
         return -1;
-    else
+    }
+    else if (Number(aArr[0]) > Number(bArr[0])) {
+        return 1;
+    }
+    else {
         return 0;
+    }
 }

@@ -3,7 +3,7 @@
 
 <head>
     <link type="image/png" rel="icon" href="images/favicon.png">
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <script src="scripts/generator scripts/loadMetadata.js"></script>
     <script src="scripts/generator scripts/loadComponent.js"></script>
     <script src="scripts/generator scripts/loadAppointments.js"></script>
@@ -14,21 +14,30 @@
     <link href="styles/defaults/margins.css" rel="stylesheet">
     <link href="styles/pages/termin.css" rel="stylesheet">
 </head>
+
 <body>
     <header class="dynamic-content" src="header/header.html"></header>
     <main>
         <h1>Kalender</h1>
-        <div class="calender">
+        <div class="calender thin-margin-bottom">
             <div id="placeholder" class="calendar">
-                    <div>
-                        <p>Zum Anzeigen des Google Kalenders müssen zuerst die <a href="https://policies.google.com/technologies/cookies?hl=en&utm_source=ucb">Google-Cookies</a> akzeptiert werden.</p>
-                        <button onclick="acceptCookies('streetView')" class="primary-button center thin-margin-top">Google-Cookies akzeptieren</button>
-                    </div>
+                <div>
+                    <p>Zum Anzeigen des Google Kalenders müssen zuerst die <a
+                            href="https://policies.google.com/technologies/cookies?hl=en&utm_source=ucb">Google-Cookies</a>
+                        akzeptiert werden.</p>
+                    <button onclick="acceptCookies('streetView')"
+                        class="primary-button center thin-margin-top">Google-Cookies akzeptieren</button>
                 </div>
+            </div>
         </div>
         <h1>Termine</h1>
-        <table id="appointments">
-
+        <table id="appointments" class="wide-margin-bottom center">
+            <tr class="header">
+                <td>Zeit</td>
+                <td>Treffpunkt</td>
+                <td>Beschreibung</td>
+                <td>Zielgruppe</td>
+            </tr>
         </table>
     </main>
     <footer class="dynamic-content" src="footer/footer.html"></footer>

@@ -1,5 +1,31 @@
-marquee {
+#marquee {
     margin-top: -3vh;
     margin-bottom: 3vh;
     height: 2.5rem;
+    margin-left: -3vw;
+    margin-right: -3vw;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+#marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    padding-right: 100%;
+    /* Startpunkt ganz links */
+    animation: marquee 35s linear infinite;
+    color: white;
+    background-color: #1D1045;
+    line-height: 2.5rem;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(calc(-100% + 100vw));
+    }
 }

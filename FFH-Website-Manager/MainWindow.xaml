@@ -24,5 +24,8 @@
         <TabItem Header="Führungsdienstgrade">
             <views:Crew/>
         </TabItem>
+        <TabItem Header="Termine">
+            <views:Appointments/>
+        </TabItem>
     </TabControl>
 </Window>

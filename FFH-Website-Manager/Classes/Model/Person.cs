@@ -1,5 +1,6 @@
 ﻿namespace FFH_Website_Manager.Classes.Model;
 
+using FFH_Website_Manager.Classes.DataProvider;
 using Org.BouncyCastle.Tls.Crypto;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -100,7 +101,7 @@ internal class Person : ObservableObject
                 try
                 {
                     using MemoryStream ms = new();
-                    App.SFTPProvider.DownloadFile(SFTPProvider.BuildPath(
+                    App.DataProvider.DownloadFile(App.DataProvider.BuildPath(
                         Appsettings.Instance.RootDirectory,
                         PathFragmentCollection.PersonImageDirectory,
                         this.Bild), ms);

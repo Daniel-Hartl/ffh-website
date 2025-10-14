@@ -1,6 +1,7 @@
 ﻿namespace FFH_Website_Manager.Popups;
 
 using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model;
 using FFH_Website_Manager.Classes.Model.Gallery;
 using FFH_Website_Manager.Views;
@@ -75,7 +76,7 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
         foreach (var img in this.Topic.Inhalt)
         {
             using MemoryStream ms = new();
-            App.SFTPProvider.DownloadFile(GetSftpUrl(img), ms);
+            App.DataProvider.DownloadFile(GetSftpUrl(img), ms);
             ms.Position = 0;
             var Bmp = BitmapFrame.Create(ms, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad);
             Bmp.Freeze();
@@ -84,7 +85,7 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
     }
 
     private string GetSftpUrl(string fileName)
-        => SFTPProvider.BuildPath(Appsettings.Instance.RootDirectory,
+        => App.DataProvider.BuildPath(Appsettings.Instance.RootDirectory,
             PathFragmentCollection.GalleryImageBaseDirectory,
             this.Area,
             this.Topic.Ordner,

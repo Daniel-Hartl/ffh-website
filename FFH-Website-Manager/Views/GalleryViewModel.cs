@@ -1,6 +1,7 @@
 ﻿namespace FFH_Website_Manager.Views;
 
 using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model;
 using FFH_Website_Manager.Classes.Model.Gallery;
 using System.Collections.ObjectModel;
@@ -35,7 +36,7 @@ internal class GalleryViewModel : ViewModelBase
         {
             if (this.sftp is not null)
             {
-                string galleryStr = sftp.DownloadStringContent("test/gallery.json");
+                string galleryStr = sftp.DownloadStringContent(PathFragmentCollection.Gallery);
                 GalleryAreas = JsonSerializer.Deserialize<ObservableCollection<GalleryArea>>(galleryStr);
             }
         }

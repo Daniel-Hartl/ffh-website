@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Windows.Media.Imaging;
 using System.Windows;
 using System.IO;
+using FFH_Website_Manager.Classes.DataProvider;
 
 internal abstract class PersonsViewModelBase : ViewModelBase
 {
@@ -58,7 +59,7 @@ internal abstract class PersonsViewModelBase : ViewModelBase
                 {
                     try
                     {
-                        this.sftp.DeleteFile(SFTPProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.PersonImageDirectory, x.Bild));
+                        this.sftp.DeleteFile(App.DataProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.PersonImageDirectory, x.Bild));
                     }
                     catch (Exception ex)
                     {
@@ -72,12 +73,12 @@ internal abstract class PersonsViewModelBase : ViewModelBase
                     x.Bild = x.Name + Path.GetExtension(x.UploadImagePath);
                     this.sftp.UploadFileFromPath(
                         x.UploadImagePath,
-                        SFTPProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.PersonImageDirectory, x.Bild));
+                        App.DataProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.PersonImageDirectory, x.Bild));
                 }
             }
         });
 
-        this.sftp.UploadStringContent(this.JsonPath, JsonSerializer.Serialize(this.BoardMembers.ToArray()));
+        this.sftp.UploadStringContent(this.JsonPath, JsonSerializer.Serialize(this.BoardMembers.ToArray(), App.SerializerConfig));
         this.StateHasChanged = false;
     }
 

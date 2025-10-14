@@ -1,6 +1,7 @@
 ﻿namespace FFH_Website_Manager.Views;
 
 using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model;
 using System.Text.Json;
 using System.Windows;
@@ -34,7 +35,7 @@ internal class StatisticsViewModel : ViewModelBase
         {
             if (this.sftp is not null)
             {
-                string statisticStr = sftp.DownloadStringContent("test/statistics.json");
+                string statisticStr = sftp.DownloadStringContent(PathFragmentCollection.Statistics);
                 Statistic = JsonSerializer.Deserialize<Statistic>(statisticStr);
             }
         }
@@ -46,7 +47,7 @@ internal class StatisticsViewModel : ViewModelBase
 
     protected override void Save(object obj)
     {
-        this.sftp.UploadStringContent(PathFragmentCollection.Statistics, JsonSerializer.Serialize(this.Statistic));
+        this.sftp.UploadStringContent(PathFragmentCollection.Statistics, JsonSerializer.Serialize(this.Statistic, App.SerializerConfig));
         this.StateHasChanged = false;
     }
 }

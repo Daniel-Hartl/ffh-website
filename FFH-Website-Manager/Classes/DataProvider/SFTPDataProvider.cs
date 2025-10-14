@@ -1,13 +1,13 @@
-﻿namespace FFH_Website_Manager.Classes;
+﻿namespace FFH_Website_Manager.Classes.DataProvider;
 
 using Renci.SshNet;
 using System.IO;
 using System.Text;
 using System.Windows;
 
-internal class SFTPProvider : SftpClient
+internal class SFTPDataProvider : SftpClient, IDataProvider
 {
-    public SFTPProvider()
+    public SFTPDataProvider()
         : base(Appsettings.Instance.Host, 22, Appsettings.Instance.User, Appsettings.Instance.Password)
     {
 
@@ -53,7 +53,7 @@ internal class SFTPProvider : SftpClient
 
     public void UploadStringContent(string remotePath, string content)
     {
-        remotePath = Appsettings.Instance.RootDirectory + "/" + remotePath;
+        remotePath = BuildPath(Appsettings.Instance.RootDirectory, remotePath);
 
         using MemoryStream ms = new(Encoding.UTF8.GetBytes(content));
         ms.Position = 0;
@@ -69,5 +69,5 @@ internal class SFTPProvider : SftpClient
         }
     }
 
-    public static string BuildPath(params string[] paths) => string.Join("/", paths);
+    public string BuildPath(params string[] paths) => string.Join("/", paths);
 }

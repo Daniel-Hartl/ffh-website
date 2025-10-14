@@ -1,4 +1,8 @@
 ﻿using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.DataProvider;
+using System.Text.Encodings.Web;
+using System.Text.Json;
+using System.Text.Unicode;
 using System.Windows;
 
 namespace FFH_Website_Manager
@@ -10,18 +14,32 @@ namespace FFH_Website_Manager
     {
         public App()
         {
-            SFTPProvider = new();
-            SFTPProvider.Connect();
-            this.Exit += this.OnExit;
+            SerializerConfig = new()
+            {
+                Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                WriteIndented = true
+            };
+
+            if (Appsettings.Instance.LocalMode)
+            {
+                DataProvider = new LocalDataProvider();
+            }
+            else
+            {
+                var provider = new SFTPDataProvider();
+                provider.Connect();
+                DataProvider = provider;
+                this.Exit += this.OnExit;
+            }
         }
 
-        internal static SFTPProvider SFTPProvider { get; set; }
-
+        internal static IDataProvider DataProvider { get; set; }
+        internal static JsonSerializerOptions SerializerConfig { get; set; }
         private void OnExit(object sender, ExitEventArgs e)
         {
             this.Exit -= this.OnExit;
-            if (SFTPProvider.IsConnected)
-                SFTPProvider?.Disconnect();
+            if (DataProvider is SFTPDataProvider dp && dp.IsConnected)
+                dp?.Disconnect();
         }
     }
 

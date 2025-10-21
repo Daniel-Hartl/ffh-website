@@ -38,7 +38,15 @@ internal class LocalDataProvider : IDataProvider
         File.WriteAllText(remotePath, content, Encoding.UTF8);
     }
 
-    public string BuildPath(params string[] paths) => Path.Combine(paths).Replace('/', '\\');
+    public string BuildPath(params string[] paths) => Path.Combine([.. paths.AsEnumerable().Where(x => !string.IsNullOrEmpty(x))]).Replace('/', '\\');
 
-    public void DeleteFile(string path) { }
+    public void DeleteFile(string path) { /* not needed in local version */ }
+
+    public void RenameFile(string oldPath, string newPath)
+    {
+        if (File.Exists(oldPath))
+            File.Move(oldPath, newPath);
+        else if (Directory.Exists(oldPath))
+            Directory.Move(oldPath, newPath);
+    }
 }

@@ -4,6 +4,7 @@ using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model;
 using FFH_Website_Manager.Classes.Model.Gallery;
+using FFH_Website_Manager.Popups;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using System.Windows;
@@ -38,6 +39,13 @@ internal class GalleryViewModel : ViewModelBase
             {
                 string galleryStr = sftp.DownloadStringContent(PathFragmentCollection.Gallery);
                 GalleryAreas = JsonSerializer.Deserialize<ObservableCollection<GalleryArea>>(galleryStr);
+                foreach (var area in GalleryAreas)
+                {
+                    area.Inhalt = [.. area.Inhalt.OrderByDescending(x => x.DateInternal)];
+
+                    foreach (var folder in area.Inhalt)
+                        folder.Parent = area;
+                }
             }
         }
         catch (Exception ex)
@@ -48,6 +56,16 @@ internal class GalleryViewModel : ViewModelBase
 
     private void EditEvent(object obj)
     {
+        if (obj is GalleryTopic tp)
+        {
+            var dlg = new EditGalleryEvent(tp, tp.Parent.Ordner);
+            dlg.ShowDialog();
+            if (dlg.Save)
+            {
+
+                App.DataProvider.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
+            }
+        }
     }
 
     private void AddEvent(object obj)

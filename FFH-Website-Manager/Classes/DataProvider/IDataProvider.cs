@@ -13,5 +13,7 @@ internal interface IDataProvider
 
     public void DeleteFile(string path);
 
+    public void RenameFile(string oldPath, string newPath);
+
     public string BuildPath(params string[] paths);
 }

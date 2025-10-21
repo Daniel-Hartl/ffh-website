@@ -43,7 +43,7 @@ internal class AppointmentViewModel : ViewModelBase
             {
                 string appsStr = sftp.DownloadStringContent(PathFragmentCollection.Appointments);
                 appointments = [..JsonSerializer.Deserialize<ObservableCollection<Appointment>>(appsStr).OrderBy(x => x.DateInternal)];
-                if (appointments.Any(x => x.DateInternal > DateTime.Now) &&
+                if (appointments.Any(x => x.DateInternal < DateTime.Now) &&
                     MessageBox.Show("In der Liste sind vergangene Termine. Sollen diese automatisch gelöscht werden?", "Vergangene Termine!", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     appointments = [.. appointments.Where(x => x.DateInternal > DateTime.Now)];

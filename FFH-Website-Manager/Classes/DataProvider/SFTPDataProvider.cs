@@ -38,7 +38,7 @@ internal class SFTPDataProvider : SftpClient, IDataProvider
     public void UploadFileFromPath(string path, string remotePath)
     {
         using FileStream fs = new(path, FileMode.Open, FileAccess.Read);
-        
+
         try
         {
             this.UploadFile(fs, remotePath);

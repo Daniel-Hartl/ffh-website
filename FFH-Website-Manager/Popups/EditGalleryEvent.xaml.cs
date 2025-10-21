@@ -3,11 +3,8 @@
 using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model.Gallery;
-using FFH_Website_Manager.Views;
 using System.ComponentModel;
 using System.IO;
-using System.Runtime.CompilerServices;
-using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -17,10 +14,14 @@ using System.Windows.Media.Imaging;
 /// </summary>
 public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposable
 {
+    private string oldDirectory;
+
     public EditGalleryEvent(GalleryTopic topic, string area)
     {
         this.DataContext = topic;
         this.Topic = topic;
+        this.oldDirectory = topic.Ordner;
+        this.Area = area;
         InitializeComponent();
         LoadBmps();
     }
@@ -29,9 +30,7 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
 
     internal GalleryTopic Topic { get; set; }
     internal string Area { get; set; }
-
-
-    private void OnPropChanged([CallerMemberName] string? src = null) => this.PropertyChanged?.Invoke(this, new(src));
+    internal bool Save { get; set; }
 
     public void Dispose()
     {
@@ -48,15 +47,15 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
             ms.Position = 0;
             var bmp = BitmapFrame.Create(ms, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad);
             bmp.Freeze();
-            this.Topic.Content.Add(new(bmp, string.Empty));
+            this.Topic.Content.Add(new(bmp, img));
         }
     }
 
-    private string GetSftpUrl(string fileName)
+    private string GetSftpUrl(string fileName, bool useNewName = true)
         => App.DataProvider.BuildPath(Appsettings.Instance.RootDirectory,
             PathFragmentCollection.GalleryImageBaseDirectory,
             this.Area,
-            this.Topic.Ordner,
+            useNewName ? this.Topic.Ordner : this.oldDirectory,
             fileName);
 
     private void DeleteImage(object sender, RoutedEventArgs e)
@@ -93,6 +92,9 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
 
     private void SaveTopic(object sender, RoutedEventArgs e)
     {
+        if (this.oldDirectory != this.Topic.Ordner)
+            App.DataProvider.RenameFile(GetSftpUrl(string.Empty, false), GetSftpUrl(string.Empty));
+
         foreach (var img in this.Topic.Content)
         {
             if (!img.IsAlreadyUploaded)
@@ -102,14 +104,15 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
             }
         }
 
-        foreach (var img in this.Topic.DeletedRemote)
+        foreach (var img in this.Topic.DeletedRemote.Select(x => x.FileName))
         {
-            App.DataProvider.DeleteFile(GetSftpUrl(img.FileName));
-            this.Topic.Inhalt.Remove(img.FileName);
+            App.DataProvider.DeleteFile(GetSftpUrl(img));
+            this.Topic.Inhalt.Remove(img);
 
         }
 
-        App.DataProvider.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(Topic..ToArray(), App.SerializerConfig));
+        this.Save = true;
+        this.Close();
     }
 
     private void Cancel(object sender, RoutedEventArgs e)

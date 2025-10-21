@@ -12,10 +12,10 @@ public class GalleryTopic : GalleryBase
     private ObservableCollection<string> inhalt;
 
     [JsonIgnore]
-    private ObservableCollection<GalleryImage> content;
+    private ObservableCollection<GalleryImage> content = [];
 
     [JsonIgnore]
-    private ObservableCollection<GalleryImage> deletedRemote;
+    private ObservableCollection<GalleryImage> deletedRemote = [];
 
     [JsonIgnore]
     public DateTime DateInternal
@@ -65,4 +65,7 @@ public class GalleryTopic : GalleryBase
             this.OnPropChanged();
         }
     }
+
+    [JsonIgnore]
+    internal GalleryArea Parent { get; set; }
 }

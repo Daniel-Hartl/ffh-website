@@ -3,9 +3,11 @@
 using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model.Gallery;
+using FFH_Website_Manager.Views;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -100,8 +102,14 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
             }
         }
 
-        foreach(var img in this.Topic.DeletedRemote)
+        foreach (var img in this.Topic.DeletedRemote)
+        {
             App.DataProvider.DeleteFile(GetSftpUrl(img.FileName));
+            this.Topic.Inhalt.Remove(img.FileName);
+
+        }
+
+        App.DataProvider.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(Topic..ToArray(), App.SerializerConfig));
     }
 
     private void Cancel(object sender, RoutedEventArgs e)

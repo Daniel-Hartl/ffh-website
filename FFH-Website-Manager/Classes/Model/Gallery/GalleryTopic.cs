@@ -7,14 +7,15 @@ public class GalleryTopic : GalleryBase
 {
     [JsonIgnore]
     private DateTime dateInternal;
+
     [JsonIgnore]
     private ObservableCollection<string> inhalt;
 
     [JsonIgnore]
-    private ObservableCollection<string> localCache;
+    private ObservableCollection<GalleryImage> content;
 
     [JsonIgnore]
-    private ObservableCollection<string> deletedRemote;
+    private ObservableCollection<GalleryImage> deletedRemote;
 
     [JsonIgnore]
     public DateTime DateInternal
@@ -44,18 +45,18 @@ public class GalleryTopic : GalleryBase
     }
 
     [JsonIgnore]
-    public ObservableCollection<string> LocalCache
+    public ObservableCollection<GalleryImage> Content
     {
-        get => localCache;
+        get => content;
         set
         {
-            localCache = value;
+            content = value;
             this.OnPropChanged();
         }
     }
 
     [JsonIgnore]
-    public ObservableCollection<string> DeletedRemote
+    public ObservableCollection<GalleryImage> DeletedRemote
     {
         get => deletedRemote;
         set

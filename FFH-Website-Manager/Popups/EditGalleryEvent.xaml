@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="EditGalleryEvent" Height="450" Width="800"
          d:DataContext="{d:DesignInstance Type=model:GalleryTopic}">
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
@@ -19,12 +19,13 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Label Content="Überschrift:"/>
         <TextBox Grid.Column="1" Text="{Binding Ordner}"/>
-        
+
         <Label Content="Datum:" Grid.Row="1"/>
         <DatePicker Grid.Row="1" Grid.Column="1" Margin="5,5"
             Language="de-de"
@@ -32,8 +33,8 @@
 
         <Label Content="Bilder" FontWeight="Bold" Grid.ColumnSpan="2"
                HorizontalAlignment="Center" Grid.Row="2"/>
-        <Label Content="Bereits hochgeladen:" Grid.Row="3"/>
-        <ItemsControl ItemsSource="{Binding Ordner}" Grid.Row="3" Grid.Column="1">
+        <Label Content="Aktuelle Bilder:" Grid.Row="3"/>
+        <ItemsControl ItemsSource="{Binding Content}" Grid.Row="3" Grid.Column="1">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -41,19 +42,63 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="60px"/>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        
-                    </Grid>
+                    <Border>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60px"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Bmp}"/>
+                            <Label Content="{Binding Converter={StaticResource uploadStateConverter}}"
+                                   Grid.Row="1" Grid.ColumnSpan="2"/>
+                            <Button Content="🗑️" Click="DeleteImage" Grid.Column="1"
+                                    ToolTip="Bild löschen"/>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Label Content="Gelöscht:" Grid.Row="4"
+               ToolTip="Bilder, die bisher zu diesem Thema hinterlegt waren, mit Speichern des Vorgangs aber gelöscht werden."/>
+        <ItemsControl ItemsSource="{Binding DeletedRemote}" Grid.Row="4" Grid.Column="1">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60px"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Bmp}"/>
+                            <Label Content="{Binding Converter={StaticResource uploadStateConverter}}"
+                                   Grid.Row="1" Grid.ColumnSpan="2"/>
+                            <Button Content="↥" Click="ReuseImage"  Grid.Column="1"
+                                    ToolTip="Bild wiederherstellen"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Button Content="Bild(er) hinzufügen" Grid.Row="5" Grid.ColumnSpan="2" Click="AddImage"/>
+
+        <DockPanel Grid.Row="7" Grid.ColumnSpan="2"
+                   HorizontalAlignment="Right" Margin="5">
+            <Button Content="Speichern" Click="SaveTopic"/>
+            <Button Content="Zurücksetzen" Click="Reset" Margin="5,0"/>
+            <Button Content="Abbrechen" Click="Cancel"/>
+        </DockPanel>
     </Grid>
 </Window>

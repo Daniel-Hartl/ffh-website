@@ -101,7 +101,7 @@
                                 <Image Source="{Binding Bmp}" HorizontalAlignment="Center"/>
                                 <Label Content="{Binding Converter={StaticResource uploadStateConverter}}"
                            Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
-                                <Button Content="↻" FontSize="20" FontWeight="Bold" Click="ReuseImage"  Grid.Column="1"
+                                <Button Content="↻" FontSize="25" FontWeight="Bold" Click="ReuseImage"  Grid.Column="1"
                             ToolTip="Bild wiederherstellen"/>
                             </Grid>
                         </Border>

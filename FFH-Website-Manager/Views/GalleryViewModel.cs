@@ -2,7 +2,6 @@
 
 using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.DataProvider;
-using FFH_Website_Manager.Classes.Model;
 using FFH_Website_Manager.Classes.Model.Gallery;
 using FFH_Website_Manager.Popups;
 using System.Collections.ObjectModel;
@@ -30,6 +29,9 @@ internal class GalleryViewModel : ViewModelBase
 
     public RelayCommand EditEventCommand => new(EditEvent);
     public RelayCommand AddEventCommand => new(AddEvent);
+    public RelayCommand DeleteEventCommand => new(DeleteEvent);
+
+    public bool IsActiveSelected { get; set; }
 
     protected override void LoadData(object obj)
     {
@@ -63,14 +65,14 @@ internal class GalleryViewModel : ViewModelBase
             if (dlg.Save)
             {
 
-                App.DataProvider.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
+                this.sftp.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
             }
         }
     }
 
     private void AddEvent(object obj)
     {
-        using GalleryAreaSelector gas = new(true);
+        using GalleryAreaSelector gas = new(IsActiveSelected);
         gas.ShowDialog();
         if (!gas.Succeed)
             return;
@@ -84,8 +86,31 @@ internal class GalleryViewModel : ViewModelBase
         dlg.ShowDialog();
         if (dlg.Save)
         {
+            this.sftp.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
+        }
+    }
 
-            App.DataProvider.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
+    private void DeleteEvent(object obj)
+    {
+        if (obj is GalleryTopic tp)
+        {
+            if (MessageBox.Show($"Wollen Sie das Event {tp.Ordner} und die dazu hinterlegten Bilder wirklich endgültig löschen?",
+                string.Empty,
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                foreach(string image in tp.Inhalt)
+                {
+                    this.sftp.DeleteFile(this.sftp.BuildPath(Appsettings.Instance.RootDirectory,
+                        PathFragmentCollection.GalleryImageBaseDirectory,
+                        tp.Parent.Ordner,
+                        tp.Ordner,
+                        image));
+                }
+
+                tp.Parent.Inhalt.Remove(tp);
+                this.sftp.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
+            }
         }
     }
 }

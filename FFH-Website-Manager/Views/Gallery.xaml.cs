@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFH_Website_Manager.Classes.Model.Gallery;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,5 +23,11 @@ public partial class Gallery : UserControl
     public Gallery()
     {
         InitializeComponent();
+    }
+
+    private void TabChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.AddedItems?[0] is GalleryArea ga)
+            this.vm.IsActiveSelected = ga.Ordner == "aktiv";
     }
 }

@@ -37,7 +37,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TabControl Background="LightGray" ItemsSource="{Binding GalleryAreas}">
+        <TabControl Background="LightGray" ItemsSource="{Binding GalleryAreas}"
+                    SelectionChanged="TabChanged">
             <TabControl.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Ordner}"/>
@@ -48,17 +49,26 @@
                     <ItemsControl ItemsSource="{Binding Inhalt}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Command="{Binding ElementName=vm, Path=EditEventCommand}"
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Command="{Binding ElementName=vm, Path=EditEventCommand}"
                                     CommandParameter="{Binding}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Label Content="{Binding Ordner}" FontWeight="Bold"/>
-                                        <Label Content="{Binding Datum}" Grid.Column="1"/>
-                                    </Grid>
-                                </Button>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Content="{Binding Ordner}" FontWeight="Bold"/>
+                                            <Label Content="{Binding Datum}" Grid.Column="1"/>
+                                        </Grid>
+                                    </Button>
+                                    <Button Content="🗑️" HorizontalAlignment="Left" Grid.Column="1"
+                                                Command="{Binding ElementName=vm, Path=DeleteEventCommand}" 
+                                                CommandParameter="{Binding}"/>
+                                </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

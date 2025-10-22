@@ -47,7 +47,8 @@
                 IsEnabled="{Binding HasImange}" Margin="5"/>
         <Image Grid.Column="1" Grid.RowSpan="4" Grid.Row="1"
                Source="{Binding RelativeSource={RelativeSource FindAncestor,
-                AncestorType={x:Type local:EditArticle}}, Path=Bmp}"/>
+                AncestorType={x:Type local:EditArticle}}, Path=Bmp}"
+               MouseLeftButtonDown="OpenImage"/>
 
         <Label Content="_Text:" Grid.Row="5" Grid.Column="0"/>
         <TextBox Text="{Binding Inhalt, UpdateSourceTrigger=PropertyChanged}"

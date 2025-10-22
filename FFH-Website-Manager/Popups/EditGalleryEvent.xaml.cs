@@ -4,9 +4,11 @@ using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model.Gallery;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 /// <summary>
@@ -133,5 +135,28 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
     private void Reset(object sender, RoutedEventArgs e)
     {
         this.LoadBmps();
+    }
+
+    private void OpenImage(object sender, MouseButtonEventArgs e)
+    {
+        if (e.ClickCount >= 2 && sender is Image img && img.DataContext is GalleryImage gi)
+        {
+            string tempPath = Path.Combine(Path.GetTempPath(), "websiteManager", "imgPreview", Guid.NewGuid().ToString() + ".jpg");
+            Directory.CreateDirectory(Path.GetDirectoryName(tempPath));
+
+            var encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(gi.Bmp);
+
+            using (var fileStream = new FileStream(tempPath, FileMode.Create))
+            {
+                encoder.Save(fileStream);
+            }
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = tempPath,
+                UseShellExecute = true
+            });
+        }
     }
 }

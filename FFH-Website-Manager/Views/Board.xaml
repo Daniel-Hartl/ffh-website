@@ -53,7 +53,7 @@
                                 </Grid.RowDefinitions>
                                 <Image Source="{Binding WpfImage}"
                                        Grid.RowSpan="2" MaxHeight="40"
-                                       MinWidth="40"/>
+                                       MinWidth="40" MouseLeftButtonDown="OpenImage"/>
                                 <Button Content="Ändern" CommandParameter="{Binding}" Grid.Column="1"
                                         Command="{Binding ElementName=vm, Path=ChangeImageCommand}"/>
                                 <Button Content="Löschen" CommandParameter="{Binding}"

@@ -62,7 +62,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Image Source="{Binding Bmp}" HorizontalAlignment="Center"/>
+                                <Image Source="{Binding Bmp}" HorizontalAlignment="Center"
+                                       MouseLeftButtonDown="OpenImage"/>
                                 <Label Content="{Binding Converter={StaticResource uploadStateConverter}}"
                                    Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
                                 <Button Content="🗑️" Click="DeleteImage" Grid.Column="1"
@@ -98,7 +99,8 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Image Source="{Binding Bmp}" HorizontalAlignment="Center"/>
+                                <Image Source="{Binding Bmp}" HorizontalAlignment="Center"
+                                       MouseLeftButtonDown="OpenImage"/>
                                 <Label Content="{Binding Converter={StaticResource uploadStateConverter}}"
                            Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
                                 <Button Content="↻" FontSize="25" FontWeight="Bold" Click="ReuseImage"  Grid.Column="1"

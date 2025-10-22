@@ -4,6 +4,7 @@ using FFH_Website_Manager.Classes;
 using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -103,4 +104,27 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
         this.Close();
     }
     private void OnPropChanged([CallerMemberName] string? src = null) => this.PropertyChanged?.Invoke(this, new(src));
+
+    private void OpenImage(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+        if (e.ClickCount >= 2)
+        {
+            string tempPath = Path.Combine(Path.GetTempPath(), "websiteManager", "imgPreview", Guid.NewGuid().ToString() + ".jpg");
+            Directory.CreateDirectory(Path.GetDirectoryName(tempPath));
+
+            var encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(Bmp);
+
+            using (var fileStream = new FileStream(tempPath, FileMode.Create))
+            {
+                encoder.Save(fileStream);
+            }
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = tempPath,
+                UseShellExecute = true
+            });
+        }
+    }
 }

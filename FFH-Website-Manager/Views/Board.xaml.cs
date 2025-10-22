@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using FFH_Website_Manager.Classes.Model;
+using FFH_Website_Manager.Classes.Model.Gallery;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FFH_Website_Manager.Views;
 /// <summary>
@@ -22,5 +14,28 @@ public partial class Board : UserControl
     public Board()
     {
         InitializeComponent();
+    }
+
+    private void OpenImage(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+        if (e.ClickCount >= 2 && sender is Image img && img.DataContext is Person p)
+        {
+            string tempPath = Path.Combine(Path.GetTempPath(), "websiteManager", "imgPreview", Guid.NewGuid().ToString() + ".jpg");
+            Directory.CreateDirectory(Path.GetDirectoryName(tempPath));
+
+            var encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(p.WpfImage);
+
+            using (var fileStream = new FileStream(tempPath, FileMode.Create))
+            {
+                encoder.Save(fileStream);
+            }
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = tempPath,
+                UseShellExecute = true
+            });
+        }
     }
 }

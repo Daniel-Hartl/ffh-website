@@ -64,7 +64,8 @@ internal class GalleryViewModel : ViewModelBase
             dlg.ShowDialog();
             if (dlg.Save)
             {
-
+                foreach (var area in GalleryAreas)
+                    area.Inhalt = [.. area.Inhalt.OrderByDescending(x => x.DateInternal)];
                 this.sftp.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
             }
         }
@@ -86,6 +87,8 @@ internal class GalleryViewModel : ViewModelBase
         dlg.ShowDialog();
         if (dlg.Save)
         {
+            foreach (var area in GalleryAreas)
+                area.Inhalt = [..area.Inhalt.OrderByDescending(x => x.DateInternal)];
             this.sftp.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
         }
     }

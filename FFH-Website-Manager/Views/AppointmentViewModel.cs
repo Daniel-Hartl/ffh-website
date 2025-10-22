@@ -62,7 +62,7 @@ internal class AppointmentViewModel : ViewModelBase
 
     protected override void Save(object obj)
     {
-        this.sftp.UploadStringContent(PathFragmentCollection.Appointments, JsonSerializer.Serialize(this.Appointments, App.SerializerConfig));
+        this.sftp.UploadStringContent(PathFragmentCollection.Appointments, JsonSerializer.Serialize(this.Appointments.OrderBy(x => x.DateInternal), App.SerializerConfig));
         this.StateHasChanged = false;
     }
 

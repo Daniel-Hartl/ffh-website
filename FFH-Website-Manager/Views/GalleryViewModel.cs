@@ -70,5 +70,22 @@ internal class GalleryViewModel : ViewModelBase
 
     private void AddEvent(object obj)
     {
+        using GalleryAreaSelector gas = new(true);
+        gas.ShowDialog();
+        if (!gas.Succeed)
+            return;
+
+        GalleryTopic tp = new()
+        {
+            Parent = gas.IsActiveSelected ? this.galleryAreas.First(x => x.Ordner == "aktiv") : this.galleryAreas.First(x => x.Ordner == "verein"),
+            DateInternal = DateTime.Today
+        };
+        using var dlg = new EditGalleryEvent(tp, tp.Parent.Ordner, true);
+        dlg.ShowDialog();
+        if (dlg.Save)
+        {
+
+            App.DataProvider.UploadStringContent(PathFragmentCollection.Gallery, JsonSerializer.Serialize(this.GalleryAreas, App.SerializerConfig));
+        }
     }
 }

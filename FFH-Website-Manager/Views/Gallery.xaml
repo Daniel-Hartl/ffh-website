@@ -32,32 +32,39 @@
     <UserControl.DataContext>
         <local:GalleryViewModel x:Name="vm"/>
     </UserControl.DataContext>
-    <TabControl Background="LightGray" ItemsSource="{Binding GalleryAreas}">
-        <TabControl.ItemTemplate>
-            <DataTemplate>
-                <TextBlock Text="{Binding Ordner}"/>
-            </DataTemplate>
-        </TabControl.ItemTemplate>
-        <TabControl.ContentTemplate>
-            <DataTemplate>
-                <ItemsControl ItemsSource="{Binding Inhalt}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Button Command="{Binding ElementName=vm, Path=EditEventCommand}"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TabControl Background="LightGray" ItemsSource="{Binding GalleryAreas}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Ordner}"/>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ItemsControl ItemsSource="{Binding Inhalt}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding ElementName=vm, Path=EditEventCommand}"
                                     CommandParameter="{Binding}">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Content="{Binding Ordner}" FontWeight="Bold"/>
-                                    <Label Content="{Binding Datum}" Grid.Column="1"/>
-                                </Grid>
-                            </Button>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </DataTemplate>
-        </TabControl.ContentTemplate>
-    </TabControl>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Content="{Binding Ordner}" FontWeight="Bold"/>
+                                        <Label Content="{Binding Datum}" Grid.Column="1"/>
+                                    </Grid>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+        <Button Content="Neue Veranstaltung" Command="{Binding AddEventCommand}" Grid.Row="1" Margin="10"/>
+    </Grid>
 </UserControl>

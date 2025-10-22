@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:FFH_Website_Manager.Popups"
         xmlns:model="clr-namespace:FFH_Website_Manager.Classes.Model.Gallery"
         mc:Ignorable="d"
-        Title="EditGalleryEvent" Height="450" Width="800"
-         d:DataContext="{d:DesignInstance Type=model:GalleryTopic}">
+        Title="Galerieordner bearbeiten" Height="450" Width="800"
+         d:DataContext="{d:DesignInstance Type=model:GalleryTopic}"
+        FontSize="14">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -114,7 +115,7 @@
         <DockPanel Grid.Row="8" Grid.ColumnSpan="2"
                    HorizontalAlignment="Right" Margin="0,5">
             <Button Content="Speichern" Click="SaveTopic"/>
-            <Button Content="Zurücksetzen" Click="Reset" Margin="5,0"/>
+            <Button Content="Zurücksetzen" Click="Reset" Margin="5,0" x:Name="resetBtn"/>
             <Button Content="Abbrechen" Click="Cancel"/>
         </DockPanel>
     </Grid>

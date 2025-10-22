@@ -1,7 +1,6 @@
 ﻿namespace FFH_Website_Manager.Classes;
 
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 internal class Appsettings

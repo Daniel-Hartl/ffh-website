@@ -49,4 +49,10 @@ internal class LocalDataProvider : IDataProvider
         else if (Directory.Exists(oldPath))
             Directory.Move(oldPath, newPath);
     }
+
+    public void EnsureDirectoryExists(string path)
+    {
+        if (!Directory.Exists(path))
+            Directory.CreateDirectory(path);
+    }
 }

@@ -4,6 +4,7 @@ using Renci.SshNet;
 using System.IO;
 using System.Text;
 using System.Windows;
+using static System.Net.WebRequestMethods;
 
 internal class SFTPDataProvider : SftpClient, IDataProvider
 {
@@ -70,4 +71,10 @@ internal class SFTPDataProvider : SftpClient, IDataProvider
     }
 
     public string BuildPath(params string[] paths) => string.Join("/", paths);
+
+    public void EnsureDirectoryExists(string path)
+    {
+        if (!this.Exists(path))
+            this.CreateDirectory(path);
+    }
 }

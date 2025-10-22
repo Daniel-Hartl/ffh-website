@@ -9,7 +9,7 @@ public class GalleryTopic : GalleryBase
     private DateTime dateInternal;
 
     [JsonIgnore]
-    private ObservableCollection<string> inhalt;
+    private ObservableCollection<string> inhalt = [];
 
     [JsonIgnore]
     private ObservableCollection<GalleryImage> content = [];

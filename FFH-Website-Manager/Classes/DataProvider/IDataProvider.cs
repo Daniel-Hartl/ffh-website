@@ -16,4 +16,6 @@ internal interface IDataProvider
     public void RenameFile(string oldPath, string newPath);
 
     public string BuildPath(params string[] paths);
+
+    public void EnsureDirectoryExists(string path);
 }

@@ -16,21 +16,25 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
 {
     private string oldDirectory;
 
-    public EditGalleryEvent(GalleryTopic topic, string area)
+    public EditGalleryEvent(GalleryTopic topic, string area, bool isNewEvent = false)
     {
         this.DataContext = topic;
         this.Topic = topic;
         this.oldDirectory = topic.Ordner;
         this.Area = area;
+        this.IsNewEvent = isNewEvent;
         InitializeComponent();
+        if (isNewEvent)
+            this.resetBtn.IsEnabled = false;
         LoadBmps();
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    internal GalleryTopic Topic { get; set; }
-    internal string Area { get; set; }
-    internal bool Save { get; set; }
+    internal GalleryTopic Topic { get; init; }
+    internal string Area { get; init; }
+    internal bool Save { get; private set; }
+    internal bool IsNewEvent { get; init; }
 
     public void Dispose()
     {
@@ -92,8 +96,14 @@ public partial class EditGalleryEvent : Window, INotifyPropertyChanged, IDisposa
 
     private void SaveTopic(object sender, RoutedEventArgs e)
     {
-        if (this.oldDirectory != this.Topic.Ordner)
+        if (this.oldDirectory != this.Topic.Ordner && !this.IsNewEvent)
             App.DataProvider.RenameFile(GetSftpUrl(string.Empty, false), GetSftpUrl(string.Empty));
+
+        if(this.IsNewEvent)
+        {
+            App.DataProvider.EnsureDirectoryExists(GetSftpUrl(string.Empty));
+            this.Topic.Parent.Inhalt.Add(this.Topic);
+        }
 
         foreach (var img in this.Topic.Content)
         {

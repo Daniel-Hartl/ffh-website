@@ -34,7 +34,8 @@
                 <GroupStyle>
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
-                            <Label FontWeight="Bold" FontSize="14" Content="{Binding Name}" HorizontalAlignment="Center"/>
+                            <Label FontWeight="Bold" FontSize="14" 
+                                   Content="{Binding Name}" HorizontalAlignment="Center"/>
                         </DataTemplate>
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>
@@ -53,13 +54,15 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <Image Source="{Binding WpfImage}"
-                                   Grid.RowSpan="2" MaxHeight="40"
+                                       Grid.RowSpan="2" MaxHeight="40"
                                        MinWidth="40" MouseLeftButtonDown="OpenImage"/>
                                 <Button Content="Ändern" CommandParameter="{Binding}" Grid.Column="1"
-                                    Command="{Binding ElementName=vm, Path=ChangeImageCommand}"/>
-                                <Button Content="Löschen" CommandParameter="{Binding}"
-                                    Grid.Row="1" Grid.Column="1" IsEnabled="{Binding HasImage}"
-                                    Command="{Binding ElementName=vm, Path=DeleteImageCommand}"/>
+                                        Command="{Binding ElementName=vm, Path=ChangeImageCommand}"
+                                        Style="{DynamicResource  secondaryButton}" Margin="0 -.5 -.5 0"/>
+                                <Button Content="🗑️" CommandParameter="{Binding}" 
+                                        Style="{DynamicResource deleteButton}" Margin="0 0 -.5 -.5"
+                                        Grid.Row="1" Grid.Column="1" IsEnabled="{Binding HasImage}"
+                                        Command="{Binding ElementName=vm, Path=DeleteImageCommand}"/>
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -80,11 +83,12 @@
                                         ItemsSource="{Binding Source={StaticResource Roles}}"/>
                 <DataGridTextColumn Header="Kommentar"
                                     Binding="{Binding Kommentar, UpdateSourceTrigger=PropertyChanged}"/>
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="55">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Entfernen" CommandParameter="{Binding}" Margin="10 1"
-                                Command="{Binding ElementName=vm, Path=DeleteMemberCommand}"/>
+                            <Button Content="🗑️" CommandParameter="{Binding}" Margin="-1 -0.5"
+                                    Style="{DynamicResource deleteButton}"
+                                    Command="{Binding ElementName=vm, Path=DeleteMemberCommand}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

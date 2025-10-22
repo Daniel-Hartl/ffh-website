@@ -25,7 +25,8 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Label Content="_Überschrift:" Grid.Row="0" Grid.Column="0"/>
-        <TextBox Text="{Binding Titel, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <TextBox Text="{Binding Titel, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" 
+                 Grid.Column="1" Grid.ColumnSpan="3"/>
 
         <Label Content="_Datum:" Grid.Row="1" Grid.Column="2"/>
         <DatePicker Grid.Row="1" Grid.Column="3" Margin="5,5"

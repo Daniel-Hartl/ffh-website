@@ -43,7 +43,9 @@
         <Label Content="Bilder" FontWeight="Bold" Grid.ColumnSpan="2"
                HorizontalAlignment="Center" Grid.Row="3"/>
         <Label Content="Aktuelle Bilder:" Grid.Row="4"/>
-        <ScrollViewer Grid.Row="4" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="4" Grid.Column="1" 
+                      HorizontalScrollBarVisibility="Disabled" 
+                      VerticalScrollBarVisibility="Auto">
             <ItemsControl ItemsSource="{Binding Content}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -65,9 +67,9 @@
                                 <Image Source="{Binding Bmp}" HorizontalAlignment="Center"
                                        MouseLeftButtonDown="OpenImage"/>
                                 <Label Content="{Binding Converter={StaticResource uploadStateConverter}}"
-                                   Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                                       Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
                                 <Button Content="🗑️" Click="DeleteImage" Grid.Column="1"
-                                    ToolTip="Bild löschen"/>
+                                        ToolTip="Bild löschen"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
@@ -80,7 +82,8 @@
 
         <Label Content="Gelöscht:" Grid.Row="6"
                ToolTip="Bilder, die bisher zu diesem Thema hinterlegt waren, mit Speichern des Vorgangs aber gelöscht werden."/>
-        <ScrollViewer Grid.Row="6" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="6" Grid.Column="1" HorizontalScrollBarVisibility="Disabled" 
+                      VerticalScrollBarVisibility="Auto">
             <ItemsControl ItemsSource="{Binding DeletedRemote}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -102,9 +105,9 @@
                                 <Image Source="{Binding Bmp}" HorizontalAlignment="Center"
                                        MouseLeftButtonDown="OpenImage"/>
                                 <Label Content="{Binding Converter={StaticResource uploadStateConverter}}"
-                           Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+                                       Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
                                 <Button Content="↻" FontSize="25" FontWeight="Bold" Click="ReuseImage"  Grid.Column="1"
-                            ToolTip="Bild wiederherstellen"/>
+                                        ToolTip="Bild wiederherstellen"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

@@ -23,7 +23,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Appointments}" AutoGenerateColumns="False"
-          CanUserReorderColumns="False" Margin="10" Grid.Column="1">
+                  CanUserReorderColumns="False" Margin="10" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Zeit">
                     <DataGridTemplateColumn.CellTemplate>
@@ -40,8 +40,9 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Löschen" CommandParameter="{Binding}" Margin="10 1"
-                             Command="{Binding ElementName=vm, Path=DeleteAppointmentCommand}"/>
+                            <Button Content="🗑️" CommandParameter="{Binding}" Margin="10 1"
+                                    Command="{Binding ElementName=vm, Path=DeleteAppointmentCommand}"
+                                    Style="{DynamicResource deleteButton}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

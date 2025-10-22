@@ -1,0 +1,91 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">    
+    <Style x:Key="primaryButton" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource Primary}"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Margin="{TemplateBinding Margin}" Background="{TemplateBinding Background}"
+                            BorderThickness="0" Opacity="{TemplateBinding Opacity}" BorderBrush="Transparent">
+                        <Label Foreground="White" FontWeight="{TemplateBinding FontWeight}" Content="{TemplateBinding Content}"
+                               HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center"
+                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                               BorderBrush="Transparent"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource Select}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource Primary}"/>
+                <Setter Property="Opacity" Value="0.75"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="secondaryButton" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource Secondary}"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Margin="{TemplateBinding Margin}" Background="{TemplateBinding Background}"
+                        BorderThickness="0" Opacity="{TemplateBinding Opacity}" BorderBrush="Transparent">
+                        <Label Foreground="{TemplateBinding Foreground}" FontWeight="{TemplateBinding FontWeight}"
+                           HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                           FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center"
+                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                           BorderBrush="Transparent" Content="{TemplateBinding Content}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#dddddd"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Opacity" Value="0.75"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="deleteButton" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource Delete}"/>
+        <Setter Property="Margin" Value="10 5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Margin="{TemplateBinding Margin}" Background="{TemplateBinding Background}"
+                        BorderThickness="0" Opacity="{TemplateBinding Opacity}" BorderBrush="Transparent">
+                        <Label Foreground="White" FontWeight="{TemplateBinding FontWeight}" Content="{TemplateBinding Content}"
+                           HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                           FontSize="{TemplateBinding FontSize}" VerticalAlignment="Center"
+                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                           BorderBrush="Transparent"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource SelectDelete}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource Delete}"/>
+                <Setter Property="Opacity" Value="0.75"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style BasedOn="{StaticResource primaryButton}" TargetType="Button"/>
+</ResourceDictionary>

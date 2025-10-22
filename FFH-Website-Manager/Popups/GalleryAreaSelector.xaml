@@ -19,7 +19,7 @@
                          GroupName="area"/>
         </DockPanel>
         <DockPanel HorizontalAlignment="Right" Grid.Row="1">
-            <Button Content="Erstellen" Margin="0,0,10,0" Click="Save"/>
+            <Button Content="Erstellen" Click="Save"/>
             <Button Content="Abbrechen" Click="Cancel"/>
         </DockPanel>
     </Grid>

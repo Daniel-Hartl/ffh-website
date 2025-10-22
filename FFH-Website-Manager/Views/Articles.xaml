@@ -20,7 +20,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <DataGrid ItemsSource="{Binding Articles}" AutoGenerateColumns="False"
-              CanUserReorderColumns="False" IsReadOnly="True" Margin="10" Grid.Column="1">
+                  CanUserReorderColumns="False" IsReadOnly="True" Margin="10" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Titel" Binding="{Binding Titel}"/>
                 <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"/>
@@ -28,16 +28,18 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Bearbeiten" CommandParameter="{Binding}" Margin="10 1"
-                                Command="{Binding ElementName=vm, Path=EditArticleCommand}"/>
+                            <Button Content="Bearbeiten" CommandParameter="{Binding}" Margin="-.5 -.5"
+                                    Command="{Binding ElementName=vm, Path=EditArticleCommand}"
+                                    Style="{StaticResource secondaryButton}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="55">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Löschen" CommandParameter="{Binding}" Margin="10 1"
-                                 Command="{Binding ElementName=vm, Path=DeleteArticleCommand}"/>
+                            <Button Content="🗑️" CommandParameter="{Binding}" Margin="-1 -.5"
+                                    Command="{Binding ElementName=vm, Path=DeleteArticleCommand}"
+                                    Style="{StaticResource deleteButton}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

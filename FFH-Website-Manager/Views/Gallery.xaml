@@ -11,8 +11,11 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TabItem">
-                        <Border Name="Panel" BorderThickness="1 1 1 0" BorderBrush="#ADADAD" Margin="0 0 0.5 -1">
-                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="10,2"/>
+                        <Border Name="Panel" BorderThickness="1 1 1 0" BorderBrush="#ADADAD"
+                                Margin="0 0 0.5 -1">
+                            <ContentPresenter x:Name="ContentSite" Margin="10,2"
+                                              VerticalAlignment="Center" 
+                                              HorizontalAlignment="Center" ContentSource="Header" />
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
@@ -55,7 +58,8 @@
                                         <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
                                     <Button Command="{Binding ElementName=vm, Path=EditEventCommand}"
-                                    CommandParameter="{Binding}">
+                                            CommandParameter="{Binding}" Margin="5 5 0 0"
+                                            Style="{DynamicResource secondaryButton}">
                                         <Grid>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*"/>
@@ -66,8 +70,9 @@
                                         </Grid>
                                     </Button>
                                     <Button Content="🗑️" HorizontalAlignment="Left" Grid.Column="1"
-                                                Command="{Binding ElementName=vm, Path=DeleteEventCommand}" 
-                                                CommandParameter="{Binding}"/>
+                                            Command="{Binding ElementName=vm, Path=DeleteEventCommand}" 
+                                            CommandParameter="{Binding}" Margin="0 5 5 0"
+                                            Style="{DynamicResource deleteButton}"/>
                                 </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -75,6 +80,7 @@
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>
-        <Button Content="Neue Veranstaltung" Command="{Binding AddEventCommand}" Grid.Row="1" Margin="10"/>
+        <Button Content="Neue Veranstaltung" Command="{Binding AddEventCommand}" 
+                Grid.Row="1" Margin="10"/>
     </Grid>
 </UserControl>

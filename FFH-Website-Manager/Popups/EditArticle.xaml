@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:FFH_Website_Manager.Popups"
         xmlns:model="clr-namespace:FFH_Website_Manager.Classes.Model"
         mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=model:Article}"
-        Height="450" Width="800" ShowInTaskbar="False">
+        Height="450" Width="800" ShowInTaskbar="False"
+        FontSize="14">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>

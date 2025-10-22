@@ -1,6 +1,6 @@
 ﻿namespace FFH_Website_Manager.Views;
 
-using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.DataProvider;
 using System.Collections.ObjectModel;
 
 internal class BoardViewModel : PersonsViewModelBase

@@ -1,6 +1,7 @@
 ﻿namespace FFH_Website_Manager.Views;
 
 using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model;
 using FFH_Website_Manager.Popups;
 using System.Collections.ObjectModel;
@@ -43,7 +44,7 @@ internal class ArticlesViewModel : ViewModelBase
         if (ea.SaveData)
         {
             this.Articles.Add(ea.Article);
-            this.sftp.UploadStringContent(PathFragmentCollection.Articles, JsonSerializer.Serialize(Articles.ToArray()));
+            this.sftp.UploadStringContent(PathFragmentCollection.Articles, JsonSerializer.Serialize(Articles.ToArray(), App.SerializerConfig));
         }
     }
 
@@ -58,7 +59,7 @@ internal class ArticlesViewModel : ViewModelBase
             if (ea.SaveData)
             {
                 art.Insert(ea.Article);
-                this.sftp.UploadStringContent(PathFragmentCollection.Articles, JsonSerializer.Serialize(Articles.ToArray()));
+                this.sftp.UploadStringContent(PathFragmentCollection.Articles, JsonSerializer.Serialize(Articles.ToArray(), App.SerializerConfig));
             }
         }
     }
@@ -69,7 +70,7 @@ internal class ArticlesViewModel : ViewModelBase
             && MessageBox.Show($"Wollen Sie wirklich den Artikel \"{art.Titel}\" endgültig löschen?", string.Empty, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
         {
             this.Articles.Remove(art);
-            this.sftp.UploadStringContent(PathFragmentCollection.Articles, JsonSerializer.Serialize(Articles.ToArray()));
+            this.sftp.UploadStringContent(PathFragmentCollection.Articles, JsonSerializer.Serialize(Articles.ToArray(), App.SerializerConfig));
         }
     }
 

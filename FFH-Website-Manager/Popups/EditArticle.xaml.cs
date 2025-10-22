@@ -1,8 +1,8 @@
 ﻿namespace FFH_Website_Manager.Popups;
 
 using FFH_Website_Manager.Classes;
+using FFH_Website_Manager.Classes.DataProvider;
 using FFH_Website_Manager.Classes.Model;
-using Microsoft.Win32;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -28,7 +28,7 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
             try
             {
                 using MemoryStream ms = new();
-                App.SFTPProvider.DownloadFile(GetSftpUrl(article.Bild), ms);
+                App.DataProvider.DownloadFile(GetSftpUrl(article.Bild), ms);
                 ms.Position = 0;
                 Bmp = BitmapFrame.Create(ms, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad);
                 Bmp.Freeze();
@@ -54,7 +54,7 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
     public bool SaveData { get; set; }
 
     private static string GetSftpUrl(string fileName)
-        => SFTPProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.ArticlesImageDirectory, fileName);
+        => App.DataProvider.BuildPath(Appsettings.Instance.RootDirectory, PathFragmentCollection.ArticlesImageDirectory, fileName);
 
     private void AddPicture(object sender, RoutedEventArgs e)
     {
@@ -78,7 +78,7 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
     {
         this.SaveData = true;
         if (this.imageHasChanged && !this.oldImageCorrupted && !string.IsNullOrEmpty(this.Article.Bild))
-            App.SFTPProvider.DeleteFile(GetSftpUrl(this.Article.Bild));
+            App.DataProvider.DeleteFile(GetSftpUrl(this.Article.Bild));
 
         if (Bmp == null)
         {
@@ -87,7 +87,7 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
         else if (!string.IsNullOrEmpty(this.uploadImagePath))
         {
             this.Article.Bild = this.Article.Titel + Path.GetExtension(this.uploadImagePath);
-            App.SFTPProvider.UploadFileFromPath(this.uploadImagePath, GetSftpUrl(this.Article.Bild));
+            App.DataProvider.UploadFileFromPath(this.uploadImagePath, GetSftpUrl(this.Article.Bild));
         }
 
         this.Close();

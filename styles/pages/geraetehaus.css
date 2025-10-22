@@ -13,7 +13,7 @@ table {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    background-image: url(../../images/building/now.png);
+    background-image: url(../../images/building/now.jpg);
 }
 
 .maps-content-div img {
@@ -75,7 +75,7 @@ table {
 }
 
 .streetView {
-    background-image: url(../../images/building/now.png);
+    background-image: url(../../images/building/now.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

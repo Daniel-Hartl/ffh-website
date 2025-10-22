@@ -1,12 +1,14 @@
-﻿namespace FFH_Website_Manager.Classes;
+﻿using FFH_Website_Manager.Classes.DataProvider;
+
+namespace FFH_Website_Manager.Classes;
 internal abstract class ViewModelBase: ObservableObject
 {
-    protected readonly SFTPProvider sftp;
+    protected readonly IDataProvider sftp;
     private bool stateHasChanged;
 
     protected ViewModelBase()
     {
-        this.sftp = App.SFTPProvider;
+        this.sftp = App.DataProvider;
     }
 
     public bool StateHasChanged

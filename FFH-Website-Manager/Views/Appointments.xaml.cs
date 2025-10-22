@@ -1,5 +1,4 @@
-﻿using FFH_Website_Manager.Classes.Model.Gallery;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,18 +15,12 @@ using System.Windows.Shapes;
 
 namespace FFH_Website_Manager.Views;
 /// <summary>
-/// Interaction logic for Gallery.xaml
+/// Interaction logic for Appointments.xaml
 /// </summary>
-public partial class Gallery : UserControl
+public partial class Appointments : UserControl
 {
-    public Gallery()
+    public Appointments()
     {
         InitializeComponent();
-    }
-
-    private void TabChanged(object sender, SelectionChangedEventArgs e)
-    {
-        if (e.AddedItems?[0] is GalleryArea ga)
-            this.vm.IsActiveSelected = ga.Ordner == "aktiv";
     }
 }

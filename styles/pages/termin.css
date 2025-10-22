@@ -7,8 +7,58 @@ iframe {
     border: 0;
 }
 
+#appointments {
+    font-size: 1.5rem;
+}
+
+.header td{
+    background-color: #1D1045 !important;
+    font-weight: bold !important;
+    color: white !important;
+    padding: 0 1rem !important;
+    font-size: 1.5rem !important;
+}
+
+.date {
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.description {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+.location {
+    padding: 0.5rem 1rem;
+    color: gray;
+}
+
+.target {
+    padding: 0.5rem 1rem;
+    color: gray;
+}
+
 @media (max-width: 1000px) {
     .calender {
         height: 55vh;
+    }
+
+    #appointments {
+        font-size: 1rem;
+    }
+
+    .header td{
+        font-size: 1rem;
+    }
+
+    .location {
+        visibility: collapse;
+        display: none;
+    }
+
+    .target {
+        visibility: collapse;
+        display: none;
     }
 }

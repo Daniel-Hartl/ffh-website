@@ -46,7 +46,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Neuen Artikel hinzufügen" Margin="10 1" Grid.Column="1"
+        <Button Content="Neuen Artikel hinzufügen" Margin="5 -10 5 5" Grid.Column="1"
                 Command="{Binding ElementName=vm, Path=AddArticleCommand}"
                 Grid.Row="1"/>
     </Grid>

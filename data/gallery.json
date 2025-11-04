@@ -1,44 +1,44 @@
-[
-    {
-        "Ordner": "verein",
+﻿[
+  {
+    "Inhalt": [
+      {
+        "Datum": "17.05.2025",
         "Inhalt": [
-            {
-                "Ordner": "Fahrzeugweihe Wischenhofen",
-                "Datum": "17.05.2025",
-                "Inhalt": [
-                    "Foto1.png",
-                    "Foto2.png",
-                    "Foto3.png",
-                    "Foto4.jpg"
-                ]
-            },
-            {
-                "Ordner": "Fahrzeugweihe Kallmünz",
-                "Datum": "10.05.2025",
-                "Inhalt": [
-                    "Foto1.png",
-                    "Foto2.png",
-                    "Foto3.png",
-                    "Foto3.png",
-                    "Foto3.png",
-                    "Foto4.jpg"
-                ]
-            }
-        ]
-    },
-    {
-        "Ordner": "aktiv",
+          "Foto1.png",
+          "Foto2.png",
+          "Foto4.jpg",
+          "clutchminister.png"
+        ],
+        "Ordner": "Fahrzeugweihe Wischenhofen"
+      },
+      {
+        "Datum": "10.05.2025",
         "Inhalt": [
-            {
-                "Ordner": "Monatsübung Mai",
-                "Datum": "08.05.2025",
-                "Inhalt": [
-                    "Foto1.png",
-                    "Foto2.png",
-                    "Foto3.png",
-                    "Foto4.jpg"
-                ]
-            }
-        ]
-    }
+          "Foto1.png",
+          "Foto2.png",
+          "Foto3.png",
+          "Foto3.png",
+          "Foto3.png",
+          "Foto4.jpg"
+        ],
+        "Ordner": "Fahrzeugweihe Kallmünz"
+      }
+    ],
+    "Ordner": "verein"
+  },
+  {
+    "Inhalt": [
+      {
+        "Datum": "08.05.2025",
+        "Inhalt": [
+          "Foto1.png",
+          "Foto2.png",
+          "Foto3.png",
+          "Foto4.jpg"
+        ],
+        "Ordner": "Monatsübung Mai"
+      }
+    ],
+    "Ordner": "aktiv"
+  }
 ]

@@ -13,7 +13,7 @@ internal class Person : ObservableObject
     [JsonIgnore]
     private string id;
     [JsonIgnore]
-    private ObservableCollection<string> funktion;
+    private ObservableCollection<string> funktion = [];
     [JsonIgnore]
     private string name;
     [JsonIgnore]

@@ -29,7 +29,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding DateInternal, UpdateSourceTrigger=PropertyChanged}"
-                                        Language="de-de"/>
+                                        Language="de-de" Margin="-1 -.5"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -40,9 +40,10 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="🗑️" CommandParameter="{Binding}" Margin="10 1"
+                            <Button Content="🗑️" CommandParameter="{Binding}" Margin="-1 -.5"
                                     Command="{Binding ElementName=vm, Path=DeleteAppointmentCommand}"
-                                    Style="{DynamicResource deleteButton}"/>
+                                    Style="{DynamicResource deleteButton}"
+                                    Visibility="{Binding Converter={StaticResource visibilityConverter}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

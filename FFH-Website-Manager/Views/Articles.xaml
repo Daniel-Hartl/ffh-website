@@ -39,7 +39,8 @@
                         <DataTemplate>
                             <Button Content="🗑️" CommandParameter="{Binding}" Margin="-1 -.5"
                                     Command="{Binding ElementName=vm, Path=DeleteArticleCommand}"
-                                    Style="{StaticResource deleteButton}"/>
+                                    Style="{StaticResource deleteButton}"
+                                    Visibility="{Binding Converter={StaticResource visibilityConverter}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

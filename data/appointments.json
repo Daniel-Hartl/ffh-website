@@ -1,14 +1,80 @@
 ﻿[
-  {
-    "Zeit": "06.11.2025-19:30",
-    "Titel": "Monatsübung - Knoten und Stiche",
-    "Ort": "Gerätehaus",
-    "Zielgruppe": "Aktive"
-  },
-  {
-    "Zeit": "16.11.2025-09:00",
-    "Titel": "Volkstrauertag",
-    "Ort": "Duggendorf",
-    "Zielgruppe": "Verein"
-  }
+    {
+        "Zeit": "08.01.2026-19:30",
+        "Titel": "Monatsübung - Reanimation",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "05.02.2026-19:30",
+        "Titel": "Monatsübung - Winterschulung",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "05.03.2026-19:30",
+        "Titel": "Monatsübung - Einsatzübung Verkehrsunfall",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "13.03.2026-19:30",
+        "Titel": "Jahreshauptversammlung",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Vereinsmitglieder"
+    },
+    {
+        "Zeit": "02.04.2026-19:30",
+        "Titel": "Monatsübung - Gerätekunde TSF",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "07.05.2026-19:30",
+        "Titel": "Monatsübung - Vegetationsbrände",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "11.06.2026-19:30",
+        "Titel": "Monatsübung - Einsatzübung Brand",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "02.07.2026-19:30",
+        "Titel": "Monatsübung - Einsatzübung Löschaufbau",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "06.08.2026-19:30",
+        "Titel": "Monatsübung - Strahlrohrtraining",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "03.09.2026-19:30",
+        "Titel": "Monatsübung - Einsatzübung Funk",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "01.10.2026-19:30",
+        "Titel": "Monatsübung - Einsatzübung THL",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "05.11.2026-19:30",
+        "Titel": "Monatsübung - Knoten und Stiche",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    },
+    {
+        "Zeit": "03.12.2026-19:30",
+        "Titel": "Monatsübung - PSNV & Selfcare",
+        "Ort": "Gerätehaus",
+        "Zielgruppe": "Aktive"
+    }
 ]

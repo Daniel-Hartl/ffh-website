@@ -1,0 +1,134 @@
+# Sicherheits- und Zugriffsregeln für FFH-Website
+
+# Verhindere Zugriff auf versteckte Dateien und Ordner
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Verhindere Zugriff auf sensible Ordner
+<Directory "vendor/">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+<Directory "FFH-Website-Manager/">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+<Directory ".git/">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+# Verhindere Zugriff auf Konfigurationsdateien
+<FilesMatch "^(composer\.(json|lock))$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Erlaube Zugriff auf öffentliche Assets
+<Directory "images/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<Directory "styles/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<Directory "scripts/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<Directory "fonts/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<Directory "data/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+# Erlaube Zugriff auf Header/Footer/Marquee Komponenten
+<Directory "header/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<Directory "footer/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<Directory "marquee/">
+    Order allow,deny
+    Allow from all
+</Directory>
+
+# PHP-Dateien erlauben (für Form-Verarbeitung)
+<FilesMatch "\.php$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# HTML-Dateien erlauben
+<FilesMatch "\.html$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# CSS, JS, Bilder erlauben
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# XML-Dateien erlauben (sitemap)
+<FilesMatch "\.xml$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Directory Index
+DirectoryIndex index.html home.html
+
+# URL-Rewriting für saubere URLs (optional)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Entferne trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+    # Redirect zu index.html wenn Verzeichnis angefragt
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_FILENAME}/index.html -f
+    RewriteRule ^(.*)$ $1/index.html [L]
+</IfModule>
+
+# Sicherheits-Header
+<IfModule mod_headers.c>
+    # Verhindere MIME-Type sniffing
+    Header always set X-Content-Type-Options nosniff
+
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Frame Options (verhindert Clickjacking)
+    Header always set X-Frame-Options DENY
+
+    # Content Security Policy (angepasst für deine Seite)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
+</IfModule>
+
+# PHP-Konfiguration (falls notwendig)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    php_value max_execution_time 30
+</IfModule>

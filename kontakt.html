@@ -18,22 +18,23 @@
     <main>
         <h1>Kontakt</h1>
         <p class="warning">Hier werden <u>keine Notrufe</u> entgegengenommen! In Notfällen wenden Sie sich an die <u><a href="tel:112">112</a></u>.</p>
-        <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+        <form action="form.php" method="POST" id="contact-form">
             <input type="hidden" name="access_key" value="d91758d4-19bc-4b20-b8cf-a14111610534">
             <div>
                 <p class="caption">Name:</p>
-                <input name="Name" required type="text" placeholder="Ihr Name" pattern="[A-Za-z]{2,}(\s[A-Za-z]{2,})+"
+                <input name="name" required type="text" placeholder="Ihr Name" pattern="[A-Za-z]{2,}(\s[A-Za-z]{2,})+"
                     oninvalid="this.setCustomValidity('Bitte geben Sie Vor- und Nachname ein!')"
                     onchange="this.setCustomValidity('')" />
                 <p class="caption">E-Mail:</p>
-                <input name="E-Mail" type="text" required placeholder="Ihre E-Mail-Adresse"
+                <input name="email" type="email" required placeholder="Ihre E-Mail-Adresse"
                     pattern="[A-Za-z0-9\-._]+@[A-Za-z0-9\-._]+\.[a-zA-Z]{2,}"
                     oninvalid="this.setCustomValidity('Bitte geben Sie Ihre E-Mail-Adresse ein!')"
                     onchange="this.setCustomValidity('')" />
                 <p class="caption">Betreff:</p>
-                <input name="Betreff" type="text" minlength="5" placeholder="Ihr Anliegen" required />
+                <input name="subject" type="text" minlength="5" placeholder="Ihr Anliegen" required />
                 <p class="caption">Nachricht:</p>
-                <textarea name="Nachricht" rows="10" placeholder="Ihre Nachricht"></textarea>
+                <textarea name="message" rows="10" placeholder="Ihre Nachricht"></textarea>
+                <input type="text" name="website" style="display:none">
                 <button class="submit-button primary-button" type="submit">Absenden</button>
             </div>
         </form>

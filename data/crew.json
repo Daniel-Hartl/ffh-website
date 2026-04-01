@@ -16,5 +16,11 @@
         "Funktion": ["Stellv. Kommandant", "1. Gerätewart", "1. Jugendbeauftragter"],
         "Name": "Gabriel Böhm",
         "Bild": ""
+    },
+    {
+        "Id": "kommandant",
+        "Funktion": ["Ehrenkommandant"],
+        "Name": "Peter Pilz",
+        "Bild": ""
     }
 ]

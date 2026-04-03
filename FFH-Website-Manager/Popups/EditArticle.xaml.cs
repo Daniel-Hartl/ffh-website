@@ -61,8 +61,20 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
     {
         if (FileDialogTemplates.SelectSingleImage(out string path))
         {
+            // keep path for later upload
             uploadImagePath = path;
-            Bmp = BitmapFrame.Create(new Uri(uploadImagePath));
+
+            // Load image into memory with CacheOption OnLoad and freeze it
+            // so the original file is not locked by the application.
+            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (var ms = new MemoryStream())
+            {
+                fs.CopyTo(ms);
+                ms.Position = 0;
+                Bmp = BitmapFrame.Create(ms, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad);
+                Bmp.Freeze();
+            }
+
             this.imageHasChanged = true;
             this.OnPropChanged(nameof(Bmp));
         }
@@ -71,6 +83,7 @@ public partial class EditArticle : Window, IDisposable, INotifyPropertyChanged
     private void RemovePicture(object sender, RoutedEventArgs e)
     {
         Bmp = null;
+        uploadImagePath = string.Empty;
         this.imageHasChanged = true;
         this.OnPropChanged(nameof(Bmp));
     }

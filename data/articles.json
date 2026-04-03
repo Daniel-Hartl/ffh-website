@@ -1,39 +1,18 @@
-[
-    {
-        "Datum": "06.03.2025",
-        "Titel": "Monatsübung Verkehrsunfall",
-        "Inhalt": "Unsere Monatsübung im März stand unter dem Thema \"Einsatzübung Verkehrsunfall\". Das Übungsszenario stellte einen realitätsnahen Einsatz nach einem Faschingsball dar: Ein alkoholisierter Fahrer war mit seinem Pkw von der Fahrbahn abgekommen und gegen eine Mauer geprallt.<br><br>Beim Eintreffen der ersten Einsatzkräfte fanden diese ein Fahrzeug vor, in dem der bewusstlose Fahrer eingeklemmt war. Die Übung konzentrierte sich auf das Absichern der Einsatzstelle, sowie auf die Rettung und Betreuung des Patienten.<br><br>Besonderes Augenmerk lag auf der Kommunikation mit dem \"verunfallten\" Fahrer und der engen Zusammenarbeit zwischen Gruppenführer, Rettungstrupp und dem fiktiven Rettungsdienst. Auch das Thema Eigensicherung, insbesondere bei Dunkelheit und schlechter Sicht, wurde intensiv geübt.<br><br>Unsere Kommandantin betonte im Anschluss die Wichtigkeit solcher realitätsnahen Szenarien: „Gerade nach Feierlichkeiten wie einem Faschingsball steigt das Risiko von Unfällen unter Alkoholeinfluss. Wir müssen für solche Situationen bestens vorbereitet sein.",
-        "Bild": "Monatsübung VU 2025.jpeg",
-        "Autor": "Daniel Hartl",
-        "Bildquelle": "Stefanie Dechant"
-    },
-    {
-        "Datum": "04.04.2024",
-        "Titel": "Jahreshauptversammlung 2024",
-        "Inhalt": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "Bild": ""
-    },
-    {
-        "Datum": "04.04.2023",
-        "Titel": "Jahreshauptversammlung 2023",
-        "Inhalt": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "Bild": "",
-        "Autor": "Martin Mustermann"
-    },
-    {
-        "Datum": "04.04.2022",
-        "Titel": "Jahreshauptversammlung 2022",
-        "Inhalt": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "Bild": "jhv2025.jpg",
-        "Bildquelle": "Test",
-        "Autor": "Martin Mustermann"
-    },
-    {
-        "Datum": "04.04.2022",
-        "Titel": "Jahreshauptversammlung 2022",
-        "Inhalt": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-        "Bild": "jhv2025.jpg",
-        "Bildquelle": "Test",
-        "Autor": "Martin Mustermann"
-    }
+﻿[
+  {
+    "Titel": "Neuer Maschinist für unsere Wehr",
+    "Datum": "27.09.2025",
+    "Autor": "Daniel Hartl",
+    "Bild": "Neuer Maschinist für die FF Heitzenhofen.jpeg",
+    "Bildquelle": "Stefanie Dechant",
+    "Inhalt": "Wir freuen uns Steffen Wagner zu seinem abgeschlossenen, einwöchigen Lehrgang zum Maschinisten gratullieren zu dürfen. Steffen ist nun bestens in Theorie und Praxis rund um unser Einsatzfahrzeug geschult. Allzeit gute Fahrt. "
+  },
+  {
+    "Titel": "Monatsübung Verkehrsunfall",
+    "Datum": "06.03.2025",
+    "Autor": "Daniel Hartl",
+    "Bild": "Monatsübung VU 2025.jpeg",
+    "Bildquelle": "Stefanie Dechant",
+    "Inhalt": "Unsere Monatsübung im März stand unter dem Thema \u0022Einsatzübung Verkehrsunfall\u0022. Das Übungsszenario stellte einen realitätsnahen Einsatz nach einem Faschingsball dar: Ein alkoholisierter Fahrer war mit seinem Pkw von der Fahrbahn abgekommen und gegen eine Mauer geprallt.\u003Cbr\u003E\u003Cbr\u003EBeim Eintreffen der ersten Einsatzkräfte fanden diese ein Fahrzeug vor, in dem der bewusstlose Fahrer eingeklemmt war. Die Übung konzentrierte sich auf das Absichern der Einsatzstelle, sowie auf die Rettung und Betreuung des Patienten.\u003Cbr\u003E\u003Cbr\u003EBesonderes Augenmerk lag auf der Kommunikation mit dem \u0022verunfallten\u0022 Fahrer und der engen Zusammenarbeit zwischen Gruppenführer, Rettungstrupp und dem fiktiven Rettungsdienst. Auch das Thema Eigensicherung, insbesondere bei Dunkelheit und schlechter Sicht, wurde intensiv geübt.\u003Cbr\u003E\u003Cbr\u003EUnsere Kommandantin betonte im Anschluss die Wichtigkeit solcher realitätsnahen Szenarien: „Gerade nach Feierlichkeiten wie einem Faschingsball steigt das Risiko von Unfällen unter Alkoholeinfluss. Wir müssen für solche Situationen bestens vorbereitet sein."
+  }
 ]

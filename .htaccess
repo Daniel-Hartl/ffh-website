@@ -1,5 +1,7 @@
 # Sicherheits- und Zugriffsregeln für FFH-Website
 
+ErrorDocument 404 /index.html
+
 # Verhindere Zugriff auf versteckte Dateien und Ordner
 <FilesMatch "^\.">
     Order allow,deny

@@ -99,7 +99,7 @@ function loadArticle(article) {
     document.getElementById('articleImgSource').innerText = "Quelle: " + article.Bildquelle;
     document.getElementById('articleImgSource').hidden = !article.Bildquelle;
 
-    document.getElementById('articleContent').innerHTML = article.Inhalt;
+    document.getElementById('articleContent').innerHTML = article.Inhalt.replace(/\r\n/g, '<br>');
 
     document.getElementById('list').classList.toggle("hidden");
     document.getElementById('article').classList.toggle("hidden");

@@ -51,10 +51,20 @@
                 AncestorType={x:Type local:EditArticle}}, Path=Bmp}"
                MouseLeftButtonDown="OpenImage"/>
 
+        <DockPanel Grid.Row="4" Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Content="Überschrift" Margin="5,2"
+                    FontSize="12" Width="80" Click="ButtonHeadlineClick"></Button>
+            <Button Content="Fett" FontWeight="Bold" Margin="5,2"
+                    FontSize="12" Width="80" Click="ButtonBoldClick"></Button>
+            <Button Content="Kursiv" FontStyle="Italic" Margin="5,2"
+                    FontSize="12" Width="80" Click="ButtonItalicClick"></Button>
+        </DockPanel>
         <Label Content="_Text:" Grid.Row="5" Grid.Column="0"/>
-        <TextBox Text="{Binding Inhalt, UpdateSourceTrigger=PropertyChanged}"
-                 Grid.Row="5" Grid.Column="1"
-                 Grid.ColumnSpan="3" TextWrapping="Wrap"/>
+        <RichTextBox Grid.Row="5" Grid.Column="1" AcceptsReturn="True"
+                     Grid.ColumnSpan="3" x:Name="articleBox" 
+                     Foreground="Black"/>
 
         <DockPanel HorizontalAlignment="Right"
                    Grid.Row="10" Grid.ColumnSpan="10">

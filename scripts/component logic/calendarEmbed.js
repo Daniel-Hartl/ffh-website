@@ -6,13 +6,41 @@ function loadStreetView() {
     document.getElementById("placeholder").replaceWith(maps);
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    root = document.getElementById('appointments');
-    if (root) {
-        const res = await getAppointments();
-        res.forEach(app => root.appendChild(generateAppointment(app)));
+let appointmentRows = [];
+let appointmentRoot = null;
+
+async function loadAppointmentsTable() {
+    appointmentRoot = document.getElementById('appointments');
+    if (!appointmentRoot) {
+        return;
     }
-});
+
+    const appointments = await getAppointments() || [];
+    appointmentRows = appointments.map(app => ({
+        data: app,
+        row: generateAppointment(app)
+    }));
+
+    appointmentRows.forEach(entry => appointmentRoot.appendChild(entry.row));
+    setupAppointmentFilters();
+}
+
+document.addEventListener('DOMContentLoaded', loadAppointmentsTable);
+
+function setupAppointmentFilters() {
+    const filters = document.querySelectorAll('input[name="appointmentFilter"]');
+    filters.forEach(filter => filter.addEventListener('change', () => {
+        const value = document.querySelector('input[name="appointmentFilter"]:checked')?.value || 'Alle';
+        filterAppointments(value);
+    }));
+}
+
+function filterAppointments(filterValue) {
+    appointmentRows.forEach(entry => {
+        const matches = filterValue === 'Alle' || entry.data.Zielgruppe === filterValue;
+        entry.row.style.display = matches ? '' : 'none';
+    });
+}
 
 function generateAppointment(app) {
     const tr = document.createElement('tr');

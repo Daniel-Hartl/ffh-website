@@ -37,11 +37,11 @@
     justify-content: center;
 }
 
-.advertisement-container{
+.seealso-container{
     display: flex;
 }
 
-.advertisement {
+.seealso {
     width: 30vw;
     margin: 1vw;
     overflow: hidden;
@@ -52,12 +52,12 @@
     justify-content: center;
 }
 
-.advertisement :hover{
+.seealso :hover{
     background-color: lightgray;
 }
 
 
-.advertisement p{
+.seealso p{
     text-align: center;
     font-variant: small-caps;
     font-weight: bold;
@@ -66,7 +66,7 @@
     font-size: 1.5rem;
 }
 
-.advertisement img {
+.seealso img {
     width: 80%;
     height: 80%;
     margin: 10% auto;
@@ -103,11 +103,11 @@
         font-size: 0.5rem;
     }
 
-    .advertisement {
+    .seealso {
     width: 80vw;
 }
 
-.advertisement-container{
+.seealso-container{
     display: inline-block;
 }
 }

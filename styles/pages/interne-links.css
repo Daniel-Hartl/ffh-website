@@ -1,0 +1,51 @@
+.seealso-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.seealso {
+    width: 29.3vw;
+    margin: 1vw;
+    overflow: hidden;
+    border-radius: 1rem;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seealso :hover{
+    background-color: lightgray;
+}
+
+
+.seealso p{
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10%;
+    font-size: 1.5rem;
+}
+
+.seealso img {
+    width: 80%;
+    height: 80%;
+    margin: 10% auto;
+    margin-bottom: 0;
+    object-fit: cover;
+}
+
+@media (max-width: 1000px) {
+    .seealso {
+        width: 80vw;
+    }
+
+    .seealso p {
+        color: lightgray;
+    }
+
+    .seealso-container {
+        display: inline-block;
+    }
+}

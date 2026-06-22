@@ -37,7 +37,7 @@
     justify-content: center;
 }
 
-.seealso-container{
+.seealso-container {
     display: flex;
 }
 
@@ -52,12 +52,12 @@
     justify-content: center;
 }
 
-.seealso :hover{
+.seealso :hover {
     background-color: lightgray;
 }
 
 
-.seealso p{
+.seealso p {
     text-align: center;
     font-variant: small-caps;
     font-weight: bold;
@@ -104,10 +104,10 @@
     }
 
     .seealso {
-    width: 80vw;
-}
+        width: 80vw;
+    }
 
-.seealso-container{
-    display: inline-block;
-}
+    .seealso-container {
+        display: inline-block;
+    }
 }

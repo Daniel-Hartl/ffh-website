@@ -14,6 +14,7 @@
     position: fixed;
     width: 100%;
     display: block;
+    height: 3rem;
 }
 
 .menubar nav {
@@ -99,12 +100,18 @@
 }
 
 .banner {
-    background-image: url(heitzenhofen.png);
+    padding-top: 3rem;
+    height: calc(100% - 3rem);
+}
+
+.banner div {
+
+    height: 100%;
+    background-image: url(Banner\ 1.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    height: calc(100% - 2rem);
-    padding-top: 2rem;
+    background-position: top right;
+    background-origin: border-box;
 }
 
 .logo-container {
